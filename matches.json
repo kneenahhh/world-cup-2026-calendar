@@ -1,0 +1,2598 @@
+[
+  {
+    "id": "ceremony-001",
+    "date": "2026-06-11T16:30:00Z",
+    "team1": {
+      "name": "🎉 Opening Ceremony @",
+      "code": "CEREMONY",
+      "flag": ""
+    },
+    "team2": {
+      "name": "Mexico City",
+      "code": "MEX",
+      "flag": "🇲🇽"
+    },
+    "stadium": "Estadio Azteca",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "broadcast": [
+      "FOX",
+      "Telemundo",
+      "Peacock"
+    ],
+    "stage": "Opening Ceremony",
+    "group": "",
+    "description": "Performers: J Balvin, Tyla, Alejandro Fernández, Belinda, Danny Ocean, Lila Downs, Los Ángeles Azules, Maná."
+  },
+  {
+    "id": "match-001",
+    "date": "2026-06-11T19:00:00Z",
+    "team1": {
+      "name": "Mexico",
+      "code": "MEX",
+      "flag": "🇲🇽"
+    },
+    "team2": {
+      "name": "South Africa",
+      "code": "RSA",
+      "flag": "🇿🇦"
+    },
+    "stadium": "Estadio Banorte",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "A"
+  },
+  {
+    "id": "match-002",
+    "date": "2026-06-12T02:00:00Z",
+    "team1": {
+      "name": "South Korea",
+      "code": "KOR",
+      "flag": "🇰🇷"
+    },
+    "team2": {
+      "name": "Czech Republic",
+      "code": "CZE",
+      "flag": "🇨🇿"
+    },
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "A"
+  },
+  {
+    "id": "ceremony-002",
+    "date": "2026-06-12T17:30:00Z",
+    "team1": {
+      "name": "🎉 Opening Ceremony @",
+      "code": "CEREMONY",
+      "flag": ""
+    },
+    "team2": {
+      "name": "Toronto",
+      "code": "CAN",
+      "flag": "🇨🇦"
+    },
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "broadcast": [
+      "FOX",
+      "Telemundo",
+      "Peacock"
+    ],
+    "stage": "Opening Ceremony",
+    "group": "",
+    "description": "Performers: Alanis Morissette, Alessia Cara, Elyanna, Jessie Reyez, Michael Bublé, Nora Fatehi, Sanjoy, Vegedream, William Prince."
+  },
+  {
+    "id": "match-003",
+    "date": "2026-06-12T19:00:00Z",
+    "team1": {
+      "name": "Canada",
+      "code": "CAN",
+      "flag": "🇨🇦"
+    },
+    "team2": {
+      "name": "Bosnia & Herzegovina",
+      "code": "BIH",
+      "flag": "🇧🇦"
+    },
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "B"
+  },
+  {
+    "id": "ceremony-003",
+    "date": "2026-06-12T23:30:00Z",
+    "team1": {
+      "name": "🎉 Opening Ceremony @",
+      "code": "CEREMONY",
+      "flag": ""
+    },
+    "team2": {
+      "name": "Los Angeles",
+      "code": "USA",
+      "flag": "🇺🇸"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Telemundo",
+      "Peacock"
+    ],
+    "stage": "Opening Ceremony",
+    "group": "",
+    "description": "Performers: Katy Perry, Future, Anitta, LISA, Rema, Tyla."
+  },
+  {
+    "id": "match-004",
+    "date": "2026-06-13T01:00:00Z",
+    "team1": {
+      "name": "USA",
+      "code": "USA",
+      "flag": "🇺🇸"
+    },
+    "team2": {
+      "name": "Paraguay",
+      "code": "PAR",
+      "flag": "🇵🇾"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "D"
+  },
+  {
+    "id": "match-005",
+    "date": "2026-06-13T19:00:00Z",
+    "team1": {
+      "name": "Qatar",
+      "code": "QAT",
+      "flag": "🇶🇦"
+    },
+    "team2": {
+      "name": "Switzerland",
+      "code": "SUI",
+      "flag": "🇨🇭"
+    },
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "B"
+  },
+  {
+    "id": "match-006",
+    "date": "2026-06-13T22:00:00Z",
+    "team1": {
+      "name": "Brazil",
+      "code": "BRA",
+      "flag": "🇧🇷"
+    },
+    "team2": {
+      "name": "Morocco",
+      "code": "MAR",
+      "flag": "🇲🇦"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "C"
+  },
+  {
+    "id": "match-007",
+    "date": "2026-06-14T01:00:00Z",
+    "team1": {
+      "name": "Haiti",
+      "code": "HTI",
+      "flag": "🇭🇹"
+    },
+    "team2": {
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    },
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, Massachusetts",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "C"
+  },
+  {
+    "id": "match-008",
+    "date": "2026-06-14T04:00:00Z",
+    "team1": {
+      "name": "Australia",
+      "code": "AUS",
+      "flag": "🇦🇺"
+    },
+    "team2": {
+      "name": "Türkiye",
+      "code": "TUR",
+      "flag": "🇹🇷"
+    },
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "D"
+  },
+  {
+    "id": "match-009",
+    "date": "2026-06-14T17:00:00Z",
+    "team1": {
+      "name": "Germany",
+      "code": "GER",
+      "flag": "🇩🇪"
+    },
+    "team2": {
+      "name": "Curaçao",
+      "code": "CUR",
+      "flag": "🇨🇼"
+    },
+    "stadium": "NRG Stadium",
+    "city": "Houston, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "E"
+  },
+  {
+    "id": "match-010",
+    "date": "2026-06-14T20:00:00Z",
+    "team1": {
+      "name": "Netherlands",
+      "code": "NED",
+      "flag": "🇳🇱"
+    },
+    "team2": {
+      "name": "Japan",
+      "code": "JPN",
+      "flag": "🇯🇵"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "F"
+  },
+  {
+    "id": "match-011",
+    "date": "2026-06-14T23:00:00Z",
+    "team1": {
+      "name": "Ecuador",
+      "code": "ECU",
+      "flag": "🇪🇨"
+    },
+    "team2": {
+      "name": "Ivory Coast",
+      "code": "CIV",
+      "flag": "🇨🇮"
+    },
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, Pennsylvania",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "E"
+  },
+  {
+    "id": "match-012",
+    "date": "2026-06-15T02:00:00Z",
+    "team1": {
+      "name": "Sweden",
+      "code": "SWE",
+      "flag": "🇸🇪"
+    },
+    "team2": {
+      "name": "Tunisia",
+      "code": "TUN",
+      "flag": "🇹🇳"
+    },
+    "stadium": "Estadio BBVA",
+    "city": "Monterrey",
+    "country": "Mexico",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "F"
+  },
+  {
+    "id": "match-013",
+    "date": "2026-06-15T16:00:00Z",
+    "team1": {
+      "name": "Spain",
+      "code": "ESP",
+      "flag": "🇪🇸"
+    },
+    "team2": {
+      "name": "Cape Verde",
+      "code": "CPV",
+      "flag": "🇨🇻"
+    },
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "H"
+  },
+  {
+    "id": "match-014",
+    "date": "2026-06-15T19:00:00Z",
+    "team1": {
+      "name": "Belgium",
+      "code": "BEL",
+      "flag": "🇧🇪"
+    },
+    "team2": {
+      "name": "Egypt",
+      "code": "EGY",
+      "flag": "🇪🇬"
+    },
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "G"
+  },
+  {
+    "id": "match-015",
+    "date": "2026-06-15T22:00:00Z",
+    "team1": {
+      "name": "Uruguay",
+      "code": "URU",
+      "flag": "🇺🇾"
+    },
+    "team2": {
+      "name": "Saudi Arabia",
+      "code": "SAU",
+      "flag": "🇸🇦"
+    },
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "H"
+  },
+  {
+    "id": "match-016",
+    "date": "2026-06-16T01:00:00Z",
+    "team1": {
+      "name": "Iran",
+      "code": "IRN",
+      "flag": "🇮🇷"
+    },
+    "team2": {
+      "name": "New Zealand",
+      "code": "NZL",
+      "flag": "🇳🇿"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "G"
+  },
+  {
+    "id": "match-017",
+    "date": "2026-06-16T19:00:00Z",
+    "team1": {
+      "name": "France",
+      "code": "FRA",
+      "flag": "🇫🇷"
+    },
+    "team2": {
+      "name": "Senegal",
+      "code": "SEN",
+      "flag": "🇸🇳"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "I"
+  },
+  {
+    "id": "match-018",
+    "date": "2026-06-16T22:00:00Z",
+    "team1": {
+      "name": "Iraq",
+      "code": "IRQ",
+      "flag": "🇮🇶"
+    },
+    "team2": {
+      "name": "Norway",
+      "code": "NOR",
+      "flag": "🇳🇴"
+    },
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, Massachusetts",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "I"
+  },
+  {
+    "id": "match-019",
+    "date": "2026-06-17T01:00:00Z",
+    "team1": {
+      "name": "Argentina",
+      "code": "ARG",
+      "flag": "🇦🇷"
+    },
+    "team2": {
+      "name": "Algeria",
+      "code": "ALG",
+      "flag": "🇩🇿"
+    },
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, Missouri",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "J"
+  },
+  {
+    "id": "match-020",
+    "date": "2026-06-17T04:00:00Z",
+    "team1": {
+      "name": "Austria",
+      "code": "AUT",
+      "flag": "🇦🇹"
+    },
+    "team2": {
+      "name": "Jordan",
+      "code": "JOR",
+      "flag": "🇯🇴"
+    },
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, California",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "J"
+  },
+  {
+    "id": "match-021",
+    "date": "2026-06-17T17:00:00Z",
+    "team1": {
+      "name": "Portugal",
+      "code": "POR",
+      "flag": "🇵🇹"
+    },
+    "team2": {
+      "name": "Congo DR",
+      "code": "COD",
+      "flag": "🇨🇩"
+    },
+    "stadium": "NRG Stadium",
+    "city": "Houston, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "K"
+  },
+  {
+    "id": "match-022",
+    "date": "2026-06-17T20:00:00Z",
+    "team1": {
+      "name": "England",
+      "code": "ENG",
+      "flag": "🇬🇧"
+    },
+    "team2": {
+      "name": "Croatia",
+      "code": "CRO",
+      "flag": "🇭🇷"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "L"
+  },
+  {
+    "id": "match-023",
+    "date": "2026-06-17T23:00:00Z",
+    "team1": {
+      "name": "Panama",
+      "code": "PAN",
+      "flag": "🇵🇦"
+    },
+    "team2": {
+      "name": "Ghana",
+      "code": "GHA",
+      "flag": "🇬🇭"
+    },
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "L"
+  },
+  {
+    "id": "match-024",
+    "date": "2026-06-18T02:00:00Z",
+    "team1": {
+      "name": "Colombia",
+      "code": "COL",
+      "flag": "🇨🇴"
+    },
+    "team2": {
+      "name": "Uzbekistan",
+      "code": "UZB",
+      "flag": "🇺🇿"
+    },
+    "stadium": "Estadio Banorte",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "K"
+  },
+  {
+    "id": "match-025",
+    "date": "2026-06-18T16:00:00Z",
+    "team1": {
+      "name": "Czech Republic",
+      "code": "CZE",
+      "flag": "🇨🇿"
+    },
+    "team2": {
+      "name": "South Africa",
+      "code": "RSA",
+      "flag": "🇿🇦"
+    },
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "A"
+  },
+  {
+    "id": "match-026",
+    "date": "2026-06-18T19:00:00Z",
+    "team1": {
+      "name": "Switzerland",
+      "code": "SUI",
+      "flag": "🇨🇭"
+    },
+    "team2": {
+      "name": "Bosnia & Herzegovina",
+      "code": "BIH",
+      "flag": "🇧🇦"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "B"
+  },
+  {
+    "id": "match-027",
+    "date": "2026-06-18T22:00:00Z",
+    "team1": {
+      "name": "Canada",
+      "code": "CAN",
+      "flag": "🇨🇦"
+    },
+    "team2": {
+      "name": "Qatar",
+      "code": "QAT",
+      "flag": "🇶🇦"
+    },
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "B"
+  },
+  {
+    "id": "match-028",
+    "date": "2026-06-19T01:00:00Z",
+    "team1": {
+      "name": "Mexico",
+      "code": "MEX",
+      "flag": "🇲🇽"
+    },
+    "team2": {
+      "name": "South Korea",
+      "code": "KOR",
+      "flag": "🇰🇷"
+    },
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "A"
+  },
+  {
+    "id": "match-029",
+    "date": "2026-06-19T19:00:00Z",
+    "team1": {
+      "name": "USA",
+      "code": "USA",
+      "flag": "🇺🇸"
+    },
+    "team2": {
+      "name": "Australia",
+      "code": "AUS",
+      "flag": "🇦🇺"
+    },
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "D"
+  },
+  {
+    "id": "match-030",
+    "date": "2026-06-19T22:00:00Z",
+    "team1": {
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    },
+    "team2": {
+      "name": "Morocco",
+      "code": "MAR",
+      "flag": "🇲🇦"
+    },
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, Massachusetts",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "C"
+  },
+  {
+    "id": "match-031",
+    "date": "2026-06-20T00:30:00Z",
+    "team1": {
+      "name": "Brazil",
+      "code": "BRA",
+      "flag": "🇧🇷"
+    },
+    "team2": {
+      "name": "Haiti",
+      "code": "HTI",
+      "flag": "🇭🇹"
+    },
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, Pennsylvania",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "C"
+  },
+  {
+    "id": "match-032",
+    "date": "2026-06-20T03:00:00Z",
+    "team1": {
+      "name": "Türkiye",
+      "code": "TUR",
+      "flag": "🇹🇷"
+    },
+    "team2": {
+      "name": "Paraguay",
+      "code": "PAR",
+      "flag": "🇵🇾"
+    },
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, California",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "D"
+  },
+  {
+    "id": "match-033",
+    "date": "2026-06-20T17:00:00Z",
+    "team1": {
+      "name": "Netherlands",
+      "code": "NED",
+      "flag": "🇳🇱"
+    },
+    "team2": {
+      "name": "Sweden",
+      "code": "SWE",
+      "flag": "🇸🇪"
+    },
+    "stadium": "NRG Stadium",
+    "city": "Houston, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "F"
+  },
+  {
+    "id": "match-034",
+    "date": "2026-06-20T20:00:00Z",
+    "team1": {
+      "name": "Germany",
+      "code": "GER",
+      "flag": "🇩🇪"
+    },
+    "team2": {
+      "name": "Ivory Coast",
+      "code": "CIV",
+      "flag": "🇨🇮"
+    },
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "E"
+  },
+  {
+    "id": "match-035",
+    "date": "2026-06-21T00:00:00Z",
+    "team1": {
+      "name": "Ecuador",
+      "code": "ECU",
+      "flag": "🇪🇨"
+    },
+    "team2": {
+      "name": "Curaçao",
+      "code": "CUR",
+      "flag": "🇨🇼"
+    },
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, Missouri",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "E"
+  },
+  {
+    "id": "match-036",
+    "date": "2026-06-21T04:00:00Z",
+    "team1": {
+      "name": "Tunisia",
+      "code": "TUN",
+      "flag": "🇹🇳"
+    },
+    "team2": {
+      "name": "Japan",
+      "code": "JPN",
+      "flag": "🇯🇵"
+    },
+    "stadium": "Estadio BBVA",
+    "city": "Monterrey",
+    "country": "Mexico",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "F"
+  },
+  {
+    "id": "match-037",
+    "date": "2026-06-21T16:00:00Z",
+    "team1": {
+      "name": "Spain",
+      "code": "ESP",
+      "flag": "🇪🇸"
+    },
+    "team2": {
+      "name": "Saudi Arabia",
+      "code": "SAU",
+      "flag": "🇸🇦"
+    },
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "H"
+  },
+  {
+    "id": "match-038",
+    "date": "2026-06-21T19:00:00Z",
+    "team1": {
+      "name": "Belgium",
+      "code": "BEL",
+      "flag": "🇧🇪"
+    },
+    "team2": {
+      "name": "Iran",
+      "code": "IRN",
+      "flag": "🇮🇷"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "G"
+  },
+  {
+    "id": "match-039",
+    "date": "2026-06-21T22:00:00Z",
+    "team1": {
+      "name": "Uruguay",
+      "code": "URU",
+      "flag": "🇺🇾"
+    },
+    "team2": {
+      "name": "Cape Verde",
+      "code": "CPV",
+      "flag": "🇨🇻"
+    },
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "H"
+  },
+  {
+    "id": "match-040",
+    "date": "2026-06-22T01:00:00Z",
+    "team1": {
+      "name": "New Zealand",
+      "code": "NZL",
+      "flag": "🇳🇿"
+    },
+    "team2": {
+      "name": "Egypt",
+      "code": "EGY",
+      "flag": "🇪🇬"
+    },
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "G"
+  },
+  {
+    "id": "match-041",
+    "date": "2026-06-22T17:00:00Z",
+    "team1": {
+      "name": "Argentina",
+      "code": "ARG",
+      "flag": "🇦🇷"
+    },
+    "team2": {
+      "name": "Austria",
+      "code": "AUT",
+      "flag": "🇦🇹"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "J"
+  },
+  {
+    "id": "match-042",
+    "date": "2026-06-22T21:00:00Z",
+    "team1": {
+      "name": "France",
+      "code": "FRA",
+      "flag": "🇫🇷"
+    },
+    "team2": {
+      "name": "Iraq",
+      "code": "IRQ",
+      "flag": "🇮🇶"
+    },
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, Pennsylvania",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "I"
+  },
+  {
+    "id": "match-043",
+    "date": "2026-06-23T00:00:00Z",
+    "team1": {
+      "name": "Norway",
+      "code": "NOR",
+      "flag": "🇳🇴"
+    },
+    "team2": {
+      "name": "Senegal",
+      "code": "SEN",
+      "flag": "🇸🇳"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "I"
+  },
+  {
+    "id": "match-044",
+    "date": "2026-06-23T03:00:00Z",
+    "team1": {
+      "name": "Jordan",
+      "code": "JOR",
+      "flag": "🇯🇴"
+    },
+    "team2": {
+      "name": "Algeria",
+      "code": "ALG",
+      "flag": "🇩🇿"
+    },
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, California",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "J"
+  },
+  {
+    "id": "match-045",
+    "date": "2026-06-23T17:00:00Z",
+    "team1": {
+      "name": "Portugal",
+      "code": "POR",
+      "flag": "🇵🇹"
+    },
+    "team2": {
+      "name": "Uzbekistan",
+      "code": "UZB",
+      "flag": "🇺🇿"
+    },
+    "stadium": "NRG Stadium",
+    "city": "Houston, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "K"
+  },
+  {
+    "id": "match-046",
+    "date": "2026-06-23T20:00:00Z",
+    "team1": {
+      "name": "England",
+      "code": "ENG",
+      "flag": "🇬🇧"
+    },
+    "team2": {
+      "name": "Ghana",
+      "code": "GHA",
+      "flag": "🇬🇭"
+    },
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, Massachusetts",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "L"
+  },
+  {
+    "id": "match-047",
+    "date": "2026-06-23T23:00:00Z",
+    "team1": {
+      "name": "Panama",
+      "code": "PAN",
+      "flag": "🇵🇦"
+    },
+    "team2": {
+      "name": "Croatia",
+      "code": "CRO",
+      "flag": "🇭🇷"
+    },
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "L"
+  },
+  {
+    "id": "match-048",
+    "date": "2026-06-24T02:00:00Z",
+    "team1": {
+      "name": "Colombia",
+      "code": "COL",
+      "flag": "🇨🇴"
+    },
+    "team2": {
+      "name": "Congo DR",
+      "code": "COD",
+      "flag": "🇨🇩"
+    },
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "K"
+  },
+  {
+    "id": "match-049",
+    "date": "2026-06-24T19:00:00Z",
+    "team1": {
+      "name": "Switzerland",
+      "code": "SUI",
+      "flag": "🇨🇭"
+    },
+    "team2": {
+      "name": "Canada",
+      "code": "CAN",
+      "flag": "🇨🇦"
+    },
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "B"
+  },
+  {
+    "id": "match-050",
+    "date": "2026-06-24T19:00:00Z",
+    "team1": {
+      "name": "Bosnia & Herzegovina",
+      "code": "BIH",
+      "flag": "🇧🇦"
+    },
+    "team2": {
+      "name": "Qatar",
+      "code": "QAT",
+      "flag": "🇶🇦"
+    },
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "B"
+  },
+  {
+    "id": "match-051",
+    "date": "2026-06-24T22:00:00Z",
+    "team1": {
+      "name": "Morocco",
+      "code": "MAR",
+      "flag": "🇲🇦"
+    },
+    "team2": {
+      "name": "Haiti",
+      "code": "HTI",
+      "flag": "🇭🇹"
+    },
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "C"
+  },
+  {
+    "id": "match-052",
+    "date": "2026-06-24T22:00:00Z",
+    "team1": {
+      "name": "Brazil",
+      "code": "BRA",
+      "flag": "🇧🇷"
+    },
+    "team2": {
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    },
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "C"
+  },
+  {
+    "id": "match-053",
+    "date": "2026-06-25T01:00:00Z",
+    "team1": {
+      "name": "South Africa",
+      "code": "RSA",
+      "flag": "🇿🇦"
+    },
+    "team2": {
+      "name": "South Korea",
+      "code": "KOR",
+      "flag": "🇰🇷"
+    },
+    "stadium": "Estadio BBVA",
+    "city": "Monterrey",
+    "country": "Mexico",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "A"
+  },
+  {
+    "id": "match-054",
+    "date": "2026-06-25T01:00:00Z",
+    "team1": {
+      "name": "Mexico",
+      "code": "MEX",
+      "flag": "🇲🇽"
+    },
+    "team2": {
+      "name": "Czech Republic",
+      "code": "CZE",
+      "flag": "🇨🇿"
+    },
+    "stadium": "Estadio Azteca",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "A"
+  },
+  {
+    "id": "match-055",
+    "date": "2026-06-25T20:00:00Z",
+    "team1": {
+      "name": "Curaçao",
+      "code": "CUR",
+      "flag": "🇨🇼"
+    },
+    "team2": {
+      "name": "Ivory Coast",
+      "code": "CIV",
+      "flag": "🇨🇮"
+    },
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, Pennsylvania",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "E"
+  },
+  {
+    "id": "match-056",
+    "date": "2026-06-25T20:00:00Z",
+    "team1": {
+      "name": "Ecuador",
+      "code": "ECU",
+      "flag": "🇪🇨"
+    },
+    "team2": {
+      "name": "Germany",
+      "code": "GER",
+      "flag": "🇩🇪"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "E"
+  },
+  {
+    "id": "match-057",
+    "date": "2026-06-25T23:00:00Z",
+    "team1": {
+      "name": "Tunisia",
+      "code": "TUN",
+      "flag": "🇹🇳"
+    },
+    "team2": {
+      "name": "Netherlands",
+      "code": "NED",
+      "flag": "🇳🇱"
+    },
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, Missouri",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "F"
+  },
+  {
+    "id": "match-058",
+    "date": "2026-06-25T23:00:00Z",
+    "team1": {
+      "name": "Japan",
+      "code": "JPN",
+      "flag": "🇯🇵"
+    },
+    "team2": {
+      "name": "Sweden",
+      "code": "SWE",
+      "flag": "🇸🇪"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "F"
+  },
+  {
+    "id": "match-059",
+    "date": "2026-06-26T02:00:00Z",
+    "team1": {
+      "name": "Paraguay",
+      "code": "PAR",
+      "flag": "🇵🇾"
+    },
+    "team2": {
+      "name": "Australia",
+      "code": "AUS",
+      "flag": "🇦🇺"
+    },
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, California",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "D"
+  },
+  {
+    "id": "match-060",
+    "date": "2026-06-26T02:00:00Z",
+    "team1": {
+      "name": "USA",
+      "code": "USA",
+      "flag": "🇺🇸"
+    },
+    "team2": {
+      "name": "Türkiye",
+      "code": "TUR",
+      "flag": "🇹🇷"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "D"
+  },
+  {
+    "id": "match-061",
+    "date": "2026-06-26T19:00:00Z",
+    "team1": {
+      "name": "Norway",
+      "code": "NOR",
+      "flag": "🇳🇴"
+    },
+    "team2": {
+      "name": "France",
+      "code": "FRA",
+      "flag": "🇫🇷"
+    },
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, Massachusetts",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "I"
+  },
+  {
+    "id": "match-062",
+    "date": "2026-06-26T19:00:00Z",
+    "team1": {
+      "name": "Senegal",
+      "code": "SEN",
+      "flag": "🇸🇳"
+    },
+    "team2": {
+      "name": "Iraq",
+      "code": "IRQ",
+      "flag": "🇮🇶"
+    },
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "I"
+  },
+  {
+    "id": "match-063",
+    "date": "2026-06-27T00:00:00Z",
+    "team1": {
+      "name": "Cape Verde",
+      "code": "CPV",
+      "flag": "🇨🇻"
+    },
+    "team2": {
+      "name": "Saudi Arabia",
+      "code": "SAU",
+      "flag": "🇸🇦"
+    },
+    "stadium": "NRG Stadium",
+    "city": "Houston, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "H"
+  },
+  {
+    "id": "match-064",
+    "date": "2026-06-27T00:00:00Z",
+    "team1": {
+      "name": "Uruguay",
+      "code": "URU",
+      "flag": "🇺🇾"
+    },
+    "team2": {
+      "name": "Spain",
+      "code": "ESP",
+      "flag": "🇪🇸"
+    },
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "H"
+  },
+  {
+    "id": "match-065",
+    "date": "2026-06-27T03:00:00Z",
+    "team1": {
+      "name": "Egypt",
+      "code": "EGY",
+      "flag": "🇪🇬"
+    },
+    "team2": {
+      "name": "Iran",
+      "code": "IRN",
+      "flag": "🇮🇷"
+    },
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "G"
+  },
+  {
+    "id": "match-066",
+    "date": "2026-06-27T03:00:00Z",
+    "team1": {
+      "name": "New Zealand",
+      "code": "NZL",
+      "flag": "🇳🇿"
+    },
+    "team2": {
+      "name": "Belgium",
+      "code": "BEL",
+      "flag": "🇧🇪"
+    },
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "G"
+  },
+  {
+    "id": "match-067",
+    "date": "2026-06-27T21:00:00Z",
+    "team1": {
+      "name": "Croatia",
+      "code": "CRO",
+      "flag": "🇭🇷"
+    },
+    "team2": {
+      "name": "Ghana",
+      "code": "GHA",
+      "flag": "🇬🇭"
+    },
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, Pennsylvania",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "L"
+  },
+  {
+    "id": "match-068",
+    "date": "2026-06-27T21:00:00Z",
+    "team1": {
+      "name": "Panama",
+      "code": "PAN",
+      "flag": "🇵🇦"
+    },
+    "team2": {
+      "name": "England",
+      "code": "ENG",
+      "flag": "🇬🇧"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "L"
+  },
+  {
+    "id": "match-069",
+    "date": "2026-06-27T23:30:00Z",
+    "team1": {
+      "name": "Colombia",
+      "code": "COL",
+      "flag": "🇨🇴"
+    },
+    "team2": {
+      "name": "Portugal",
+      "code": "POR",
+      "flag": "🇵🇹"
+    },
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "K"
+  },
+  {
+    "id": "match-070",
+    "date": "2026-06-27T23:30:00Z",
+    "team1": {
+      "name": "Congo DR",
+      "code": "COD",
+      "flag": "🇨🇩"
+    },
+    "team2": {
+      "name": "Uzbekistan",
+      "code": "UZB",
+      "flag": "🇺🇿"
+    },
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "K"
+  },
+  {
+    "id": "match-071",
+    "date": "2026-06-28T02:00:00Z",
+    "team1": {
+      "name": "Algeria",
+      "code": "ALG",
+      "flag": "🇩🇿"
+    },
+    "team2": {
+      "name": "Austria",
+      "code": "AUT",
+      "flag": "🇦🇹"
+    },
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, Missouri",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Universo",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "J"
+  },
+  {
+    "id": "match-072",
+    "date": "2026-06-28T02:00:00Z",
+    "team1": {
+      "name": "Jordan",
+      "code": "JOR",
+      "flag": "🇯🇴"
+    },
+    "team2": {
+      "name": "Argentina",
+      "code": "ARG",
+      "flag": "🇦🇷"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Group Stage",
+    "group": "J"
+  },
+  {
+    "id": "match-073",
+    "date": "2026-06-28T19:00:00Z",
+    "team1": {
+      "name": "Group A 2nd Place",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Group B 2nd Place",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-074",
+    "date": "2026-06-29T17:00:00Z",
+    "team1": {
+      "name": "Group C Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Group F 2nd Place",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "NRG Stadium",
+    "city": "Houston, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-075",
+    "date": "2026-06-29T20:30:00Z",
+    "team1": {
+      "name": "Group E Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "3rd Place Group A/B/C/D/F",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, Massachusetts",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-076",
+    "date": "2026-06-30T01:00:00Z",
+    "team1": {
+      "name": "Group F Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Group C 2nd Place",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Estadio BBVA",
+    "city": "Monterrey",
+    "country": "Mexico",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-077",
+    "date": "2026-06-30T17:00:00Z",
+    "team1": {
+      "name": "Group E 2nd Place",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Group I 2nd Place",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-078",
+    "date": "2026-06-30T21:00:00Z",
+    "team1": {
+      "name": "Group I Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Third Place Group C/D/F/G/H",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-079",
+    "date": "2026-07-01T01:00:00Z",
+    "team1": {
+      "name": "Group A Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "3rd Place Group C/E/F/H/I",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Estadio Azteca",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-080",
+    "date": "2026-07-01T16:00:00Z",
+    "team1": {
+      "name": "Group L Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "3rd Place Group E/H/I/J/K",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-081",
+    "date": "2026-07-01T20:00:00Z",
+    "team1": {
+      "name": "Group G Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "3rd Place Group A/E/H/I/J",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+    "country": "United States",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-082",
+    "date": "2026-07-02T00:00:00Z",
+    "team1": {
+      "name": "Group D Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "3rd Place Group B/E/F/I/J",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-083",
+    "date": "2026-07-02T19:00:00Z",
+    "team1": {
+      "name": "Group H Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Group J 2nd Place",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-084",
+    "date": "2026-07-02T23:00:00Z",
+    "team1": {
+      "name": "Group K 2nd Place",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Group L 2nd Place",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "BMO Field",
+    "city": "Toronto",
+    "country": "Canada",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-085",
+    "date": "2026-07-03T03:00:00Z",
+    "team1": {
+      "name": "Group B Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "3rd Place E/F/G/I/J",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "broadcast": [
+      "FS1",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-086",
+    "date": "2026-07-03T18:00:00Z",
+    "team1": {
+      "name": "Group D 2nd Place",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Group G 2nd Place",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-087",
+    "date": "2026-07-03T22:00:00Z",
+    "team1": {
+      "name": "Group J Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Group H 2nd Place",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-088",
+    "date": "2026-07-04T01:30:00Z",
+    "team1": {
+      "name": "Group K Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "3rd Place D/E/I/J/L",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, Missouri",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 32",
+    "group": ""
+  },
+  {
+    "id": "match-089",
+    "date": "2026-07-04T17:00:00Z",
+    "team1": {
+      "name": "Round of 32 1 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 32 3 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "NRG Stadium",
+    "city": "Houston, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
+  },
+  {
+    "id": "match-090",
+    "date": "2026-07-04T21:00:00Z",
+    "team1": {
+      "name": "Round of 32 2 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 32 5 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia, Pennsylvania",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
+  },
+  {
+    "id": "match-091",
+    "date": "2026-07-05T20:00:00Z",
+    "team1": {
+      "name": "Round of 32 4 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 32 6 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
+  },
+  {
+    "id": "match-092",
+    "date": "2026-07-06T00:00:00Z",
+    "team1": {
+      "name": "Round of 32 7 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 32 8 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Estadio Banorte",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
+  },
+  {
+    "id": "match-093",
+    "date": "2026-07-06T19:00:00Z",
+    "team1": {
+      "name": "Round of 32 11 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 32 12 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
+  },
+  {
+    "id": "match-094",
+    "date": "2026-07-07T00:00:00Z",
+    "team1": {
+      "name": "Round of 32 9 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 32 10 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
+  },
+  {
+    "id": "match-095",
+    "date": "2026-07-07T16:00:00Z",
+    "team1": {
+      "name": "Round of 32 14 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 32 16 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
+  },
+  {
+    "id": "match-096",
+    "date": "2026-07-07T20:00:00Z",
+    "team1": {
+      "name": "Round of 32 13 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 32 15 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "country": "Canada",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
+  },
+  {
+    "id": "match-097",
+    "date": "2026-07-09T20:00:00Z",
+    "team1": {
+      "name": "Round of 16 1 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 16 2 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough, Massachusetts",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Quarterfinal",
+    "group": ""
+  },
+  {
+    "id": "match-098",
+    "date": "2026-07-10T19:00:00Z",
+    "team1": {
+      "name": "Round of 16 5 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 16 6 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood, California",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Quarterfinal",
+    "group": ""
+  },
+  {
+    "id": "match-099",
+    "date": "2026-07-11T21:00:00Z",
+    "team1": {
+      "name": "Round of 16 3 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 16 4 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Quarterfinal",
+    "group": ""
+  },
+  {
+    "id": "match-100",
+    "date": "2026-07-12T01:00:00Z",
+    "team1": {
+      "name": "Round of 16 7 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 16 8 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City, Missouri",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Quarterfinal",
+    "group": ""
+  },
+  {
+    "id": "match-101",
+    "date": "2026-07-14T19:00:00Z",
+    "team1": {
+      "name": "Quarterfinal 1 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Quarterfinal 2 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "AT&T Stadium",
+    "city": "Arlington, Texas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Semifinal",
+    "group": ""
+  },
+  {
+    "id": "match-102",
+    "date": "2026-07-15T19:00:00Z",
+    "team1": {
+      "name": "Quarterfinal 3 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Quarterfinal 4 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Semifinal",
+    "group": ""
+  },
+  {
+    "id": "match-103",
+    "date": "2026-07-18T21:00:00Z",
+    "team1": {
+      "name": "Semifinal 1 Loser",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Semifinal 2 Loser",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Third-place game",
+    "group": ""
+  },
+  {
+    "id": "match-104",
+    "date": "2026-07-19T19:00:00Z",
+    "team1": {
+      "name": "Semifinal 1 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Semifinal 2 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Final",
+    "group": ""
+  },
+  {
+    "id": "halftime-001",
+    "date": "2026-07-19T20:00:00Z",
+    "team1": {
+      "name": "🎉 World Cup Final",
+      "code": "HALFTIME",
+      "flag": ""
+    },
+    "team2": {
+      "name": "Half-Time Show",
+      "code": "FINAL",
+      "flag": "🏆"
+    },
+    "stadium": "MetLife Stadium",
+    "city": "East Rutherford, New Jersey",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Telemundo",
+      "Peacock"
+    ],
+    "stage": "Halftime Show",
+    "group": "",
+    "description": "Performers: Shakira, Madonna, and BTS. Curator: Chris Martin (Coldplay)."
+  }
+]

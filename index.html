@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA World Cup 2026 - Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <img src="Bob at the World Cup.png" alt="Bob at the World Cup" class="header-logo">
+                <div class="header-text">
+                    <h1>⚽ FIFA World Cup 2026</h1>
+                    <p class="subtitle">Add matches to your calendar</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Controls Section -->
+        <section class="controls">
+            <div class="control-group">
+                <label for="timezone-selector">
+                    <span class="label-icon">🌍</span>
+                    Select Your Timezone:
+                </label>
+                <select id="timezone-selector" class="timezone-select">
+                    <option value="America/New_York">Eastern Time (ET)</option>
+                    <option value="America/Chicago">Central Time (CT)</option>
+                    <option value="America/Denver">Mountain Time (MT)</option>
+                    <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                    <option value="America/Anchorage">Alaska Time (AKT)</option>
+                    <option value="Pacific/Honolulu">Hawaii Time (HST)</option>
+                    <option value="America/Mexico_City">Mexico City (CST)</option>
+                    <option value="America/Toronto">Toronto (ET)</option>
+                    <option value="America/Vancouver">Vancouver (PT)</option>
+                    <option value="Europe/London">London (GMT)</option>
+                    <option value="Europe/Paris">Paris (CET)</option>
+                    <option value="Europe/Berlin">Berlin (CET)</option>
+                    <option value="Europe/Madrid">Madrid (CET)</option>
+                    <option value="Europe/Rome">Rome (CET)</option>
+                    <option value="Asia/Tokyo">Tokyo (JST)</option>
+                    <option value="Asia/Seoul">Seoul (KST)</option>
+                    <option value="Asia/Shanghai">Shanghai (CST)</option>
+                    <option value="Asia/Dubai">Dubai (GST)</option>
+                    <option value="Australia/Sydney">Sydney (AEDT)</option>
+                    <option value="Pacific/Auckland">Auckland (NZDT)</option>
+                    <option value="America/Sao_Paulo">São Paulo (BRT)</option>
+                    <option value="America/Buenos_Aires">Buenos Aires (ART)</option>
+                    <option value="Africa/Johannesburg">Johannesburg (SAST)</option>
+                    <option value="Africa/Cairo">Cairo (EET)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="view-toggle">
+                    <span class="label-icon">👁️</span>
+                    View:
+                </label>
+                <div class="view-toggle">
+                    <button id="list-view-btn" class="view-btn active">
+                        📋 List
+                    </button>
+                    <button id="calendar-view-btn" class="view-btn">
+                        📅 Calendar
+                    </button>
+                </div>
+            </div>
+
+            <div class="control-group selection-controls">
+                <button id="select-all-btn" class="btn btn-secondary">
+                    ✓ Select All
+                </button>
+                <button id="deselect-all-btn" class="btn btn-secondary">
+                    ✗ Deselect All
+                </button>
+            </div>
+        </section>
+
+        <!-- Download Buttons -->
+        <section class="download-section">
+            <button id="download-all-btn" class="btn btn-primary">
+                ⬇️ Download All Matches
+            </button>
+            <button id="download-selected-btn" class="btn btn-success">
+                ✅ Download Selected Matches
+            </button>
+            <div id="selection-count" class="selection-count">
+                0 matches selected
+            </div>
+        </section>
+
+        <!-- Search/Filter Section -->
+        <section class="filter-section">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="🔍 Search teams, stadiums, or cities..."
+                    class="search-input"
+                >
+            </div>
+            <div class="team-filter-box">
+                <label for="team-filter">⭐ Filter by Favorite Team:</label>
+                <select id="team-filter" class="team-filter-select">
+                    <option value="">All Teams</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- List View -->
+        <section id="list-view" class="list-view">
+            <div id="matches-container" class="matches-container">
+                <!-- Matches will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Calendar View -->
+        <section id="calendar-view" class="calendar-view" style="display: none;">
+            <div class="calendar-header">
+                <button id="prev-month-btn" class="calendar-nav-btn">◀</button>
+                <h2 id="calendar-month-year" class="calendar-title">June 2026</h2>
+                <button id="next-month-btn" class="calendar-nav-btn">▶</button>
+            </div>
+            <div id="calendar-grid" class="calendar-grid">
+                <!-- Calendar will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>FIFA World Cup 2026 • Hosted by USA 🇺🇸, Mexico 🇲🇽, and Canada 🇨🇦</p>
+            <img src="Bob at the World Cup.png" alt="Bob at the World Cup" class="footer-logo">
+            <p class="footer-note">Made by Bobinho</p>
+        </footer>
+    </div>
+
+    <!-- Match Detail Modal -->
+    <div id="match-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body">
+                <!-- Match details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="ics-generator.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
