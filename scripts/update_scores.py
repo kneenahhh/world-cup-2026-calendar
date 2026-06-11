@@ -6,7 +6,7 @@ Runs every 3 hours via GitHub Actions
 
 import requests
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import os
 import sys
 
@@ -117,7 +117,7 @@ def update_match_scores():
     print("Starting score update process...")
     
     matches = load_matches()
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     six_hours_ago = now - timedelta(hours=6)
     
     updated_count = 0
