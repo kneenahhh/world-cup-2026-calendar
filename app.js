@@ -2876,11 +2876,11 @@ class WorldCupCalendar {
             const hasScore = match.team1.score !== undefined && match.team2.score !== undefined;
             const isFinished = hasScore || (isPast && match.status === 'finished');
             
-            // Compact view for finished matches
-            if (isFinished && hasScore) {
+            // Compact view for finished matches OR past special events
+            if ((isFinished && hasScore) || (isPast && isSpecialEvent)) {
                 return `
                     <div class="match-card match-card-compact ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} past-match" data-match-id="${match.id}">
-                        <span class="final-badge">FINAL</span>
+                        <span class="final-badge">${hasScore ? 'FINAL' : 'PAST'}</span>
                         <input
                             type="checkbox"
                             class="match-checkbox"
@@ -2888,11 +2888,19 @@ class WorldCupCalendar {
                             disabled
                         >
                         <div class="match-info-compact">
+                            ${hasScore ? `
                             <div class="match-score-display">
                                 <span class="team-score">${match.team1.flag} ${match.team1.name} <strong>${match.team1.score}</strong></span>
                                 <span class="score-separator">-</span>
                                 <span class="team-score"><strong>${match.team2.score}</strong> ${match.team2.name} ${match.team2.flag}</span>
                             </div>
+                            ` : `
+                            <div class="match-score-display">
+                                <span class="team-score">${match.team1.flag} ${match.team1.name}</span>
+                                <span class="vs">@</span>
+                                <span class="team-score">${match.team2.name} ${match.team2.flag}</span>
+                            </div>
+                            `}
                             <div class="match-meta-compact">
                                 <span class="time">🕐 ${this.formatTime(match.date)}</span>
                                 <span class="venue">📍 ${match.stadium}</span>
