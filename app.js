@@ -2872,13 +2872,16 @@ class WorldCupCalendar {
         container.innerHTML = this.filteredMatches.map(match => {
             const isSelected = this.selectedMatches.has(match.id);
             const isSpecialEvent = match.stage === 'Opening Ceremony' || match.stage === 'Halftime Show';
+            const isPast = this.isMatchPast(match.date);
             return `
-                <div class="match-card ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''}" data-match-id="${match.id}">
-                    <input 
-                        type="checkbox" 
-                        class="match-checkbox" 
+                <div class="match-card ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} ${isPast ? 'past-match' : ''}" data-match-id="${match.id}">
+                    ${isPast ? '<span class="past-label">PAST</span>' : ''}
+                    <input
+                        type="checkbox"
+                        class="match-checkbox"
                         id="checkbox-${match.id}"
                         ${isSelected ? 'checked' : ''}
+                        ${isPast ? 'disabled' : ''}
                     >
                     <div class="match-info">
                         <div class="match-teams">
@@ -2959,7 +2962,15 @@ class WorldCupCalendar {
             const dateStr = date.toISOString().split('T')[0];
             const dayMatches = this.filteredMatches.filter(match => {
                 const matchDate = new Date(match.date);
-                return matchDate.toISOString().split('T')[0] === dateStr;
+                // Get the date in the user's timezone using Intl.DateTimeFormat
+                const formatter = new Intl.DateTimeFormat('en-CA', {
+                    timeZone: this.currentTimezone,
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit'
+                });
+                const matchDateStr = formatter.format(matchDate); // Returns YYYY-MM-DD
+                return matchDateStr === dateStr;
             });
 
             html += `<div class="calendar-day" data-date="${dateStr}">
@@ -3065,9 +3076,26 @@ class WorldCupCalendar {
     }
 
     /**
+     * Check if a match is in the past (including 2 hour buffer for match duration)
+     */
+    isMatchPast(matchDate) {
+        const now = new Date();
+        const match = new Date(matchDate);
+        // Add 2 hours to match time to account for game duration
+        const matchEnd = new Date(match.getTime() + (2 * 60 * 60 * 1000));
+        return now > matchEnd;
+    }
+
+    /**
      * Toggle match selection
      */
     toggleMatchSelection(matchId) {
+        const match = this.matches.find(m => m.id === matchId);
+        // Don't allow selection of past matches
+        if (match && this.isMatchPast(match.date)) {
+            return;
+        }
+        
         if (this.selectedMatches.has(matchId)) {
             this.selectedMatches.delete(matchId);
         } else {
@@ -3093,11 +3121,13 @@ class WorldCupCalendar {
     }
 
     /**
-     * Select all matches
+     * Select all matches (excluding past matches)
      */
     selectAllMatches() {
         this.filteredMatches.forEach(match => {
-            this.selectedMatches.add(match.id);
+            if (!this.isMatchPast(match.date)) {
+                this.selectedMatches.add(match.id);
+            }
         });
         this.updateSelectionCount();
         this.renderMatches();
@@ -3162,8 +3192,17 @@ class WorldCupCalendar {
         // Add performer info for special events
         const performerInfo = match.description ? `<p><strong>🎤 ${match.description}</strong></p>` : '';
         
+        // Check if match is in the past
+        const isPast = this.isMatchPast(match.date);
+        const addButton = isPast ? '' : `
+            <button class="btn btn-primary" onclick="app.toggleMatchSelection('${match.id}'); app.renderMatches(); document.getElementById('match-modal').style.display='none';">
+                ${this.selectedMatches.has(match.id) ? '✗ Remove from Selection' : '✓ Add to Selection'}
+            </button>
+        `;
+        
         modalBody.innerHTML = `
             <h2>${match.team1.flag} ${match.team1.name} vs ${match.team2.name} ${match.team2.flag}</h2>
+            ${isPast ? '<p style="color: #9e9e9e; font-weight: 600; margin-top: 10px;">⏱️ This match has already occurred</p>' : ''}
             <div style="margin: 20px 0;">
                 <p><strong>📅 Date:</strong> ${this.formatDate(match.date)}</p>
                 <p><strong>🕐 Time:</strong> ${this.formatTime(match.date)}</p>
@@ -3173,9 +3212,7 @@ class WorldCupCalendar {
                 <p><strong>🏆 Stage:</strong> ${match.stage}${match.group ? ' - Group ' + match.group : ''}</p>
                 ${performerInfo}
             </div>
-            <button class="btn btn-primary" onclick="app.toggleMatchSelection('${match.id}'); app.renderMatches(); document.getElementById('match-modal').style.display='none';">
-                ${this.selectedMatches.has(match.id) ? '✗ Remove from Selection' : '✓ Add to Selection'}
-            </button>
+            ${addButton}
         `;
 
         modal.style.display = 'flex';

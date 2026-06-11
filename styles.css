@@ -301,6 +301,7 @@ body {
     align-items: flex-start;
     transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .match-card:hover {
@@ -322,6 +323,29 @@ body {
 .match-card.selected {
     border-color: var(--primary-color);
     background: rgba(26, 115, 232, 0.05);
+}
+
+.match-card.past-match {
+    opacity: 0.6;
+    background: #f5f5f5;
+}
+
+.match-card.past-match .match-checkbox {
+    cursor: not-allowed;
+}
+
+.past-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #9e9e9e;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 1;
 }
 
 .match-checkbox {
