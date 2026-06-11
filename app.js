@@ -2873,9 +2873,39 @@ class WorldCupCalendar {
             const isSelected = this.selectedMatches.has(match.id);
             const isSpecialEvent = match.stage === 'Opening Ceremony' || match.stage === 'Halftime Show';
             const isPast = this.isMatchPast(match.date);
+            const hasScore = match.team1.score !== undefined && match.team2.score !== undefined;
+            const isFinished = hasScore || (isPast && match.status === 'finished');
+            
+            // Compact view for finished matches
+            if (isFinished && hasScore) {
+                return `
+                    <div class="match-card match-card-compact ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} past-match" data-match-id="${match.id}">
+                        <span class="final-badge">FINAL</span>
+                        <input
+                            type="checkbox"
+                            class="match-checkbox"
+                            id="checkbox-${match.id}"
+                            disabled
+                        >
+                        <div class="match-info-compact">
+                            <div class="match-score-display">
+                                <span class="team-score">${match.team1.flag} ${match.team1.name} <strong>${match.team1.score}</strong></span>
+                                <span class="score-separator">-</span>
+                                <span class="team-score"><strong>${match.team2.score}</strong> ${match.team2.name} ${match.team2.flag}</span>
+                            </div>
+                            <div class="match-meta-compact">
+                                <span class="time">🕐 ${this.formatTime(match.date)}</span>
+                                <span class="venue">📍 ${match.stadium}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Regular view for upcoming/ongoing matches
             return `
                 <div class="match-card ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} ${isPast ? 'past-match' : ''}" data-match-id="${match.id}">
-                    ${isPast ? '<span class="past-label">PAST</span>' : ''}
+                    ${isPast && !hasScore ? '<span class="past-label">PAST</span>' : ''}
                     <input
                         type="checkbox"
                         class="match-checkbox"
@@ -2978,6 +3008,17 @@ class WorldCupCalendar {
                 <div class="day-matches">
                     ${dayMatches.map(match => {
                         const isPast = this.isMatchPast(match.date);
+                        const hasScore = match.team1.score !== undefined && match.team2.score !== undefined;
+                        
+                        if (hasScore) {
+                            return `
+                                <div class="calendar-match past-calendar-match" data-match-id="${match.id}">
+                                    <span class="match-time">${this.formatTime(match.date)}</span>
+                                    <span class="match-teams-short">${match.team1.flag} ${match.team1.score}-${match.team2.score} ${match.team2.flag}</span>
+                                </div>
+                            `;
+                        }
+                        
                         return `
                             <div class="calendar-match ${isPast ? 'past-calendar-match' : ''}" data-match-id="${match.id}">
                                 <span class="match-time">${this.formatTime(match.date)}</span>
@@ -3197,6 +3238,18 @@ class WorldCupCalendar {
         
         // Check if match is in the past
         const isPast = this.isMatchPast(match.date);
+        const hasScore = match.team1.score !== undefined && match.team2.score !== undefined;
+        
+        // Title with score if available
+        const titleDisplay = hasScore
+            ? `<h2>${match.team1.flag} ${match.team1.name} <span style="color: #1a73e8; font-size: 2rem;">${match.team1.score}</span> - <span style="color: #1a73e8; font-size: 2rem;">${match.team2.score}</span> ${match.team2.name} ${match.team2.flag}</h2>
+               <p style="color: #1e8e3e; font-weight: 700; font-size: 1.2rem; margin-top: 10px;">⚽ FINAL SCORE</p>`
+            : `<h2>${match.team1.flag} ${match.team1.name} vs ${match.team2.name} ${match.team2.flag}</h2>`;
+        
+        const statusMessage = isPast && !hasScore
+            ? '<p style="color: #9e9e9e; font-weight: 600; margin-top: 10px;">⏱️ This match has already occurred</p>'
+            : '';
+        
         const addButton = isPast ? '' : `
             <button class="btn btn-primary" onclick="app.toggleMatchSelection('${match.id}'); app.renderMatches(); document.getElementById('match-modal').style.display='none';">
                 ${this.selectedMatches.has(match.id) ? '✗ Remove from Selection' : '✓ Add to Selection'}
@@ -3204,8 +3257,8 @@ class WorldCupCalendar {
         `;
         
         modalBody.innerHTML = `
-            <h2>${match.team1.flag} ${match.team1.name} vs ${match.team2.name} ${match.team2.flag}</h2>
-            ${isPast ? '<p style="color: #9e9e9e; font-weight: 600; margin-top: 10px;">⏱️ This match has already occurred</p>' : ''}
+            ${titleDisplay}
+            ${statusMessage}
             <div style="margin: 20px 0;">
                 <p><strong>📅 Date:</strong> ${this.formatDate(match.date)}</p>
                 <p><strong>🕐 Time:</strong> ${this.formatTime(match.date)}</p>
