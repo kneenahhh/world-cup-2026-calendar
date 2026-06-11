@@ -30,12 +30,14 @@
     "team1": {
       "name": "Mexico",
       "code": "MEX",
-      "flag": "🇲🇽"
+      "flag": "🇲🇽",
+      "score": 2
     },
     "team2": {
       "name": "South Africa",
       "code": "RSA",
-      "flag": "🇿🇦"
+      "flag": "🇿🇦",
+      "score": 0
     },
     "stadium": "Estadio Banorte",
     "city": "Mexico City",
@@ -46,7 +48,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "A"
+    "group": "A",
+    "status": "finished"
   },
   {
     "id": "match-002",
