@@ -51,57 +51,73 @@ def save_matches(matches):
 
 def fetch_match_score_from_api(team1_name, team2_name, match_date):
     """
-    Fetch match score from API-Football (RapidAPI)
+    Fetch match score from TheSportsDB API (100% FREE, no API key needed!)
     Returns: {'team1_score': int, 'team2_score': int, 'status': 'finished'} or None
     """
-    api_key = os.environ.get('RAPIDAPI_KEY')
-    
-    if not api_key:
-        print("Warning: RAPIDAPI_KEY not found in environment variables")
-        return None
-    
     try:
-        # API-Football endpoint for World Cup 2026
-        url = "https://api-football-v1.p.rapidapi.com/v3/fixtures"
+        # TheSportsDB free API endpoint
+        url = "https://www.thesportsdb.com/api/v1/json/3/searchevents.php"
         
         # Format date for API (YYYY-MM-DD)
         match_date_obj = datetime.fromisoformat(match_date.replace('Z', '+00:00'))
         date_str = match_date_obj.strftime('%Y-%m-%d')
         
-        headers = {
-            "X-RapidAPI-Key": api_key,
-            "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
-        }
+        # Try searching by team names
+        search_terms = [team1_name, team2_name]
         
-        # Query parameters - World Cup 2026 (league ID: 1)
-        querystring = {
-            "league": "1",  # World Cup
-            "season": "2026",
-            "date": date_str
-        }
-        
-        response = requests.get(url, headers=headers, params=querystring, timeout=10)
-        response.raise_for_status()
-        
-        data = response.json()
-        
-        if data.get('response'):
-            # Find matching fixture
-            for fixture in data['response']:
-                home_team = fixture['teams']['home']['name']
-                away_team = fixture['teams']['away']['name']
+        for search_term in search_terms:
+            querystring = {
+                "e": search_term,
+                "s": "Soccer"
+            }
+            
+            response = requests.get(url, params=querystring, timeout=10)
+            response.raise_for_status()
+            
+            data = response.json()
+            
+            if not data.get('event'):
+                continue
+            
+            # Find the specific match on this date
+            for event in data['event']:
+                event_date = event.get('dateEvent', '')
+                home_team = event.get('strHomeTeam', '')
+                away_team = event.get('strAwayTeam', '')
                 
-                # Match teams (case-insensitive)
-                if (team1_name.lower() in home_team.lower() or home_team.lower() in team1_name.lower()) and \
-                   (team2_name.lower() in away_team.lower() or away_team.lower() in team2_name.lower()):
+                # Check if this is our match (same date and teams match)
+                if event_date == date_str:
+                    # Check if team names match (case-insensitive, partial match)
+                    team1_match = (team1_name.lower() in home_team.lower() or
+                                  home_team.lower() in team1_name.lower() or
+                                  team1_name.lower() in away_team.lower() or
+                                  away_team.lower() in team1_name.lower())
                     
-                    # Check if match is finished
-                    if fixture['fixture']['status']['short'] in ['FT', 'AET', 'PEN']:
-                        return {
-                            'team1_score': fixture['goals']['home'],
-                            'team2_score': fixture['goals']['away'],
-                            'status': 'finished'
-                        }
+                    team2_match = (team2_name.lower() in home_team.lower() or
+                                  home_team.lower() in team2_name.lower() or
+                                  team2_name.lower() in away_team.lower() or
+                                  away_team.lower() in team2_name.lower())
+                    
+                    if team1_match and team2_match:
+                        # Check if match is finished
+                        status = event.get('strStatus', '')
+                        home_score = event.get('intHomeScore')
+                        away_score = event.get('intAwayScore')
+                        
+                        if status == 'Match Finished' and home_score is not None and away_score is not None:
+                            # Determine which team is team1 and team2
+                            if team1_name.lower() in home_team.lower() or home_team.lower() in team1_name.lower():
+                                return {
+                                    'team1_score': int(home_score),
+                                    'team2_score': int(away_score),
+                                    'status': 'finished'
+                                }
+                            else:
+                                return {
+                                    'team1_score': int(away_score),
+                                    'team2_score': int(home_score),
+                                    'status': 'finished'
+                                }
         
         return None
         
