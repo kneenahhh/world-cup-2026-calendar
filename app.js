@@ -2976,12 +2976,15 @@ class WorldCupCalendar {
             html += `<div class="calendar-day" data-date="${dateStr}">
                 <div class="day-number">${day}</div>
                 <div class="day-matches">
-                    ${dayMatches.map(match => `
-                        <div class="calendar-match" data-match-id="${match.id}">
-                            <span class="match-time">${this.formatTime(match.date)}</span>
-                            <span class="match-teams-short">${match.team1.flag} vs ${match.team2.flag}</span>
-                        </div>
-                    `).join('')}
+                    ${dayMatches.map(match => {
+                        const isPast = this.isMatchPast(match.date);
+                        return `
+                            <div class="calendar-match ${isPast ? 'past-calendar-match' : ''}" data-match-id="${match.id}">
+                                <span class="match-time">${this.formatTime(match.date)}</span>
+                                <span class="match-teams-short">${match.team1.flag} vs ${match.team2.flag}</span>
+                            </div>
+                        `;
+                    }).join('')}
                 </div>
             </div>`;
         }
