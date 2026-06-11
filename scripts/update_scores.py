@@ -13,8 +13,19 @@ import sys
 def load_matches():
     """Load matches from matches.json"""
     try:
-        with open('matches.json', 'r', encoding='utf-8') as f:
-            return json.load(f)
+        # Try current directory first
+        if os.path.exists('matches.json'):
+            with open('matches.json', 'r', encoding='utf-8') as f:
+                return json.load(f)
+        # Try parent directory (when running from scripts folder)
+        elif os.path.exists('../matches.json'):
+            with open('../matches.json', 'r', encoding='utf-8') as f:
+                return json.load(f)
+        else:
+            print("Error: matches.json not found in current or parent directory")
+            print(f"Current directory: {os.getcwd()}")
+            print(f"Files in current directory: {os.listdir('.')}")
+            sys.exit(1)
     except Exception as e:
         print(f"Error loading matches.json: {e}")
         sys.exit(1)
@@ -22,8 +33,17 @@ def load_matches():
 def save_matches(matches):
     """Save updated matches to matches.json"""
     try:
-        with open('matches.json', 'w', encoding='utf-8') as f:
+        # Save to the same location where we found it
+        if os.path.exists('matches.json'):
+            filepath = 'matches.json'
+        elif os.path.exists('../matches.json'):
+            filepath = '../matches.json'
+        else:
+            filepath = 'matches.json'  # Default to current directory
+            
+        with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(matches, f, indent=2, ensure_ascii=False)
+        print(f"Saved to: {os.path.abspath(filepath)}")
         return True
     except Exception as e:
         print(f"Error saving matches.json: {e}")
