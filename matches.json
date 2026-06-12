@@ -1,43 +1,16 @@
 [
   {
-    "id": "ceremony-001",
-    "date": "2026-06-11T16:30:00Z",
-    "team1": {
-      "name": "🎉 Opening Ceremony @",
-      "code": "CEREMONY",
-      "flag": ""
-    },
-    "team2": {
-      "name": "Mexico City",
-      "code": "MEX",
-      "flag": "🇲🇽"
-    },
-    "stadium": "Estadio Azteca",
-    "city": "Mexico City",
-    "country": "Mexico",
-    "broadcast": [
-      "FOX",
-      "Telemundo",
-      "Peacock"
-    ],
-    "stage": "Opening Ceremony",
-    "group": "",
-    "description": "Performers: J Balvin, Tyla, Alejandro Fernández, Belinda, Danny Ocean, Lila Downs, Los Ángeles Azules, Maná."
-  },
-  {
     "id": "match-001",
     "date": "2026-06-11T19:00:00Z",
     "team1": {
       "name": "Mexico",
       "code": "MEX",
-      "flag": "🇲🇽",
-      "score": 2
+      "flag": "🇲🇽"
     },
     "team2": {
       "name": "South Africa",
       "code": "RSA",
-      "flag": "🇿🇦",
-      "score": 0
+      "flag": "🇿🇦"
     },
     "stadium": "Estadio Banorte",
     "city": "Mexico City",
@@ -48,8 +21,7 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "A",
-    "status": "finished"
+    "group": "A"
   },
   {
     "id": "match-002",
@@ -76,31 +48,6 @@
     "group": "A"
   },
   {
-    "id": "ceremony-002",
-    "date": "2026-06-12T17:30:00Z",
-    "team1": {
-      "name": "🎉 Opening Ceremony @",
-      "code": "CEREMONY",
-      "flag": ""
-    },
-    "team2": {
-      "name": "Toronto",
-      "code": "CAN",
-      "flag": "🇨🇦"
-    },
-    "stadium": "BMO Field",
-    "city": "Toronto",
-    "country": "Canada",
-    "broadcast": [
-      "FOX",
-      "Telemundo",
-      "Peacock"
-    ],
-    "stage": "Opening Ceremony",
-    "group": "",
-    "description": "Performers: Alanis Morissette, Alessia Cara, Elyanna, Jessie Reyez, Michael Bublé, Nora Fatehi, Sanjoy, Vegedream, William Prince."
-  },
-  {
     "id": "match-003",
     "date": "2026-06-12T19:00:00Z",
     "team1": {
@@ -125,31 +72,6 @@
     "group": "B"
   },
   {
-    "id": "ceremony-003",
-    "date": "2026-06-12T23:30:00Z",
-    "team1": {
-      "name": "🎉 Opening Ceremony @",
-      "code": "CEREMONY",
-      "flag": ""
-    },
-    "team2": {
-      "name": "Los Angeles",
-      "code": "USA",
-      "flag": "🇺🇸"
-    },
-    "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
-    "country": "United States",
-    "broadcast": [
-      "FOX",
-      "Telemundo",
-      "Peacock"
-    ],
-    "stage": "Opening Ceremony",
-    "group": "",
-    "description": "Performers: Katy Perry, Future, Anitta, LISA, Rema, Tyla."
-  },
-  {
     "id": "match-004",
     "date": "2026-06-13T01:00:00Z",
     "team1": {
@@ -163,7 +85,7 @@
       "flag": "🇵🇾"
     },
     "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -187,7 +109,7 @@
       "flag": "🇨🇭"
     },
     "stadium": "Levi's Stadium",
-    "city": "Santa Clara, California",
+    "city": "Santa Clara",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -211,7 +133,7 @@
       "flag": "🇲🇦"
     },
     "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -235,7 +157,7 @@
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
     },
     "stadium": "Gillette Stadium",
-    "city": "Foxborough, Massachusetts",
+    "city": "Boston",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -283,7 +205,7 @@
       "flag": "🇨🇼"
     },
     "stadium": "NRG Stadium",
-    "city": "Houston, Texas",
+    "city": "Houston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -307,7 +229,7 @@
       "flag": "🇯🇵"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -331,7 +253,7 @@
       "flag": "🇨🇮"
     },
     "stadium": "Lincoln Financial Field",
-    "city": "Philadelphia, Pennsylvania",
+    "city": "Philadelphia",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -451,7 +373,7 @@
       "flag": "🇳🇿"
     },
     "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -475,7 +397,7 @@
       "flag": "🇸🇳"
     },
     "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -499,7 +421,7 @@
       "flag": "🇳🇴"
     },
     "stadium": "Gillette Stadium",
-    "city": "Foxborough, Massachusetts",
+    "city": "Boston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -523,7 +445,7 @@
       "flag": "🇩🇿"
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City, Missouri",
+    "city": "Kansas City",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -547,7 +469,7 @@
       "flag": "🇯🇴"
     },
     "stadium": "Levi's Stadium",
-    "city": "Santa Clara, California",
+    "city": "Santa Clara",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -571,7 +493,7 @@
       "flag": "🇨🇩"
     },
     "stadium": "NRG Stadium",
-    "city": "Houston, Texas",
+    "city": "Houston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -595,7 +517,7 @@
       "flag": "🇭🇷"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -691,7 +613,7 @@
       "flag": "🇧🇦"
     },
     "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -787,7 +709,7 @@
       "flag": "🇲🇦"
     },
     "stadium": "Gillette Stadium",
-    "city": "Foxborough, Massachusetts",
+    "city": "Boston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -811,7 +733,7 @@
       "flag": "🇭🇹"
     },
     "stadium": "Lincoln Financial Field",
-    "city": "Philadelphia, Pennsylvania",
+    "city": "Philadelphia",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -835,7 +757,7 @@
       "flag": "🇵🇾"
     },
     "stadium": "Levi's Stadium",
-    "city": "Santa Clara, California",
+    "city": "Santa Clara",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -859,7 +781,7 @@
       "flag": "🇸🇪"
     },
     "stadium": "NRG Stadium",
-    "city": "Houston, Texas",
+    "city": "Houston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -907,7 +829,7 @@
       "flag": "🇨🇼"
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City, Missouri",
+    "city": "Kansas City",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -979,7 +901,7 @@
       "flag": "🇮🇷"
     },
     "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1051,7 +973,7 @@
       "flag": "🇦🇹"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1075,7 +997,7 @@
       "flag": "🇮🇶"
     },
     "stadium": "Lincoln Financial Field",
-    "city": "Philadelphia, Pennsylvania",
+    "city": "Philadelphia",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1099,7 +1021,7 @@
       "flag": "🇸🇳"
     },
     "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1123,7 +1045,7 @@
       "flag": "🇩🇿"
     },
     "stadium": "Levi's Stadium",
-    "city": "Santa Clara, California",
+    "city": "Santa Clara",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1147,7 +1069,7 @@
       "flag": "🇺🇿"
     },
     "stadium": "NRG Stadium",
-    "city": "Houston, Texas",
+    "city": "Houston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1171,7 +1093,7 @@
       "flag": "🇬🇭"
     },
     "stadium": "Gillette Stadium",
-    "city": "Foxborough, Massachusetts",
+    "city": "Boston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1387,7 +1309,7 @@
       "flag": "🇨🇮"
     },
     "stadium": "Lincoln Financial Field",
-    "city": "Philadelphia, Pennsylvania",
+    "city": "Philadelphia",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1411,7 +1333,7 @@
       "flag": "🇩🇪"
     },
     "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1435,7 +1357,7 @@
       "flag": "🇳🇱"
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City, Missouri",
+    "city": "Kansas City",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1459,7 +1381,7 @@
       "flag": "🇸🇪"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1483,7 +1405,7 @@
       "flag": "🇦🇺"
     },
     "stadium": "Levi's Stadium",
-    "city": "Santa Clara, California",
+    "city": "Santa Clara",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1507,7 +1429,7 @@
       "flag": "🇹🇷"
     },
     "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1531,7 +1453,7 @@
       "flag": "🇫🇷"
     },
     "stadium": "Gillette Stadium",
-    "city": "Foxborough, Massachusetts",
+    "city": "Boston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1579,7 +1501,7 @@
       "flag": "🇸🇦"
     },
     "stadium": "NRG Stadium",
-    "city": "Houston, Texas",
+    "city": "Houston",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1675,7 +1597,7 @@
       "flag": "🇬🇭"
     },
     "stadium": "Lincoln Financial Field",
-    "city": "Philadelphia, Pennsylvania",
+    "city": "Philadelphia",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1699,7 +1621,7 @@
       "flag": "🇬🇧"
     },
     "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1771,7 +1693,7 @@
       "flag": "🇦🇹"
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City, Missouri",
+    "city": "Kansas City",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1795,7 +1717,7 @@
       "flag": "🇦🇷"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1819,7 +1741,7 @@
       "flag": "🏴"
     },
     "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1843,7 +1765,7 @@
       "flag": "🏴"
     },
     "stadium": "NRG Stadium",
-    "city": "Houston, Texas",
+    "city": "Houston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1867,7 +1789,7 @@
       "flag": "🏴"
     },
     "stadium": "Gillette Stadium",
-    "city": "Foxborough, Massachusetts",
+    "city": "Boston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1915,7 +1837,7 @@
       "flag": "🏴"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1939,7 +1861,7 @@
       "flag": "🏴"
     },
     "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2035,7 +1957,7 @@
       "flag": "🏴"
     },
     "stadium": "Levi's Stadium",
-    "city": "Santa Clara, California",
+    "city": "Santa Clara",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2059,7 +1981,7 @@
       "flag": "🏴"
     },
     "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2131,7 +2053,7 @@
       "flag": "🏴"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2179,7 +2101,7 @@
       "flag": "🏴"
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City, Missouri",
+    "city": "Kansas City",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2203,7 +2125,7 @@
       "flag": "🏴"
     },
     "stadium": "NRG Stadium",
-    "city": "Houston, Texas",
+    "city": "Houston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2227,7 +2149,7 @@
       "flag": "🏴"
     },
     "stadium": "Lincoln Financial Field",
-    "city": "Philadelphia, Pennsylvania",
+    "city": "Philadelphia",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2251,7 +2173,7 @@
       "flag": "🏴"
     },
     "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2299,7 +2221,7 @@
       "flag": "🏴"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2395,7 +2317,7 @@
       "flag": "🏴"
     },
     "stadium": "Gillette Stadium",
-    "city": "Foxborough, Massachusetts",
+    "city": "Boston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2419,7 +2341,7 @@
       "flag": "🏴"
     },
     "stadium": "SoFi Stadium",
-    "city": "Inglewood, California",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2467,7 +2389,7 @@
       "flag": "🏴"
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City, Missouri",
+    "city": "Kansas City",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2491,7 +2413,7 @@
       "flag": "🏴"
     },
     "stadium": "AT&T Stadium",
-    "city": "Arlington, Texas",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2563,7 +2485,7 @@
       "flag": "🏴"
     },
     "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2572,30 +2494,5 @@
     ],
     "stage": "Final",
     "group": ""
-  },
-  {
-    "id": "halftime-001",
-    "date": "2026-07-19T20:00:00Z",
-    "team1": {
-      "name": "🎉 World Cup Final",
-      "code": "HALFTIME",
-      "flag": ""
-    },
-    "team2": {
-      "name": "Half-Time Show",
-      "code": "FINAL",
-      "flag": "🏆"
-    },
-    "stadium": "MetLife Stadium",
-    "city": "East Rutherford, New Jersey",
-    "country": "United States",
-    "broadcast": [
-      "FOX",
-      "Telemundo",
-      "Peacock"
-    ],
-    "stage": "Halftime Show",
-    "group": "",
-    "description": "Performers: Shakira, Madonna, and BTS. Curator: Chris Martin (Coldplay)."
   }
 ]
