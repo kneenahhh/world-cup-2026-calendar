@@ -24,7 +24,7 @@
             <div class="control-group">
                 <label for="timezone-selector">
                     <span class="label-icon">🌍</span>
-                    Select Your Timezone:
+                    Timezone:
                 </label>
                 <select id="timezone-selector" class="timezone-select">
                     <option value="America/New_York">Eastern Time (ET)</option>
@@ -68,33 +68,24 @@
                     </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Download Buttons -->
-        <section class="download-section">
-            <button id="download-all-btn" class="btn btn-primary">
-                ⬇️ Download All Matches
-            </button>
-            <button id="download-selected-btn" class="btn btn-success">
-                ✅ Download Selected Matches
-            </button>
-            <div id="selection-count" class="selection-count">
-                0 matches selected
+            <div class="control-group download-controls">
+                <button id="download-all-btn" class="btn btn-primary btn-small">
+                    ⬇️ All
+                </button>
+                <button id="download-selected-btn" class="btn btn-success btn-small">
+                    ✅ Selected
+                </button>
+                <div id="selection-count" class="selection-count">
+                    0 selected
+                </div>
             </div>
         </section>
 
-        <!-- Search/Filter Section -->
+        <!-- Filter Section -->
         <section class="filter-section">
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="search-input"
-                    placeholder="🔍 Search teams, stadiums, or cities..."
-                    class="search-input"
-                >
-            </div>
             <div class="team-filter-box">
-                <label for="team-filter">⭐ Filter by Favorite Team:</label>
+                <label for="team-filter">⭐ Filter by Team:</label>
                 <select id="team-filter" class="team-filter-select">
                     <option value="">All Teams</option>
                 </select>
