@@ -74,12 +74,19 @@ body {
 
 /* Controls Section */
 .controls {
-    padding: 30px;
+    padding: 20px 30px;
     background: var(--background);
     border-bottom: 1px solid var(--border);
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
+    align-items: center;
+}
+
+.download-controls {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
     align-items: center;
 }
 
@@ -166,6 +173,12 @@ body {
     gap: 8px;
 }
 
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    gap: 5px;
+}
+
 .btn-primary {
     background: var(--primary-color);
     color: white;
@@ -199,48 +212,18 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Download Section */
-.download-section {
-    padding: 20px 30px;
-    background: var(--background);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 .selection-count {
-    margin-left: auto;
     font-weight: 600;
     color: var(--primary-color);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
 
 /* Filter Section */
 .filter-section {
-    padding: 20px 30px;
+    padding: 15px 30px;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-}
-
-.search-box {
-    margin-bottom: 15px;
-}
-
-.search-input {
-    width: 100%;
-    padding: 12px 20px;
-    border: 2px solid var(--border);
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.search-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
 }
 
 .team-filter-box {
@@ -284,6 +267,7 @@ body {
 
 .matches-container {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -673,240 +657,230 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 5px;
     }
 
-    /* Header - 40% smaller on mobile */
+    /* Header - Even more compact */
     .header {
-        padding: 20px 15px;
+        padding: 15px 10px;
     }
 
     .header-content {
-        gap: 12px;
+        gap: 10px;
     }
 
     .header-logo {
-        max-width: 72px;
+        max-width: 60px;
     }
 
     .header h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .subtitle {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .footer-logo {
-        max-width: 80px;
+        max-width: 70px;
     }
 
-    /* Controls Section */
+    /* Controls Section - More compact */
     .controls {
-        padding: 15px;
+        padding: 10px;
         flex-direction: column;
         align-items: stretch;
-        gap: 12px;
+        gap: 10px;
     }
 
     .control-group {
         flex-direction: column;
         align-items: stretch;
-        gap: 8px;
+        gap: 6px;
     }
 
     .control-group label {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .timezone-select {
         width: 100%;
-        padding: 8px 12px;
-        font-size: 0.9rem;
+        padding: 6px 10px;
+        font-size: 0.85rem;
     }
 
     .view-toggle {
-        padding: 3px;
+        padding: 2px;
     }
 
     .view-btn {
-        padding: 6px 12px;
-        font-size: 0.85rem;
+        padding: 5px 10px;
+        font-size: 0.8rem;
     }
 
-    /* Download Section - Smaller buttons in one line */
-    .download-section {
-        padding: 12px 15px;
-        flex-direction: row;
-        gap: 8px;
-        align-items: center;
+    .download-controls {
+        margin-left: 0;
+        width: 100%;
+        justify-content: space-between;
     }
 
-    .btn {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-        gap: 4px;
-        flex: 1;
-        justify-content: center;
+    .btn-small {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        gap: 3px;
     }
 
     .selection-count {
-        display: none;
+        font-size: 0.75rem;
     }
 
-    /* Filter Section - Smaller and more compact */
+    /* Filter Section - More compact */
     .filter-section {
-        padding: 12px 15px;
-    }
-
-    .search-box {
-        margin-bottom: 10px;
-    }
-
-    .search-input {
-        padding: 8px 12px;
-        font-size: 0.9rem;
+        padding: 10px;
     }
 
     .team-filter-box {
         flex-direction: column;
         align-items: stretch;
-        gap: 6px;
+        gap: 5px;
     }
 
     .team-filter-box label {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .team-filter-select {
-        padding: 8px 12px;
-        font-size: 0.9rem;
+        padding: 6px 10px;
+        font-size: 0.85rem;
     }
 
-    /* List View - More compact match cards */
+    /* List View - Single column, more compact */
     .list-view {
-        padding: 15px;
+        padding: 10px;
     }
 
     .matches-container {
-        gap: 12px;
-    }
-
-    .match-card {
-        padding: 12px;
+        grid-template-columns: 1fr;
         gap: 10px;
     }
 
+    .match-card {
+        padding: 10px;
+        gap: 8px;
+    }
+
     .match-card-compact {
-        padding: 10px 12px !important;
+        padding: 8px 10px !important;
     }
 
     .match-checkbox {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
     }
 
     .match-teams {
         flex-direction: column;
-        gap: 5px;
-        font-size: 1rem;
-        margin-bottom: 8px;
+        gap: 4px;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
     }
 
     .match-details {
-        gap: 12px;
-        margin-bottom: 8px;
-    }
-
-    .match-details span {
-        font-size: 0.85rem;
-    }
-
-    .match-venue, .match-broadcast {
-        font-size: 0.8rem;
-    }
-
-    .match-stage {
-        font-size: 0.75rem;
-        padding: 3px 10px;
-    }
-
-    .past-label, .final-badge {
-        font-size: 10px;
-        padding: 3px 8px;
-    }
-
-    /* Compact card adjustments */
-    .match-score-display {
-        font-size: 0.95rem;
         gap: 10px;
         margin-bottom: 6px;
     }
 
+    .match-details span {
+        font-size: 0.8rem;
+    }
+
+    .match-venue, .match-broadcast {
+        font-size: 0.75rem;
+        margin-top: 3px;
+    }
+
+    .match-stage {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        margin-top: 6px;
+    }
+
+    .past-label, .final-badge {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+
+    /* Compact card adjustments */
+    .match-score-display {
+        font-size: 0.9rem;
+        gap: 8px;
+        margin-bottom: 5px;
+    }
+
     .team-score strong {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .match-meta-compact {
-        gap: 10px;
-        font-size: 0.75rem;
+        gap: 8px;
+        font-size: 0.7rem;
     }
 
-    /* Calendar View - Improved mobile experience */
+    /* Calendar View - More compact */
     .calendar-view {
-        padding: 15px;
+        padding: 10px;
     }
 
     .calendar-header {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .calendar-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .calendar-nav-btn {
-        padding: 8px 12px;
-        font-size: 1rem;
+        padding: 6px 10px;
+        font-size: 0.9rem;
     }
 
     .calendar-grid {
         grid-template-columns: repeat(7, 1fr);
-        gap: 4px;
+        gap: 3px;
     }
 
     .calendar-day-header {
-        padding: 6px 2px;
-        font-size: 0.7rem;
+        padding: 4px 2px;
+        font-size: 0.65rem;
     }
 
     .calendar-day {
-        min-height: 70px;
-        padding: 4px;
+        min-height: 60px;
+        padding: 3px;
     }
 
     .day-number {
-        font-size: 0.85rem;
-        margin-bottom: 3px;
+        font-size: 0.8rem;
+        margin-bottom: 2px;
     }
 
     .calendar-match {
-        font-size: 0.6rem;
-        padding: 3px 4px;
+        font-size: 0.55rem;
+        padding: 2px 3px;
         margin-bottom: 2px;
     }
 
     .match-time {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
     }
 
     .match-teams-short {
-        font-size: 0.55rem;
+        font-size: 0.5rem;
     }
 
     /* Modal adjustments */
     .modal-content {
-        padding: 20px;
+        padding: 15px;
         width: 95%;
     }
 }
