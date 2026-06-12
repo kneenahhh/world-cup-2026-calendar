@@ -2854,7 +2854,27 @@ class WorldCupCalendar {
             return;
         }
 
-        container.innerHTML = this.filteredMatches.map(match => {
+        // Group matches by day and add spacers for proper 2-column layout
+        let html = '';
+        let currentDate = '';
+        let matchesInCurrentDay = 0;
+        
+        this.filteredMatches.forEach((match, index) => {
+            const matchDate = this.formatDate(match.date);
+            
+            // Check if we're starting a new day
+            if (matchDate !== currentDate) {
+                // If previous day had odd number of matches, add a spacer
+                if (matchesInCurrentDay % 2 === 1) {
+                    html += '<div class="match-spacer"></div>';
+                }
+                currentDate = matchDate;
+                matchesInCurrentDay = 0;
+            }
+            
+            matchesInCurrentDay++;
+            
+            // Generate match card HTML
             const isSelected = this.selectedMatches.has(match.id);
             const isSpecialEvent = match.stage === 'Opening Ceremony' || match.stage === 'Halftime Show';
             const isPast = this.isMatchPast(match.date);
@@ -2863,7 +2883,7 @@ class WorldCupCalendar {
             
             // Compact view for finished matches OR past special events
             if ((isFinished && hasScore) || (isPast && isSpecialEvent)) {
-                return `
+                html += `
                     <div class="match-card match-card-compact ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} past-match" data-match-id="${match.id}">
                         <span class="final-badge">${hasScore ? 'FINAL' : 'PAST'}</span>
                         <input
@@ -2895,8 +2915,9 @@ class WorldCupCalendar {
                 `;
             }
             
+            } else {
             // Regular view for upcoming/ongoing matches
-            return `
+            html += `
                 <div class="match-card ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} ${isPast ? 'past-match' : ''}" data-match-id="${match.id}">
                     ${isPast && !hasScore ? '<span class="past-label">PAST</span>' : ''}
                     <input
@@ -2926,7 +2947,15 @@ class WorldCupCalendar {
                     </div>
                 </div>
             `;
-        }).join('');
+            }
+        });
+        
+        // Add final spacer if needed
+        if (matchesInCurrentDay % 2 === 1) {
+            html += '<div class="match-spacer"></div>';
+        }
+        
+        container.innerHTML = html;
 
         // Add event listeners to checkboxes
         container.querySelectorAll('.match-checkbox').forEach(checkbox => {
