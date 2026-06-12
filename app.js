@@ -2889,7 +2889,7 @@ class WorldCupCalendar {
             if (isPast) {
                 html += `
                     <div class="match-card match-card-compact ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} past-match" data-match-id="${match.id}">
-                        <span class="final-badge">${hasScore ? 'FINAL' : 'PAST'}</span>
+                        <span class="${hasScore ? 'final-badge' : 'past-label'}">${hasScore ? 'FINAL' : 'PAST'}</span>
                         <input
                             type="checkbox"
                             class="match-checkbox"
