@@ -277,6 +277,13 @@ body {
     visibility: hidden;
 }
 
+.day-separator {
+    grid-column: 1 / -1;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 10px 0;
+}
+
 .match-card {
     background: var(--surface);
     border: 2px solid var(--border);
@@ -441,10 +448,18 @@ body {
     font-weight: 600;
 }
 
-.match-venue, .match-broadcast {
+.match-venue-broadcast {
+    display: flex;
+    gap: 15px;
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+.match-venue, .match-broadcast {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .match-stage {
@@ -791,10 +806,11 @@ body {
     }
 
     .match-teams {
-        flex-direction: column;
-        gap: 4px;
+        flex-direction: row;
+        gap: 8px;
         font-size: 0.95rem;
         margin-bottom: 6px;
+        flex-wrap: wrap;
     }
 
     .match-details {
@@ -806,9 +822,14 @@ body {
         font-size: 0.8rem;
     }
 
-    .match-venue, .match-broadcast {
+    .match-venue-broadcast {
+        gap: 10px;
         font-size: 0.75rem;
         margin-top: 3px;
+    }
+    
+    .match-venue, .match-broadcast {
+        font-size: 0.75rem;
     }
 
     .match-stage {
