@@ -2868,6 +2868,10 @@ class WorldCupCalendar {
                 if (matchesInCurrentDay % 2 === 1) {
                     html += '<div class="match-spacer"></div>';
                 }
+                // Add day separator line (except before first day)
+                if (currentDate !== '') {
+                    html += '<div class="day-separator"></div>';
+                }
                 currentDate = matchDate;
                 matchesInCurrentDay = 0;
             }
@@ -2935,11 +2939,9 @@ class WorldCupCalendar {
                             <span class="date">📅 ${this.formatDate(match.date)}</span>
                             <span class="time">🕐 ${this.formatTime(match.date)}</span>
                         </div>
-                        <div class="match-venue">
-                            📍 ${match.stadium}, ${match.city}
-                        </div>
-                        <div class="match-broadcast">
-                            📺 ${match.broadcast.join(', ')}
+                        <div class="match-venue-broadcast">
+                            <span class="match-venue">📍 ${match.stadium}, ${match.city}</span>
+                            <span class="match-broadcast">📺 ${match.broadcast.join(', ')}</span>
                         </div>
                         <span class="match-stage">${match.stage}${match.group ? ' - Group ' + match.group : ''}</span>
                     </div>
