@@ -174,9 +174,10 @@ body {
 }
 
 .btn-small {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    gap: 5px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    gap: 4px;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -271,13 +272,18 @@ body {
     gap: 20px;
 }
 
+.match-spacer {
+    /* Invisible spacer to maintain 2-column layout */
+    visibility: hidden;
+}
+
 .match-card {
     background: var(--surface);
     border: 2px solid var(--border);
     border-radius: 12px;
-    padding: 20px;
+    padding: 16px;
     display: flex;
-    gap: 15px;
+    gap: 12px;
     align-items: flex-start;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -690,21 +696,24 @@ body {
         padding: 10px;
         flex-direction: column;
         align-items: stretch;
-        gap: 10px;
+        gap: 8px;
     }
 
     .control-group {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 6px;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
     }
 
     .control-group label {
         font-size: 0.85rem;
+        white-space: nowrap;
     }
 
     .timezone-select {
-        width: 100%;
+        flex: 1;
+        min-width: 120px;
         padding: 6px 10px;
         font-size: 0.85rem;
     }
@@ -722,16 +731,19 @@ body {
         margin-left: 0;
         width: 100%;
         justify-content: space-between;
+        flex-wrap: nowrap;
     }
 
     .btn-small {
-        padding: 6px 10px;
-        font-size: 0.8rem;
+        padding: 6px 8px;
+        font-size: 0.75rem;
         gap: 3px;
+        flex: 1;
     }
 
     .selection-count {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        flex-shrink: 0;
     }
 
     /* Filter Section - More compact */
