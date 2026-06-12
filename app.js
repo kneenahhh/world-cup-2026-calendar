@@ -2885,8 +2885,8 @@ class WorldCupCalendar {
             const hasScore = match.team1.score !== undefined && match.team2.score !== undefined;
             const isFinished = hasScore || (isPast && match.status === 'finished');
             
-            // Compact view for finished matches OR past special events
-            if ((isFinished && hasScore) || (isPast && isSpecialEvent)) {
+            // Compact view for ALL past events (finished matches, past special events, or any past match)
+            if (isPast) {
                 html += `
                     <div class="match-card match-card-compact ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} past-match" data-match-id="${match.id}">
                         <span class="final-badge">${hasScore ? 'FINAL' : 'PAST'}</span>
