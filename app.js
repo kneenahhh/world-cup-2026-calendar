@@ -2728,15 +2728,6 @@ class WorldCupCalendar {
             this.switchView('calendar');
         });
 
-        // Selection controls
-        document.getElementById('select-all-btn').addEventListener('click', () => {
-            this.selectAllMatches();
-        });
-
-        document.getElementById('deselect-all-btn').addEventListener('click', () => {
-            this.deselectAllMatches();
-        });
-
         // Download buttons
         document.getElementById('download-all-btn').addEventListener('click', () => {
             this.downloadAllMatches();
