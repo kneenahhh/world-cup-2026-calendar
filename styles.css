@@ -152,10 +152,6 @@ body {
     color: white;
 }
 
-.selection-controls {
-    margin-left: auto;
-}
-
 /* Buttons */
 .btn {
     padding: 12px 24px;
@@ -680,67 +676,238 @@ body {
         padding: 10px;
     }
 
+    /* Header - 40% smaller on mobile */
+    .header {
+        padding: 20px 15px;
+    }
+
+    .header-content {
+        gap: 12px;
+    }
+
     .header-logo {
-        max-width: 150px;
+        max-width: 72px;
     }
 
     .header h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
     }
 
     .footer-logo {
         max-width: 80px;
     }
 
+    /* Controls Section */
     .controls {
+        padding: 15px;
         flex-direction: column;
         align-items: stretch;
+        gap: 12px;
     }
 
     .control-group {
         flex-direction: column;
         align-items: stretch;
+        gap: 8px;
+    }
+
+    .control-group label {
+        font-size: 0.9rem;
     }
 
     .timezone-select {
         width: 100%;
+        padding: 8px 12px;
+        font-size: 0.9rem;
     }
 
-    .selection-controls {
-        margin-left: 0;
-        display: flex;
-        gap: 10px;
+    .view-toggle {
+        padding: 3px;
     }
 
+    .view-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Download Section - Smaller buttons in one line */
     .download-section {
-        flex-direction: column;
-        align-items: stretch;
+        padding: 12px 15px;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        gap: 4px;
+        flex: 1;
+        justify-content: center;
     }
 
     .selection-count {
-        margin-left: 0;
-        text-align: center;
+        display: none;
+    }
+
+    /* Filter Section - Smaller and more compact */
+    .filter-section {
+        padding: 12px 15px;
+    }
+
+    .search-box {
+        margin-bottom: 10px;
+    }
+
+    .search-input {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .team-filter-box {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .team-filter-box label {
+        font-size: 0.9rem;
+    }
+
+    .team-filter-select {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* List View - More compact match cards */
+    .list-view {
+        padding: 15px;
+    }
+
+    .matches-container {
+        gap: 12px;
+    }
+
+    .match-card {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .match-card-compact {
+        padding: 10px 12px !important;
+    }
+
+    .match-checkbox {
+        width: 18px;
+        height: 18px;
     }
 
     .match-teams {
         flex-direction: column;
         gap: 5px;
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .match-details {
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+
+    .match-details span {
+        font-size: 0.85rem;
+    }
+
+    .match-venue, .match-broadcast {
+        font-size: 0.8rem;
+    }
+
+    .match-stage {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+
+    .past-label, .final-badge {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    /* Compact card adjustments */
+    .match-score-display {
+        font-size: 0.95rem;
+        gap: 10px;
+        margin-bottom: 6px;
+    }
+
+    .team-score strong {
+        font-size: 1.2rem;
+    }
+
+    .match-meta-compact {
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+
+    /* Calendar View - Improved mobile experience */
+    .calendar-view {
+        padding: 15px;
+    }
+
+    .calendar-header {
+        margin-bottom: 15px;
+    }
+
+    .calendar-title {
+        font-size: 1.3rem;
+    }
+
+    .calendar-nav-btn {
+        padding: 8px 12px;
+        font-size: 1rem;
     }
 
     .calendar-grid {
         grid-template-columns: repeat(7, 1fr);
-        gap: 5px;
+        gap: 4px;
+    }
+
+    .calendar-day-header {
+        padding: 6px 2px;
+        font-size: 0.7rem;
     }
 
     .calendar-day {
-        min-height: 80px;
-        padding: 5px;
+        min-height: 70px;
+        padding: 4px;
+    }
+
+    .day-number {
+        font-size: 0.85rem;
+        margin-bottom: 3px;
     }
 
     .calendar-match {
-        font-size: 0.65rem;
-        padding: 3px 5px;
+        font-size: 0.6rem;
+        padding: 3px 4px;
+        margin-bottom: 2px;
+    }
+
+    .match-time {
+        font-size: 0.6rem;
+    }
+
+    .match-teams-short {
+        font-size: 0.55rem;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        padding: 20px;
+        width: 95%;
     }
 }
 
