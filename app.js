@@ -2913,11 +2913,9 @@ class WorldCupCalendar {
                         </div>
                     </div>
                 `;
-            }
-            
             } else {
-            // Regular view for upcoming/ongoing matches
-            html += `
+                // Regular view for upcoming/ongoing matches
+                html += `
                 <div class="match-card ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} ${isPast ? 'past-match' : ''}" data-match-id="${match.id}">
                     ${isPast && !hasScore ? '<span class="past-label">PAST</span>' : ''}
                     <input
