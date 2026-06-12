@@ -2737,12 +2737,6 @@ class WorldCupCalendar {
             this.downloadSelectedMatches();
         });
 
-        // Search input
-        const searchInput = document.getElementById('search-input');
-        searchInput.addEventListener('input', this.debounce((e) => {
-            this.filterMatches();
-        }, 300));
-
         // Team filter
         document.getElementById('team-filter').addEventListener('change', () => {
             this.filterMatches();
@@ -3198,25 +3192,15 @@ class WorldCupCalendar {
      * Filter matches based on search query and team filter
      */
     filterMatches() {
-        const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
         const teamFilter = document.getElementById('team-filter').value;
         
         this.filteredMatches = this.matches.filter(match => {
-            // Apply search filter
-            const matchesSearch = !searchQuery ||
-                match.team1.name.toLowerCase().includes(searchQuery) ||
-                match.team2.name.toLowerCase().includes(searchQuery) ||
-                match.stadium.toLowerCase().includes(searchQuery) ||
-                match.city.toLowerCase().includes(searchQuery) ||
-                match.country.toLowerCase().includes(searchQuery) ||
-                match.stage.toLowerCase().includes(searchQuery);
-            
             // Apply team filter
             const matchesTeam = !teamFilter ||
                 match.team1.name === teamFilter ||
                 match.team2.name === teamFilter;
             
-            return matchesSearch && matchesTeam;
+            return matchesTeam;
         });
         
         this.renderMatches();
