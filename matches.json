@@ -57,12 +57,14 @@
     "team1": {
       "name": "South Korea",
       "code": "KOR",
-      "flag": "🇰🇷"
+      "flag": "🇰🇷",
+      "score": 2
     },
     "team2": {
       "name": "Czech Republic",
       "code": "CZE",
-      "flag": "🇨🇿"
+      "flag": "🇨🇿",
+      "score": 1
     },
     "stadium": "Estadio Akron",
     "city": "Guadalajara",
@@ -73,7 +75,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "A"
+    "group": "A",
+    "status": "finished"
   },
   {
     "id": "ceremony-002",
