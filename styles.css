@@ -675,6 +675,14 @@ body {
     text-decoration: underline;
 }
 
+.footer-disclaimer {
+    font-size: 0.8rem;
+    margin-top: 15px;
+    color: var(--text-secondary);
+    font-style: italic;
+    opacity: 0.8;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
