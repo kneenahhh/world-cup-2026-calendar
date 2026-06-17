@@ -323,12 +323,14 @@
     "team1": {
       "name": "Netherlands",
       "code": "NED",
-      "flag": "🇳🇱"
+      "flag": "🇳🇱",
+      "score": 2
     },
     "team2": {
       "name": "Japan",
       "code": "JPN",
-      "flag": "🇯🇵"
+      "flag": "🇯🇵",
+      "score": 2
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -339,7 +341,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "F"
+    "group": "F",
+    "status": "finished"
   },
   {
     "id": "match-011",
@@ -347,12 +350,14 @@
     "team1": {
       "name": "Ecuador",
       "code": "ECU",
-      "flag": "🇪🇨"
+      "flag": "🇪🇨",
+      "score": 0
     },
     "team2": {
       "name": "Ivory Coast",
       "code": "CIV",
-      "flag": "🇨🇮"
+      "flag": "🇨🇮",
+      "score": 1
     },
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -363,7 +368,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "E"
+    "group": "E",
+    "status": "finished"
   },
   {
     "id": "match-012",
@@ -371,12 +377,14 @@
     "team1": {
       "name": "Sweden",
       "code": "SWE",
-      "flag": "🇸🇪"
+      "flag": "🇸🇪",
+      "score": 5
     },
     "team2": {
       "name": "Tunisia",
       "code": "TUN",
-      "flag": "🇹🇳"
+      "flag": "🇹🇳",
+      "score": 1
     },
     "stadium": "Estadio BBVA",
     "city": "Monterrey",
@@ -387,7 +395,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "F"
+    "group": "F",
+    "status": "finished"
   },
   {
     "id": "match-013",
@@ -395,12 +404,14 @@
     "team1": {
       "name": "Spain",
       "code": "ESP",
-      "flag": "🇪🇸"
+      "flag": "🇪🇸",
+      "score": 0
     },
     "team2": {
       "name": "Cape Verde",
       "code": "CPV",
-      "flag": "🇨🇻"
+      "flag": "🇨🇻",
+      "score": 0
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
@@ -411,7 +422,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "H"
+    "group": "H",
+    "status": "finished"
   },
   {
     "id": "match-014",
@@ -419,12 +431,14 @@
     "team1": {
       "name": "Belgium",
       "code": "BEL",
-      "flag": "🇧🇪"
+      "flag": "🇧🇪",
+      "score": 1
     },
     "team2": {
       "name": "Egypt",
       "code": "EGY",
-      "flag": "🇪🇬"
+      "flag": "🇪🇬",
+      "score": 1
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -435,7 +449,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "G"
+    "group": "G",
+    "status": "finished"
   },
   {
     "id": "match-015",
@@ -443,12 +458,14 @@
     "team1": {
       "name": "Uruguay",
       "code": "URU",
-      "flag": "🇺🇾"
+      "flag": "🇺🇾",
+      "score": 1
     },
     "team2": {
       "name": "Saudi Arabia",
       "code": "SAU",
-      "flag": "🇸🇦"
+      "flag": "🇸🇦",
+      "score": 1
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -459,7 +476,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "H"
+    "group": "H",
+    "status": "finished"
   },
   {
     "id": "match-016",
@@ -467,12 +485,14 @@
     "team1": {
       "name": "Iran",
       "code": "IRN",
-      "flag": "🇮🇷"
+      "flag": "🇮🇷",
+      "score": 2
     },
     "team2": {
       "name": "New Zealand",
       "code": "NZL",
-      "flag": "🇳🇿"
+      "flag": "🇳🇿",
+      "score": 2
     },
     "stadium": "SoFi Stadium",
     "city": "LA",
@@ -483,7 +503,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "G"
+    "group": "G",
+    "status": "finished"
   },
   {
     "id": "match-017",
@@ -491,12 +512,14 @@
     "team1": {
       "name": "France",
       "code": "FRA",
-      "flag": "🇫🇷"
+      "flag": "🇫🇷",
+      "score": 3
     },
     "team2": {
       "name": "Senegal",
       "code": "SEN",
-      "flag": "🇸🇳"
+      "flag": "🇸🇳",
+      "score": 1
     },
     "stadium": "MetLife Stadium",
     "city": "NY/NJ",
@@ -507,7 +530,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "I"
+    "group": "I",
+    "status": "finished"
   },
   {
     "id": "match-018",
@@ -515,12 +539,14 @@
     "team1": {
       "name": "Iraq",
       "code": "IRQ",
-      "flag": "🇮🇶"
+      "flag": "🇮🇶",
+      "score": 1
     },
     "team2": {
       "name": "Norway",
       "code": "NOR",
-      "flag": "🇳🇴"
+      "flag": "🇳🇴",
+      "score": 4
     },
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -531,7 +557,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "I"
+    "group": "I",
+    "status": "finished"
   },
   {
     "id": "match-019",
@@ -539,12 +566,14 @@
     "team1": {
       "name": "Argentina",
       "code": "ARG",
-      "flag": "🇦🇷"
+      "flag": "🇦🇷",
+      "score": 3
     },
     "team2": {
       "name": "Algeria",
       "code": "ALG",
-      "flag": "🇩🇿"
+      "flag": "🇩🇿",
+      "score": 0
     },
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
@@ -555,7 +584,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "J"
+    "group": "J",
+    "status": "finished"
   },
   {
     "id": "match-020",
@@ -563,12 +593,14 @@
     "team1": {
       "name": "Austria",
       "code": "AUT",
-      "flag": "🇦🇹"
+      "flag": "🇦🇹",
+      "score": 3
     },
     "team2": {
       "name": "Jordan",
       "code": "JOR",
-      "flag": "🇯🇴"
+      "flag": "🇯🇴",
+      "score": 1
     },
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -579,7 +611,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "J"
+    "group": "J",
+    "status": "finished"
   },
   {
     "id": "match-021",
