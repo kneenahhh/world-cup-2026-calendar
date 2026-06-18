@@ -620,12 +620,14 @@
     "team1": {
       "name": "Portugal",
       "code": "POR",
-      "flag": "🇵🇹"
+      "flag": "🇵🇹",
+      "score": 1
     },
     "team2": {
       "name": "Congo DR",
       "code": "COD",
-      "flag": "🇨🇩"
+      "flag": "🇨🇩",
+      "score": 1
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -636,7 +638,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "K"
+    "group": "K",
+    "status": "finished"
   },
   {
     "id": "match-022",
@@ -644,12 +647,14 @@
     "team1": {
       "name": "England",
       "code": "ENG",
-      "flag": "🇬🇧"
+      "flag": "🇬🇧",
+      "score": 4
     },
     "team2": {
       "name": "Croatia",
       "code": "CRO",
-      "flag": "🇭🇷"
+      "flag": "🇭🇷",
+      "score": 2
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -660,7 +665,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "L"
+    "group": "L",
+    "status": "finished"
   },
   {
     "id": "match-023",
@@ -668,12 +674,14 @@
     "team1": {
       "name": "Panama",
       "code": "PAN",
-      "flag": "🇵🇦"
+      "flag": "🇵🇦",
+      "score": 0
     },
     "team2": {
       "name": "Ghana",
       "code": "GHA",
-      "flag": "🇬🇭"
+      "flag": "🇬🇭",
+      "score": 1
     },
     "stadium": "BMO Field",
     "city": "Toronto",
@@ -684,7 +692,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "L"
+    "group": "L",
+    "status": "finished"
   },
   {
     "id": "match-024",
