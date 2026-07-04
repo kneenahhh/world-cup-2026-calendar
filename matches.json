@@ -2488,12 +2488,14 @@
     "team1": {
       "name": "Round of 32 1 Winner",
       "code": "TBD",
-      "flag": "⚽"
+      "flag": "⚽",
+      "score": 0
     },
     "team2": {
       "name": "Round of 32 3 Winner",
       "code": "TBD",
-      "flag": "🏴"
+      "flag": "🏴",
+      "score": 3
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -2504,7 +2506,8 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-090",
@@ -2513,13 +2516,15 @@
       "name": "Paraguay",
       "code": "PAR",
       "flag": "🇵🇾",
-      "label": "Round of 32 2 Winner"
+      "label": "Round of 32 2 Winner",
+      "score": 0
     },
     "team2": {
       "name": "France",
       "code": "FRA",
       "flag": "🇫🇷",
-      "label": "Round of 32 5 Winner"
+      "label": "Round of 32 5 Winner",
+      "score": 0
     },
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -2530,7 +2535,8 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": ""
+    "group": "",
+    "status": "live"
   },
   {
     "id": "match-091",
