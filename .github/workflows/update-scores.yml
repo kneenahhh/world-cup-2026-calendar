@@ -2,29 +2,33 @@ name: Update Match Scores
 
 on:
   schedule:
-    # Runs every 3 hours
-    - cron: '0 */3 * * *'
-  workflow_dispatch: # Allows manual triggering
+    # Every 30 minutes during peak match hours (noon–midnight UTC = 8am–8pm ET)
+    - cron: '*/30 12-23 * * *'
+    # Every hour outside peak hours
+    - cron: '0 0-11 * * *'
+  workflow_dispatch: # Allows manual triggering from the Actions tab
 
 jobs:
   update-scores:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        
+        uses: actions/checkout@v4
+
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          
+          python-version: '3.12'
+
       - name: Install dependencies
         run: pip install requests
-        
+
       - name: Fetch and update scores
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python scripts/update_scores.py
-        
+
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -32,4 +36,4 @@ jobs:
           git add matches.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update match scores [automated]" && git push)
 
-# Made with Bob
+# Made with IBM Bob
