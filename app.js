@@ -2885,7 +2885,7 @@ class WorldCupCalendar {
             const hasScore = match.team1.score !== undefined && match.team2.score !== undefined;
             const isFinished = hasScore || (isPast && match.status === 'finished');
             
-            // Compact view for ALL past events (finished matches, past special events, or any past match)
+            // Compact view for ALL past events
             if (isPast) {
                 html += `
                     <div class="match-card match-card-compact ${isSelected ? 'selected' : ''} ${isSpecialEvent ? 'special-event' : ''} past-match" data-match-id="${match.id}">
@@ -2916,8 +2916,13 @@ class WorldCupCalendar {
                                 ${match.team2.label ? `<span class="bracket-label">${match.team2.label}</span>` : ''}
                             </div>` : ''}
                             <div class="match-meta-compact">
+                                <span class="date">📅 ${this.formatDate(match.date)}</span>
                                 <span class="time">🕐 ${this.formatTime(match.date)}</span>
                                 <span class="venue">📍 ${match.stadium}</span>
+                            </div>
+                            <div class="match-tags">
+                                ${!isSpecialEvent ? `<span class="match-stage-tag">${match.stage}</span>` : ''}
+                                ${match.group ? `<span class="match-group-tag">Group ${match.group}</span>` : ''}
                             </div>
                         </div>
                     </div>
@@ -2953,7 +2958,10 @@ class WorldCupCalendar {
                             <span class="match-venue">📍 ${match.stadium}, ${match.city}</span>
                             <span class="match-broadcast">📺 ${match.broadcast.join(', ')}</span>
                         </div>
-                        <span class="match-stage">${match.stage}${match.group ? ' - Group ' + match.group : ''}</span>
+                        <div class="match-tags">
+                            ${!isSpecialEvent ? `<span class="match-stage-tag">${match.stage}</span>` : ''}
+                            ${match.group ? `<span class="match-group-tag">Group ${match.group}</span>` : ''}
+                        </div>
                     </div>
                 </div>
             `;
@@ -3287,7 +3295,7 @@ class WorldCupCalendar {
                 <p><strong>📍 Stadium:</strong> ${match.stadium}</p>
                 <p><strong>🌍 Location:</strong> ${match.city}, ${match.country}</p>
                 <p><strong>📺 Watch on:</strong> ${match.broadcast.join(', ')}</p>
-                <p><strong>🏆 Stage:</strong> ${match.stage}${match.group ? ' - Group ' + match.group : ''}</p>
+                <p><strong>🏆 Stage:</strong> ${match.stage}${match.group ? ' · Group ' + match.group : ''}</p>
                 ${match.team1.label || match.team2.label ? `
                 <p><strong>🔖 Bracket:</strong>
                     ${match.team1.label ? `${match.team1.name} qualified as <em>${match.team1.label}</em>` : ''}
