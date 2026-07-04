@@ -31,13 +31,15 @@
       "name": "Mexico",
       "code": "MEX",
       "flag": "🇲🇽",
-      "score": 2
+      "score": 2,
+      "label": "Mexico"
     },
     "team2": {
       "name": "South Africa",
-      "code": "RSA",
+      "code": "SOU",
       "flag": "🇿🇦",
-      "score": 0
+      "score": 0,
+      "label": "South Africa"
     },
     "stadium": "Estadio Banorte",
     "city": "Mexico City",
@@ -56,15 +58,17 @@
     "date": "2026-06-12T02:00:00Z",
     "team1": {
       "name": "South Korea",
-      "code": "KOR",
+      "code": "SOU",
       "flag": "🇰🇷",
-      "score": 2
+      "score": 2,
+      "label": "South Korea"
     },
     "team2": {
       "name": "Czech Republic",
       "code": "CZE",
       "flag": "🇨🇿",
-      "score": 1
+      "score": 1,
+      "label": "Czech Republic"
     },
     "stadium": "Estadio Akron",
     "city": "Guadalajara",
@@ -110,13 +114,15 @@
       "name": "Canada",
       "code": "CAN",
       "flag": "🇨🇦",
-      "score": 1
+      "score": 1,
+      "label": "Canada"
     },
     "team2": {
       "name": "Bosnia & Herzegovina",
-      "code": "BIH",
+      "code": "BOS",
       "flag": "🇧🇦",
-      "score": 1
+      "score": 1,
+      "label": "Bosnia & Herzegovina"
     },
     "stadium": "BMO Field",
     "city": "Toronto",
@@ -162,13 +168,15 @@
       "name": "USA",
       "code": "USA",
       "flag": "🇺🇸",
-      "score": 4
+      "score": 4,
+      "label": "USA"
     },
     "team2": {
       "name": "Paraguay",
       "code": "PAR",
       "flag": "🇵🇾",
-      "score": 1
+      "score": 1,
+      "label": "Paraguay"
     },
     "stadium": "SoFi Stadium",
     "city": "LA",
@@ -189,13 +197,15 @@
       "name": "Qatar",
       "code": "QAT",
       "flag": "🇶🇦",
-      "score": 1
+      "score": 1,
+      "label": "Qatar"
     },
     "team2": {
       "name": "Switzerland",
-      "code": "SUI",
+      "code": "SWI",
       "flag": "🇨🇭",
-      "score": 1
+      "score": 1,
+      "label": "Switzerland"
     },
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -216,13 +226,15 @@
       "name": "Brazil",
       "code": "BRA",
       "flag": "🇧🇷",
-      "score": 1
+      "score": 1,
+      "label": "Brazil"
     },
     "team2": {
       "name": "Morocco",
-      "code": "MAR",
+      "code": "MOR",
       "flag": "🇲🇦",
-      "score": 1
+      "score": 1,
+      "label": "Morocco"
     },
     "stadium": "MetLife Stadium",
     "city": "NY/NJ",
@@ -241,15 +253,17 @@
     "date": "2026-06-14T01:00:00Z",
     "team1": {
       "name": "Haiti",
-      "code": "HTI",
+      "code": "HAI",
       "flag": "🇭🇹",
-      "score": 0
+      "score": 0,
+      "label": "Haiti"
     },
     "team2": {
       "name": "Scotland",
       "code": "SCO",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "score": 1
+      "score": 1,
+      "label": "Scotland"
     },
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -270,13 +284,15 @@
       "name": "Australia",
       "code": "AUS",
       "flag": "🇦🇺",
-      "score": 2
+      "score": 2,
+      "label": "Australia"
     },
     "team2": {
       "name": "Türkiye",
-      "code": "TUR",
+      "code": "TÜR",
       "flag": "🇹🇷",
-      "score": 0
+      "score": 0,
+      "label": "Türkiye"
     },
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -297,13 +313,15 @@
       "name": "Germany",
       "code": "GER",
       "flag": "🇩🇪",
-      "score": 7
+      "score": 7,
+      "label": "Germany"
     },
     "team2": {
       "name": "Curaçao",
       "code": "CUR",
       "flag": "🇨🇼",
-      "score": 1
+      "score": 1,
+      "label": "Curaçao"
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -322,15 +340,17 @@
     "date": "2026-06-14T20:00:00Z",
     "team1": {
       "name": "Netherlands",
-      "code": "NED",
+      "code": "NET",
       "flag": "🇳🇱",
-      "score": 2
+      "score": 2,
+      "label": "Netherlands"
     },
     "team2": {
       "name": "Japan",
-      "code": "JPN",
+      "code": "JAP",
       "flag": "🇯🇵",
-      "score": 2
+      "score": 2,
+      "label": "Japan"
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -351,13 +371,15 @@
       "name": "Ecuador",
       "code": "ECU",
       "flag": "🇪🇨",
-      "score": 0
+      "score": 0,
+      "label": "Ecuador"
     },
     "team2": {
       "name": "Ivory Coast",
-      "code": "CIV",
+      "code": "IVO",
       "flag": "🇨🇮",
-      "score": 1
+      "score": 1,
+      "label": "Ivory Coast"
     },
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -378,13 +400,15 @@
       "name": "Sweden",
       "code": "SWE",
       "flag": "🇸🇪",
-      "score": 5
+      "score": 5,
+      "label": "Sweden"
     },
     "team2": {
       "name": "Tunisia",
       "code": "TUN",
       "flag": "🇹🇳",
-      "score": 1
+      "score": 1,
+      "label": "Tunisia"
     },
     "stadium": "Estadio BBVA",
     "city": "Monterrey",
@@ -403,15 +427,17 @@
     "date": "2026-06-15T16:00:00Z",
     "team1": {
       "name": "Spain",
-      "code": "ESP",
+      "code": "SPA",
       "flag": "🇪🇸",
-      "score": 0
+      "score": 0,
+      "label": "Spain"
     },
     "team2": {
-      "name": "Cape Verde",
-      "code": "CPV",
-      "flag": "🇨🇻",
-      "score": 0
+      "name": "Cape Verde Islands",
+      "code": "CAP",
+      "flag": "⚽",
+      "score": 0,
+      "label": "Cape Verde"
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
@@ -432,13 +458,15 @@
       "name": "Belgium",
       "code": "BEL",
       "flag": "🇧🇪",
-      "score": 1
+      "score": 1,
+      "label": "Belgium"
     },
     "team2": {
       "name": "Egypt",
       "code": "EGY",
       "flag": "🇪🇬",
-      "score": 1
+      "score": 1,
+      "label": "Egypt"
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -459,13 +487,15 @@
       "name": "Uruguay",
       "code": "URU",
       "flag": "🇺🇾",
-      "score": 1
+      "score": 1,
+      "label": "Uruguay"
     },
     "team2": {
       "name": "Saudi Arabia",
       "code": "SAU",
       "flag": "🇸🇦",
-      "score": 1
+      "score": 1,
+      "label": "Saudi Arabia"
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -484,15 +514,17 @@
     "date": "2026-06-16T01:00:00Z",
     "team1": {
       "name": "Iran",
-      "code": "IRN",
+      "code": "IRA",
       "flag": "🇮🇷",
-      "score": 2
+      "score": 2,
+      "label": "Iran"
     },
     "team2": {
       "name": "New Zealand",
-      "code": "NZL",
+      "code": "NEW",
       "flag": "🇳🇿",
-      "score": 2
+      "score": 2,
+      "label": "New Zealand"
     },
     "stadium": "SoFi Stadium",
     "city": "LA",
@@ -513,13 +545,15 @@
       "name": "France",
       "code": "FRA",
       "flag": "🇫🇷",
-      "score": 3
+      "score": 3,
+      "label": "France"
     },
     "team2": {
       "name": "Senegal",
       "code": "SEN",
       "flag": "🇸🇳",
-      "score": 1
+      "score": 1,
+      "label": "Senegal"
     },
     "stadium": "MetLife Stadium",
     "city": "NY/NJ",
@@ -538,15 +572,17 @@
     "date": "2026-06-16T22:00:00Z",
     "team1": {
       "name": "Iraq",
-      "code": "IRQ",
+      "code": "IRA",
       "flag": "🇮🇶",
-      "score": 1
+      "score": 1,
+      "label": "Iraq"
     },
     "team2": {
       "name": "Norway",
       "code": "NOR",
       "flag": "🇳🇴",
-      "score": 4
+      "score": 4,
+      "label": "Norway"
     },
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -567,13 +603,15 @@
       "name": "Argentina",
       "code": "ARG",
       "flag": "🇦🇷",
-      "score": 3
+      "score": 3,
+      "label": "Argentina"
     },
     "team2": {
       "name": "Algeria",
       "code": "ALG",
       "flag": "🇩🇿",
-      "score": 0
+      "score": 0,
+      "label": "Algeria"
     },
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
@@ -592,15 +630,17 @@
     "date": "2026-06-17T04:00:00Z",
     "team1": {
       "name": "Austria",
-      "code": "AUT",
+      "code": "AUS",
       "flag": "🇦🇹",
-      "score": 3
+      "score": 3,
+      "label": "Austria"
     },
     "team2": {
       "name": "Jordan",
       "code": "JOR",
       "flag": "🇯🇴",
-      "score": 1
+      "score": 1,
+      "label": "Jordan"
     },
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -621,13 +661,15 @@
       "name": "Portugal",
       "code": "POR",
       "flag": "🇵🇹",
-      "score": 1
+      "score": 1,
+      "label": "Portugal"
     },
     "team2": {
       "name": "Congo DR",
-      "code": "COD",
+      "code": "CON",
       "flag": "🇨🇩",
-      "score": 1
+      "score": 1,
+      "label": "Congo DR"
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -647,14 +689,16 @@
     "team1": {
       "name": "England",
       "code": "ENG",
-      "flag": "🇬🇧",
-      "score": 4
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "score": 4,
+      "label": "England"
     },
     "team2": {
       "name": "Croatia",
       "code": "CRO",
       "flag": "🇭🇷",
-      "score": 2
+      "score": 2,
+      "label": "Croatia"
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -675,13 +719,15 @@
       "name": "Panama",
       "code": "PAN",
       "flag": "🇵🇦",
-      "score": 0
+      "score": 0,
+      "label": "Panama"
     },
     "team2": {
       "name": "Ghana",
       "code": "GHA",
       "flag": "🇬🇭",
-      "score": 1
+      "score": 1,
+      "label": "Ghana"
     },
     "stadium": "BMO Field",
     "city": "Toronto",
@@ -702,13 +748,15 @@
       "name": "Colombia",
       "code": "COL",
       "flag": "🇨🇴",
-      "score": 3
+      "score": 3,
+      "label": "Colombia"
     },
     "team2": {
       "name": "Uzbekistan",
       "code": "UZB",
       "flag": "🇺🇿",
-      "score": 1
+      "score": 1,
+      "label": "Uzbekistan"
     },
     "stadium": "Estadio Banorte",
     "city": "Mexico City",
@@ -729,13 +777,15 @@
       "name": "Czech Republic",
       "code": "CZE",
       "flag": "🇨🇿",
-      "score": 1
+      "score": 1,
+      "label": "Czech Republic"
     },
     "team2": {
       "name": "South Africa",
-      "code": "RSA",
+      "code": "SOU",
       "flag": "🇿🇦",
-      "score": 1
+      "score": 1,
+      "label": "South Africa"
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
@@ -754,15 +804,17 @@
     "date": "2026-06-18T19:00:00Z",
     "team1": {
       "name": "Switzerland",
-      "code": "SUI",
+      "code": "SWI",
       "flag": "🇨🇭",
-      "score": 4
+      "score": 4,
+      "label": "Switzerland"
     },
     "team2": {
       "name": "Bosnia & Herzegovina",
-      "code": "BIH",
+      "code": "BOS",
       "flag": "🇧🇦",
-      "score": 1
+      "score": 1,
+      "label": "Bosnia & Herzegovina"
     },
     "stadium": "SoFi Stadium",
     "city": "LA",
@@ -783,13 +835,15 @@
       "name": "Canada",
       "code": "CAN",
       "flag": "🇨🇦",
-      "score": 6
+      "score": 6,
+      "label": "Canada"
     },
     "team2": {
       "name": "Qatar",
       "code": "QAT",
       "flag": "🇶🇦",
-      "score": 0
+      "score": 0,
+      "label": "Qatar"
     },
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -810,13 +864,15 @@
       "name": "Mexico",
       "code": "MEX",
       "flag": "🇲🇽",
-      "score": 1
+      "score": 1,
+      "label": "Mexico"
     },
     "team2": {
       "name": "South Korea",
-      "code": "KOR",
+      "code": "SOU",
       "flag": "🇰🇷",
-      "score": 0
+      "score": 0,
+      "label": "South Korea"
     },
     "stadium": "Estadio Akron",
     "city": "Guadalajara",
@@ -837,13 +893,15 @@
       "name": "USA",
       "code": "USA",
       "flag": "🇺🇸",
-      "score": 2
+      "score": 2,
+      "label": "USA"
     },
     "team2": {
       "name": "Australia",
       "code": "AUS",
       "flag": "🇦🇺",
-      "score": 0
+      "score": 0,
+      "label": "Australia"
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -864,13 +922,15 @@
       "name": "Scotland",
       "code": "SCO",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "score": 0
+      "score": 0,
+      "label": "Scotland"
     },
     "team2": {
       "name": "Morocco",
-      "code": "MAR",
+      "code": "MOR",
       "flag": "🇲🇦",
-      "score": 1
+      "score": 1,
+      "label": "Morocco"
     },
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -891,13 +951,15 @@
       "name": "Brazil",
       "code": "BRA",
       "flag": "🇧🇷",
-      "score": 3
+      "score": 3,
+      "label": "Brazil"
     },
     "team2": {
       "name": "Haiti",
-      "code": "HTI",
+      "code": "HAI",
       "flag": "🇭🇹",
-      "score": 0
+      "score": 0,
+      "label": "Haiti"
     },
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -916,15 +978,17 @@
     "date": "2026-06-20T03:00:00Z",
     "team1": {
       "name": "Türkiye",
-      "code": "TUR",
+      "code": "TÜR",
       "flag": "🇹🇷",
-      "score": 0
+      "score": 0,
+      "label": "Türkiye"
     },
     "team2": {
       "name": "Paraguay",
       "code": "PAR",
       "flag": "🇵🇾",
-      "score": 1
+      "score": 1,
+      "label": "Paraguay"
     },
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -943,15 +1007,17 @@
     "date": "2026-06-20T17:00:00Z",
     "team1": {
       "name": "Netherlands",
-      "code": "NED",
+      "code": "NET",
       "flag": "🇳🇱",
-      "score": 5
+      "score": 5,
+      "label": "Netherlands"
     },
     "team2": {
       "name": "Sweden",
       "code": "SWE",
       "flag": "🇸🇪",
-      "score": 1
+      "score": 1,
+      "label": "Sweden"
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -972,13 +1038,15 @@
       "name": "Germany",
       "code": "GER",
       "flag": "🇩🇪",
-      "score": 2
+      "score": 2,
+      "label": "Germany"
     },
     "team2": {
       "name": "Ivory Coast",
-      "code": "CIV",
+      "code": "IVO",
       "flag": "🇨🇮",
-      "score": 1
+      "score": 1,
+      "label": "Ivory Coast"
     },
     "stadium": "BMO Field",
     "city": "Toronto",
@@ -999,13 +1067,15 @@
       "name": "Ecuador",
       "code": "ECU",
       "flag": "🇪🇨",
-      "score": 0
+      "score": 0,
+      "label": "Ecuador"
     },
     "team2": {
       "name": "Curaçao",
       "code": "CUR",
       "flag": "🇨🇼",
-      "score": 0
+      "score": 0,
+      "label": "Curaçao"
     },
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
@@ -1026,13 +1096,15 @@
       "name": "Tunisia",
       "code": "TUN",
       "flag": "🇹🇳",
-      "score": 0
+      "score": 0,
+      "label": "Tunisia"
     },
     "team2": {
       "name": "Japan",
-      "code": "JPN",
+      "code": "JAP",
       "flag": "🇯🇵",
-      "score": 4
+      "score": 4,
+      "label": "Japan"
     },
     "stadium": "Estadio BBVA",
     "city": "Monterrey",
@@ -1051,15 +1123,17 @@
     "date": "2026-06-21T16:00:00Z",
     "team1": {
       "name": "Spain",
-      "code": "ESP",
+      "code": "SPA",
       "flag": "🇪🇸",
-      "score": 4
+      "score": 4,
+      "label": "Spain"
     },
     "team2": {
       "name": "Saudi Arabia",
       "code": "SAU",
       "flag": "🇸🇦",
-      "score": 0
+      "score": 0,
+      "label": "Saudi Arabia"
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
@@ -1080,13 +1154,15 @@
       "name": "Belgium",
       "code": "BEL",
       "flag": "🇧🇪",
-      "score": 0
+      "score": 0,
+      "label": "Belgium"
     },
     "team2": {
       "name": "Iran",
-      "code": "IRN",
+      "code": "IRA",
       "flag": "🇮🇷",
-      "score": 0
+      "score": 0,
+      "label": "Iran"
     },
     "stadium": "SoFi Stadium",
     "city": "LA",
@@ -1106,12 +1182,16 @@
     "team1": {
       "name": "Uruguay",
       "code": "URU",
-      "flag": "🇺🇾"
+      "flag": "🇺🇾",
+      "label": "Uruguay",
+      "score": 2
     },
     "team2": {
-      "name": "Cape Verde",
-      "code": "CPV",
-      "flag": "🇨🇻"
+      "name": "Cape Verde Islands",
+      "code": "CAP",
+      "flag": "⚽",
+      "label": "Cape Verde",
+      "score": 2
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -1122,22 +1202,25 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "H"
+    "group": "H",
+    "status": "finished"
   },
   {
     "id": "match-040",
     "date": "2026-06-22T01:00:00Z",
     "team1": {
       "name": "New Zealand",
-      "code": "NZL",
+      "code": "NEW",
       "flag": "🇳🇿",
-      "score": 1
+      "score": 1,
+      "label": "New Zealand"
     },
     "team2": {
       "name": "Egypt",
       "code": "EGY",
       "flag": "🇪🇬",
-      "score": 3
+      "score": 3,
+      "label": "Egypt"
     },
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -1158,13 +1241,15 @@
       "name": "Argentina",
       "code": "ARG",
       "flag": "🇦🇷",
-      "score": 2
+      "score": 2,
+      "label": "Argentina"
     },
     "team2": {
       "name": "Austria",
-      "code": "AUT",
+      "code": "AUS",
       "flag": "🇦🇹",
-      "score": 0
+      "score": 0,
+      "label": "Austria"
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -1185,13 +1270,15 @@
       "name": "France",
       "code": "FRA",
       "flag": "🇫🇷",
-      "score": 3
+      "score": 3,
+      "label": "France"
     },
     "team2": {
       "name": "Iraq",
-      "code": "IRQ",
+      "code": "IRA",
       "flag": "🇮🇶",
-      "score": 0
+      "score": 0,
+      "label": "Iraq"
     },
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -1212,13 +1299,15 @@
       "name": "Norway",
       "code": "NOR",
       "flag": "🇳🇴",
-      "score": 3
+      "score": 3,
+      "label": "Norway"
     },
     "team2": {
       "name": "Senegal",
       "code": "SEN",
       "flag": "🇸🇳",
-      "score": 2
+      "score": 2,
+      "label": "Senegal"
     },
     "stadium": "MetLife Stadium",
     "city": "NY/NJ",
@@ -1239,13 +1328,15 @@
       "name": "Jordan",
       "code": "JOR",
       "flag": "🇯🇴",
-      "score": 1
+      "score": 1,
+      "label": "Jordan"
     },
     "team2": {
       "name": "Algeria",
       "code": "ALG",
       "flag": "🇩🇿",
-      "score": 2
+      "score": 2,
+      "label": "Algeria"
     },
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -1266,13 +1357,15 @@
       "name": "Portugal",
       "code": "POR",
       "flag": "🇵🇹",
-      "score": 5
+      "score": 5,
+      "label": "Portugal"
     },
     "team2": {
       "name": "Uzbekistan",
       "code": "UZB",
       "flag": "🇺🇿",
-      "score": 0
+      "score": 0,
+      "label": "Uzbekistan"
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -1292,14 +1385,16 @@
     "team1": {
       "name": "England",
       "code": "ENG",
-      "flag": "🇬🇧",
-      "score": 0
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "score": 0,
+      "label": "England"
     },
     "team2": {
       "name": "Ghana",
       "code": "GHA",
       "flag": "🇬🇭",
-      "score": 0
+      "score": 0,
+      "label": "Ghana"
     },
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -1320,13 +1415,15 @@
       "name": "Panama",
       "code": "PAN",
       "flag": "🇵🇦",
-      "score": 0
+      "score": 0,
+      "label": "Panama"
     },
     "team2": {
       "name": "Croatia",
       "code": "CRO",
       "flag": "🇭🇷",
-      "score": 1
+      "score": 1,
+      "label": "Croatia"
     },
     "stadium": "BMO Field",
     "city": "Toronto",
@@ -1347,13 +1444,15 @@
       "name": "Colombia",
       "code": "COL",
       "flag": "🇨🇴",
-      "score": 1
+      "score": 1,
+      "label": "Colombia"
     },
     "team2": {
       "name": "Congo DR",
-      "code": "COD",
+      "code": "CON",
       "flag": "🇨🇩",
-      "score": 0
+      "score": 0,
+      "label": "Congo DR"
     },
     "stadium": "Estadio Akron",
     "city": "Guadalajara",
@@ -1372,15 +1471,17 @@
     "date": "2026-06-24T19:00:00Z",
     "team1": {
       "name": "Switzerland",
-      "code": "SUI",
+      "code": "SWI",
       "flag": "🇨🇭",
-      "score": 2
+      "score": 2,
+      "label": "Switzerland"
     },
     "team2": {
       "name": "Canada",
       "code": "CAN",
       "flag": "🇨🇦",
-      "score": 1
+      "score": 1,
+      "label": "Canada"
     },
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -1399,15 +1500,17 @@
     "date": "2026-06-24T19:00:00Z",
     "team1": {
       "name": "Bosnia & Herzegovina",
-      "code": "BIH",
+      "code": "BOS",
       "flag": "🇧🇦",
-      "score": 3
+      "score": 3,
+      "label": "Bosnia & Herzegovina"
     },
     "team2": {
       "name": "Qatar",
       "code": "QAT",
       "flag": "🇶🇦",
-      "score": 1
+      "score": 1,
+      "label": "Qatar"
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -1426,15 +1529,17 @@
     "date": "2026-06-24T22:00:00Z",
     "team1": {
       "name": "Morocco",
-      "code": "MAR",
+      "code": "MOR",
       "flag": "🇲🇦",
-      "score": 4
+      "score": 4,
+      "label": "Morocco"
     },
     "team2": {
       "name": "Haiti",
-      "code": "HTI",
+      "code": "HAI",
       "flag": "🇭🇹",
-      "score": 2
+      "score": 2,
+      "label": "Haiti"
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
@@ -1455,13 +1560,15 @@
       "name": "Brazil",
       "code": "BRA",
       "flag": "🇧🇷",
-      "score": 3
+      "score": 3,
+      "label": "Brazil"
     },
     "team2": {
       "name": "Scotland",
       "code": "SCO",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "score": 0
+      "score": 0,
+      "label": "Scotland"
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -1480,15 +1587,17 @@
     "date": "2026-06-25T01:00:00Z",
     "team1": {
       "name": "South Africa",
-      "code": "RSA",
+      "code": "SOU",
       "flag": "🇿🇦",
-      "score": 1
+      "score": 1,
+      "label": "South Africa"
     },
     "team2": {
       "name": "South Korea",
-      "code": "KOR",
+      "code": "SOU",
       "flag": "🇰🇷",
-      "score": 0
+      "score": 0,
+      "label": "South Korea"
     },
     "stadium": "Estadio BBVA",
     "city": "Monterrey",
@@ -1509,13 +1618,15 @@
       "name": "Mexico",
       "code": "MEX",
       "flag": "🇲🇽",
-      "score": 3
+      "score": 3,
+      "label": "Mexico"
     },
     "team2": {
       "name": "Czech Republic",
       "code": "CZE",
       "flag": "🇨🇿",
-      "score": 0
+      "score": 0,
+      "label": "Czech Republic"
     },
     "stadium": "Estadio Azteca",
     "city": "Mexico City",
@@ -1536,13 +1647,15 @@
       "name": "Curaçao",
       "code": "CUR",
       "flag": "🇨🇼",
-      "score": 0
+      "score": 0,
+      "label": "Curaçao"
     },
     "team2": {
       "name": "Ivory Coast",
-      "code": "CIV",
+      "code": "IVO",
       "flag": "🇨🇮",
-      "score": 2
+      "score": 2,
+      "label": "Ivory Coast"
     },
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -1563,13 +1676,15 @@
       "name": "Ecuador",
       "code": "ECU",
       "flag": "🇪🇨",
-      "score": 2
+      "score": 2,
+      "label": "Ecuador"
     },
     "team2": {
       "name": "Germany",
       "code": "GER",
       "flag": "🇩🇪",
-      "score": 1
+      "score": 1,
+      "label": "Germany"
     },
     "stadium": "MetLife Stadium",
     "city": "NY/NJ",
@@ -1590,13 +1705,15 @@
       "name": "Tunisia",
       "code": "TUN",
       "flag": "🇹🇳",
-      "score": 1
+      "score": 1,
+      "label": "Tunisia"
     },
     "team2": {
       "name": "Netherlands",
-      "code": "NED",
+      "code": "NET",
       "flag": "🇳🇱",
-      "score": 3
+      "score": 3,
+      "label": "Netherlands"
     },
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
@@ -1615,15 +1732,17 @@
     "date": "2026-06-25T23:00:00Z",
     "team1": {
       "name": "Japan",
-      "code": "JPN",
+      "code": "JAP",
       "flag": "🇯🇵",
-      "score": 1
+      "score": 1,
+      "label": "Japan"
     },
     "team2": {
       "name": "Sweden",
       "code": "SWE",
       "flag": "🇸🇪",
-      "score": 1
+      "score": 1,
+      "label": "Sweden"
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -1644,13 +1763,15 @@
       "name": "Paraguay",
       "code": "PAR",
       "flag": "🇵🇾",
-      "score": 0
+      "score": 0,
+      "label": "Paraguay"
     },
     "team2": {
       "name": "Australia",
       "code": "AUS",
       "flag": "🇦🇺",
-      "score": 0
+      "score": 0,
+      "label": "Australia"
     },
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -1671,13 +1792,15 @@
       "name": "USA",
       "code": "USA",
       "flag": "🇺🇸",
-      "score": 2
+      "score": 2,
+      "label": "USA"
     },
     "team2": {
       "name": "Türkiye",
-      "code": "TUR",
+      "code": "TÜR",
       "flag": "🇹🇷",
-      "score": 3
+      "score": 3,
+      "label": "Türkiye"
     },
     "stadium": "SoFi Stadium",
     "city": "LA",
@@ -1698,13 +1821,15 @@
       "name": "Norway",
       "code": "NOR",
       "flag": "🇳🇴",
-      "score": 1
+      "score": 1,
+      "label": "Norway"
     },
     "team2": {
       "name": "France",
       "code": "FRA",
       "flag": "🇫🇷",
-      "score": 4
+      "score": 4,
+      "label": "France"
     },
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -1725,13 +1850,15 @@
       "name": "Senegal",
       "code": "SEN",
       "flag": "🇸🇳",
-      "score": 5
+      "score": 5,
+      "label": "Senegal"
     },
     "team2": {
       "name": "Iraq",
-      "code": "IRQ",
+      "code": "IRA",
       "flag": "🇮🇶",
-      "score": 0
+      "score": 0,
+      "label": "Iraq"
     },
     "stadium": "BMO Field",
     "city": "Toronto",
@@ -1749,14 +1876,18 @@
     "id": "match-063",
     "date": "2026-06-27T00:00:00Z",
     "team1": {
-      "name": "Cape Verde",
-      "code": "CPV",
-      "flag": "🇨🇻"
+      "name": "Cape Verde Islands",
+      "code": "CAP",
+      "flag": "⚽",
+      "label": "Cape Verde",
+      "score": 0
     },
     "team2": {
       "name": "Saudi Arabia",
       "code": "SAU",
-      "flag": "🇸🇦"
+      "flag": "🇸🇦",
+      "label": "Saudi Arabia",
+      "score": 0
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -1767,7 +1898,8 @@
       "Peacock"
     ],
     "stage": "Group Stage",
-    "group": "H"
+    "group": "H",
+    "status": "finished"
   },
   {
     "id": "match-064",
@@ -1776,13 +1908,15 @@
       "name": "Uruguay",
       "code": "URU",
       "flag": "🇺🇾",
-      "score": 0
+      "score": 0,
+      "label": "Uruguay"
     },
     "team2": {
       "name": "Spain",
-      "code": "ESP",
+      "code": "SPA",
       "flag": "🇪🇸",
-      "score": 1
+      "score": 1,
+      "label": "Spain"
     },
     "stadium": "Estadio Akron",
     "city": "Guadalajara",
@@ -1803,13 +1937,15 @@
       "name": "Egypt",
       "code": "EGY",
       "flag": "🇪🇬",
-      "score": 1
+      "score": 1,
+      "label": "Egypt"
     },
     "team2": {
       "name": "Iran",
-      "code": "IRN",
+      "code": "IRA",
       "flag": "🇮🇷",
-      "score": 1
+      "score": 1,
+      "label": "Iran"
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -1828,15 +1964,17 @@
     "date": "2026-06-27T03:00:00Z",
     "team1": {
       "name": "New Zealand",
-      "code": "NZL",
+      "code": "NEW",
       "flag": "🇳🇿",
-      "score": 1
+      "score": 1,
+      "label": "New Zealand"
     },
     "team2": {
       "name": "Belgium",
       "code": "BEL",
       "flag": "🇧🇪",
-      "score": 5
+      "score": 5,
+      "label": "Belgium"
     },
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -1857,13 +1995,15 @@
       "name": "Croatia",
       "code": "CRO",
       "flag": "🇭🇷",
-      "score": 2
+      "score": 2,
+      "label": "Croatia"
     },
     "team2": {
       "name": "Ghana",
       "code": "GHA",
       "flag": "🇬🇭",
-      "score": 1
+      "score": 1,
+      "label": "Ghana"
     },
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -1884,13 +2024,15 @@
       "name": "Panama",
       "code": "PAN",
       "flag": "🇵🇦",
-      "score": 0
+      "score": 0,
+      "label": "Panama"
     },
     "team2": {
       "name": "England",
       "code": "ENG",
-      "flag": "🇬🇧",
-      "score": 2
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "score": 2,
+      "label": "England"
     },
     "stadium": "MetLife Stadium",
     "city": "NY/NJ",
@@ -1911,13 +2053,15 @@
       "name": "Colombia",
       "code": "COL",
       "flag": "🇨🇴",
-      "score": 0
+      "score": 0,
+      "label": "Colombia"
     },
     "team2": {
       "name": "Portugal",
       "code": "POR",
       "flag": "🇵🇹",
-      "score": 0
+      "score": 0,
+      "label": "Portugal"
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -1936,15 +2080,17 @@
     "date": "2026-06-27T23:30:00Z",
     "team1": {
       "name": "Congo DR",
-      "code": "COD",
+      "code": "CON",
       "flag": "🇨🇩",
-      "score": 3
+      "score": 3,
+      "label": "Congo DR"
     },
     "team2": {
       "name": "Uzbekistan",
       "code": "UZB",
       "flag": "🇺🇿",
-      "score": 1
+      "score": 1,
+      "label": "Uzbekistan"
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
@@ -1965,13 +2111,15 @@
       "name": "Algeria",
       "code": "ALG",
       "flag": "🇩🇿",
-      "score": 3
+      "score": 3,
+      "label": "Algeria"
     },
     "team2": {
       "name": "Austria",
-      "code": "AUT",
+      "code": "AUS",
       "flag": "🇦🇹",
-      "score": 3
+      "score": 3,
+      "label": "Austria"
     },
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
@@ -1992,13 +2140,15 @@
       "name": "Jordan",
       "code": "JOR",
       "flag": "🇯🇴",
-      "score": 1
+      "score": 1,
+      "label": "Jordan"
     },
     "team2": {
       "name": "Argentina",
       "code": "ARG",
       "flag": "🇦🇷",
-      "score": 3
+      "score": 3,
+      "label": "Argentina"
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -2016,14 +2166,18 @@
     "id": "match-073",
     "date": "2026-06-28T19:00:00Z",
     "team1": {
-      "name": "Group A 2nd Place",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "South Africa",
+      "code": "SOU",
+      "flag": "🇿🇦",
+      "label": "Group A 2nd Place",
+      "score": 0
     },
     "team2": {
-      "name": "Group B 2nd Place",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Canada",
+      "code": "CAN",
+      "flag": "🇨🇦",
+      "label": "Group B 2nd Place",
+      "score": 1
     },
     "stadium": "SoFi Stadium",
     "city": "LA",
@@ -2034,20 +2188,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-074",
     "date": "2026-06-29T17:00:00Z",
     "team1": {
-      "name": "Group C Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Brazil",
+      "code": "BRA",
+      "flag": "🇧🇷",
+      "label": "Group C Winner",
+      "score": 2
     },
     "team2": {
-      "name": "Group F 2nd Place",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Japan",
+      "code": "JAP",
+      "flag": "🇯🇵",
+      "label": "Group F 2nd Place",
+      "score": 1
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -2058,20 +2217,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-075",
     "date": "2026-06-29T20:30:00Z",
     "team1": {
-      "name": "Group E Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Germany",
+      "code": "GER",
+      "flag": "🇩🇪",
+      "label": "Group E Winner",
+      "score": 4
     },
     "team2": {
-      "name": "3rd Place Group A/B/C/D/F",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Paraguay",
+      "code": "PAR",
+      "flag": "🇵🇾",
+      "label": "3rd Place Group A/B/C/D/F",
+      "score": 5
     },
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -2082,20 +2246,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-076",
     "date": "2026-06-30T01:00:00Z",
     "team1": {
-      "name": "Group F Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Netherlands",
+      "code": "NET",
+      "flag": "🇳🇱",
+      "label": "Group F Winner",
+      "score": 3
     },
     "team2": {
-      "name": "Group C 2nd Place",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Morocco",
+      "code": "MOR",
+      "flag": "🇲🇦",
+      "label": "Group C 2nd Place",
+      "score": 4
     },
     "stadium": "Estadio BBVA",
     "city": "Monterrey",
@@ -2106,20 +2275,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-077",
     "date": "2026-06-30T17:00:00Z",
     "team1": {
-      "name": "Group E 2nd Place",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Ivory Coast",
+      "code": "IVO",
+      "flag": "🇨🇮",
+      "label": "Group E 2nd Place",
+      "score": 1
     },
     "team2": {
-      "name": "Group I 2nd Place",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Norway",
+      "code": "NOR",
+      "flag": "🇳🇴",
+      "label": "Group I 2nd Place",
+      "score": 2
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -2130,20 +2304,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-078",
     "date": "2026-06-30T21:00:00Z",
     "team1": {
-      "name": "Group I Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "France",
+      "code": "FRA",
+      "flag": "🇫🇷",
+      "label": "Group I Winner",
+      "score": 3
     },
     "team2": {
-      "name": "Third Place Group C/D/F/G/H",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Sweden",
+      "code": "SWE",
+      "flag": "🇸🇪",
+      "label": "Third Place Group C/D/F/G/H",
+      "score": 0
     },
     "stadium": "MetLife Stadium",
     "city": "NY/NJ",
@@ -2154,7 +2333,8 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-079",
@@ -2184,14 +2364,18 @@
     "id": "match-080",
     "date": "2026-07-01T16:00:00Z",
     "team1": {
-      "name": "Group L Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "England",
+      "code": "ENG",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "label": "Group L Winner",
+      "score": 2
     },
     "team2": {
-      "name": "3rd Place Group E/H/I/J/K",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Congo DR",
+      "code": "CON",
+      "flag": "🇨🇩",
+      "label": "3rd Place Group E/H/I/J/K",
+      "score": 1
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
@@ -2202,20 +2386,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-081",
     "date": "2026-07-01T20:00:00Z",
     "team1": {
-      "name": "Group G Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Belgium",
+      "code": "BEL",
+      "flag": "🇧🇪",
+      "label": "Group G Winner",
+      "score": 3
     },
     "team2": {
-      "name": "3rd Place Group A/E/H/I/J",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Senegal",
+      "code": "SEN",
+      "flag": "🇸🇳",
+      "label": "3rd Place Group A/E/H/I/J",
+      "score": 2
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -2226,20 +2415,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-082",
     "date": "2026-07-02T00:00:00Z",
     "team1": {
-      "name": "Group D Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "USA",
+      "code": "USA",
+      "flag": "🇺🇸",
+      "label": "Group D Winner",
+      "score": 2
     },
     "team2": {
-      "name": "3rd Place Group B/E/F/I/J",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Bosnia & Herzegovina",
+      "code": "BOS",
+      "flag": "🇧🇦",
+      "label": "3rd Place Group B/E/F/I/J",
+      "score": 0
     },
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -2250,20 +2444,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-083",
     "date": "2026-07-02T19:00:00Z",
     "team1": {
-      "name": "Group H Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Spain",
+      "code": "SPA",
+      "flag": "🇪🇸",
+      "label": "Group H Winner",
+      "score": 3
     },
     "team2": {
-      "name": "Group J 2nd Place",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Austria",
+      "code": "AUS",
+      "flag": "🇦🇹",
+      "label": "Group J 2nd Place",
+      "score": 0
     },
     "stadium": "SoFi Stadium",
     "city": "LA",
@@ -2274,20 +2473,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-084",
     "date": "2026-07-02T23:00:00Z",
     "team1": {
-      "name": "Group K 2nd Place",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Portugal",
+      "code": "POR",
+      "flag": "🇵🇹",
+      "label": "Group K 2nd Place",
+      "score": 2
     },
     "team2": {
-      "name": "Group L 2nd Place",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Croatia",
+      "code": "CRO",
+      "flag": "🇭🇷",
+      "label": "Group L 2nd Place",
+      "score": 1
     },
     "stadium": "BMO Field",
     "city": "Toronto",
@@ -2298,20 +2502,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-085",
     "date": "2026-07-03T03:00:00Z",
     "team1": {
-      "name": "Group B Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Switzerland",
+      "code": "SWI",
+      "flag": "🇨🇭",
+      "label": "Group B Winner",
+      "score": 2
     },
     "team2": {
-      "name": "3rd Place E/F/G/I/J",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Algeria",
+      "code": "ALG",
+      "flag": "🇩🇿",
+      "label": "3rd Place E/F/G/I/J",
+      "score": 0
     },
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -2322,20 +2531,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-086",
     "date": "2026-07-03T18:00:00Z",
     "team1": {
-      "name": "Group D 2nd Place",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Australia",
+      "code": "AUS",
+      "flag": "🇦🇺",
+      "label": "Group D 2nd Place",
+      "score": 3
     },
     "team2": {
-      "name": "Group G 2nd Place",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Egypt",
+      "code": "EGY",
+      "flag": "🇪🇬",
+      "label": "Group G 2nd Place",
+      "score": 5
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -2346,20 +2560,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-087",
     "date": "2026-07-03T22:00:00Z",
     "team1": {
-      "name": "Group J Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Argentina",
+      "code": "ARG",
+      "flag": "🇦🇷",
+      "label": "Group J Winner",
+      "score": 3
     },
     "team2": {
-      "name": "Group H 2nd Place",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Cape Verde Islands",
+      "code": "CAP",
+      "flag": "⚽",
+      "label": "Group H 2nd Place",
+      "score": 2
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -2370,20 +2589,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-088",
     "date": "2026-07-04T01:30:00Z",
     "team1": {
-      "name": "Group K Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Colombia",
+      "code": "COL",
+      "flag": "🇨🇴",
+      "label": "Group K Winner",
+      "score": 1
     },
     "team2": {
-      "name": "3rd Place D/E/I/J/L",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Ghana",
+      "code": "GHA",
+      "flag": "🇬🇭",
+      "label": "3rd Place D/E/I/J/L",
+      "score": 0
     },
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
@@ -2394,20 +2618,25 @@
       "Peacock"
     ],
     "stage": "Round of 32",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-089",
     "date": "2026-07-04T17:00:00Z",
     "team1": {
-      "name": "Round of 32 1 Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Canada",
+      "code": "CAN",
+      "flag": "🇨🇦",
+      "label": "Round of 32 1 Winner",
+      "score": 0
     },
     "team2": {
-      "name": "Round of 32 3 Winner",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Morocco",
+      "code": "MOR",
+      "flag": "🇲🇦",
+      "label": "Round of 32 3 Winner",
+      "score": 3
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -2418,7 +2647,8 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-090",
