@@ -2258,14 +2258,14 @@
       "code": "USA",
       "flag": "🇺🇸",
       "label": "Group G Winner",
-      "score": 3
+      "score": 2
     },
     "team2": {
       "name": "Bosnia & Herzegovina",
       "code": "BOS",
       "flag": "🇧🇦",
       "label": "3rd Place Group A/E/H/I/J",
-      "score": 2
+      "score": 0
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -2352,7 +2352,7 @@
       "code": "ALG",
       "flag": "🇩🇿",
       "label": "Group L 2nd Place",
-      "score": 1
+      "score": 0
     },
     "stadium": "BMO Field",
     "city": "Toronto",
@@ -2432,14 +2432,14 @@
       "code": "COL",
       "flag": "🇨🇴",
       "label": "Group J Winner",
-      "score": 3
+      "score": 1
     },
     "team2": {
       "name": "Ghana",
       "code": "GHA",
       "flag": "🇬🇭",
       "label": "Group H 2nd Place",
-      "score": 2
+      "score": 0
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -2488,14 +2488,12 @@
     "team1": {
       "name": "Round of 32 1 Winner",
       "code": "TBD",
-      "flag": "⚽",
-      "score": 0
+      "flag": "⚽"
     },
     "team2": {
       "name": "Round of 32 3 Winner",
       "code": "TBD",
-      "flag": "🏴",
-      "score": 3
+      "flag": "🏴"
     },
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -2506,8 +2504,7 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": "",
-    "status": "finished"
+    "group": ""
   },
   {
     "id": "match-090",
@@ -2591,16 +2588,16 @@
     "id": "match-093",
     "date": "2026-07-06T19:00:00Z",
     "team1": {
-      "name": "USA",
-      "code": "USA",
-      "flag": "🇺🇸",
-      "label": "Round of 32 11 Winner"
+      "name": "Portugal",
+      "code": "POR",
+      "flag": "🇵🇹",
+      "label": "Round of 32 9 Winner"
     },
     "team2": {
-      "name": "Belgium",
-      "code": "BEL",
-      "flag": "🇧🇪",
-      "label": "Round of 32 12 Winner"
+      "name": "Spain",
+      "code": "ESP",
+      "flag": "🇪🇸",
+      "label": "Round of 32 10 Winner"
     },
     "stadium": "AT&T Stadium",
     "city": "Dallas",
@@ -2617,16 +2614,16 @@
     "id": "match-094",
     "date": "2026-07-07T00:00:00Z",
     "team1": {
-      "name": "Portugal",
-      "code": "POR",
-      "flag": "🇵🇹",
-      "label": "Round of 32 9 Winner"
+      "name": "USA",
+      "code": "USA",
+      "flag": "🇺🇸",
+      "label": "Round of 32 11 Winner"
     },
     "team2": {
-      "name": "Spain",
-      "code": "SPA",
-      "flag": "🇪🇸",
-      "label": "Round of 32 10 Winner"
+      "name": "Belgium",
+      "code": "BEL",
+      "flag": "🇧🇪",
+      "label": "Round of 32 12 Winner"
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
