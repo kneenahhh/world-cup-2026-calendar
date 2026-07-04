@@ -36,8 +36,12 @@ TEAM_NAME_MAP = {
     "Czech Republic": "Czech Republic",
     "Cape Verde": "Cape Verde",
     "Cabo Verde": "Cape Verde",
+    "Cape Verde Islands": "Cape Verde",
     "New Zealand": "New Zealand",
     "Saudi Arabia": "Saudi Arabia",
+    "England": "England",
+    "Wales": "Wales",
+    "Northern Ireland": "Northern Ireland",
 }
 
 
@@ -301,15 +305,33 @@ def update_match_scores():
         if match_time > now:
             continue  # Not started yet
 
-        # Skip matches already finished with scores AND with real team names
+        # Normalise whatever name is currently in matches.json so we can
+        # detect whether it's a real country regardless of spelling variants
+        t1_norm = normalise(t1_name)
+        t2_norm = normalise(t2_name)
+        t1_has_real_name = not is_tbd(t1_norm)
+        t2_has_real_name = not is_tbd(t2_norm)
+
+        # Ensure any previously-written name variants are corrected to canonical form
+        if t1_has_real_name and match["team1"]["name"] != t1_norm:
+            match["team1"]["name"] = t1_norm
+            match["team1"]["flag"] = flag_for(t1_norm)
+        if t2_has_real_name and match["team2"]["name"] != t2_norm:
+            match["team2"]["name"] = t2_norm
+            match["team2"]["flag"] = flag_for(t2_norm)
+
+        # Skip matches already finished with real team names and scores
         already_done = (
             match.get("status") == "finished"
             and "score" in match.get("team1", {})
             and "score" in match.get("team2", {})
-            and not is_tbd(t1_name)
-            and not is_tbd(t2_name)
+            and t1_has_real_name
+            and t2_has_real_name
         )
         if already_done:
+            # Still save if name was just corrected above
+            if match["team1"]["name"] != t1_name or match["team2"]["name"] != t2_name:
+                updated_count += 1
             continue
 
         # Try to get score + real team data from the API
@@ -318,21 +340,21 @@ def update_match_scores():
         if result:
             changed = False
 
-            # Update real team names for knockout slots that had TBD placeholders
-            if is_tbd(t1_name) and result["real_t1_name"]:
-                match["team1"]["label"] = t1_name          # preserve bracket label
+            # Update real team names only for slots that still have TBD placeholders
+            if is_tbd(t1_name) and result["real_t1_name"] and not is_tbd(result["real_t1_name"]):
+                match["team1"]["label"] = t1_name
                 match["team1"]["name"]  = result["real_t1_name"]
                 match["team1"]["flag"]  = result["real_t1_flag"]
                 match["team1"]["code"]  = result["real_t1_name"][:3].upper()
                 changed = True
-            if is_tbd(t2_name) and result["real_t2_name"]:
-                match["team2"]["label"] = t2_name          # preserve bracket label
+            if is_tbd(t2_name) and result["real_t2_name"] and not is_tbd(result["real_t2_name"]):
+                match["team2"]["label"] = t2_name
                 match["team2"]["name"]  = result["real_t2_name"]
                 match["team2"]["flag"]  = result["real_t2_flag"]
                 match["team2"]["code"]  = result["real_t2_name"][:3].upper()
                 changed = True
 
-            # Update scores when available
+            # Update scores only when they are new or changed
             if result["team1_score"] is not None and result["team2_score"] is not None:
                 if match["team1"].get("score") != result["team1_score"] \
                         or match["team2"].get("score") != result["team2_score"]:
@@ -340,7 +362,8 @@ def update_match_scores():
                     match["team2"]["score"] = result["team2_score"]
                     changed = True
 
-            if match.get("status") != result["status"] and result["status"] not in ("scheduled", ""):
+            if result["status"] not in ("scheduled", "") \
+                    and match.get("status") != result["status"]:
                 match["status"] = result["status"]
                 changed = True
 
