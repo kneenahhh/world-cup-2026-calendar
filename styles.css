@@ -477,6 +477,25 @@ body {
     background: #9c27b0;
 }
 
+/* Bracket origin labels (e.g. "Group A 2nd Place") on knockout match cards */
+.bracket-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.bracket-label {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #f0f4ff;
+    color: #3a5bd9;
+    border: 1px solid #c5d0f5;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
 /* Calendar View */
 .calendar-view {
     padding: 30px;
