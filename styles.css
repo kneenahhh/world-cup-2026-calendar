@@ -462,19 +462,37 @@ body {
     font-size: 0.9rem;
 }
 
-.match-stage {
+.special-event .match-stage-tag {
+    background: #9c27b0;
+}
+
+/* Stage + Group tags row on match cards */
+.match-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.match-stage-tag {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 3px 10px;
     background: var(--primary-color);
     color: white;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    margin-top: 10px;
 }
 
-.special-event .match-stage {
-    background: #9c27b0;
+.match-group-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #e8f0fe;
+    color: #1a56c4;
+    border: 1px solid #c5d5f7;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
 }
 
 /* Bracket origin labels (e.g. "Group A 2nd Place") on knockout match cards */
@@ -859,10 +877,9 @@ body {
         font-size: 0.75rem;
     }
 
-    .match-stage {
+    .match-stage-tag, .match-group-tag {
         font-size: 0.7rem;
         padding: 2px 8px;
-        margin-top: 6px;
     }
 
     .past-label, .final-badge {
