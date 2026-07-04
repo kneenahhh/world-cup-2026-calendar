@@ -2910,6 +2910,11 @@ class WorldCupCalendar {
                                 <span class="team-score">${match.team2.name} ${match.team2.flag}</span>
                             </div>
                             `}
+                            ${(match.team1.label || match.team2.label) ? `
+                            <div class="bracket-labels">
+                                ${match.team1.label ? `<span class="bracket-label">${match.team1.label}</span>` : ''}
+                                ${match.team2.label ? `<span class="bracket-label">${match.team2.label}</span>` : ''}
+                            </div>` : ''}
                             <div class="match-meta-compact">
                                 <span class="time">🕐 ${this.formatTime(match.date)}</span>
                                 <span class="venue">📍 ${match.stadium}</span>
@@ -2935,6 +2940,11 @@ class WorldCupCalendar {
                             <span class="vs">vs</span>
                             <span class="team">${match.team2.name} ${match.team2.flag}</span>
                         </div>
+                        ${(match.team1.label || match.team2.label) ? `
+                        <div class="bracket-labels">
+                            ${match.team1.label ? `<span class="bracket-label">${match.team1.label}</span>` : ''}
+                            ${match.team2.label ? `<span class="bracket-label">${match.team2.label}</span>` : ''}
+                        </div>` : ''}
                         <div class="match-details">
                             <span class="date">📅 ${this.formatDate(match.date)}</span>
                             <span class="time">🕐 ${this.formatTime(match.date)}</span>
@@ -3278,6 +3288,12 @@ class WorldCupCalendar {
                 <p><strong>🌍 Location:</strong> ${match.city}, ${match.country}</p>
                 <p><strong>📺 Watch on:</strong> ${match.broadcast.join(', ')}</p>
                 <p><strong>🏆 Stage:</strong> ${match.stage}${match.group ? ' - Group ' + match.group : ''}</p>
+                ${match.team1.label || match.team2.label ? `
+                <p><strong>🔖 Bracket:</strong>
+                    ${match.team1.label ? `${match.team1.name} qualified as <em>${match.team1.label}</em>` : ''}
+                    ${match.team1.label && match.team2.label ? ' · ' : ''}
+                    ${match.team2.label ? `${match.team2.name} qualified as <em>${match.team2.label}</em>` : ''}
+                </p>` : ''}
                 ${performerInfo}
             </div>
             ${addButton}
