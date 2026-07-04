@@ -2855,12 +2855,14 @@ class WorldCupCalendar {
         }
 
         // Group matches by day and add spacers for proper 2-column layout
+        // Grouping uses UTC date (FIFA schedule date) so late-night ET games
+        // appear under the correct tournament date, not the previous calendar day.
         let html = '';
         let currentDate = '';
         let matchesInCurrentDay = 0;
         
         this.filteredMatches.forEach((match, index) => {
-            const matchDate = this.formatDate(match.date);
+            const matchDate = this.formatDateHeader(match.date);
             
             // Check if we're starting a new day
             if (matchDate !== currentDate) {
@@ -3103,17 +3105,37 @@ class WorldCupCalendar {
     }
 
     /**
-     * Format date for display
+     * Format date for display on cards and modal (ET, no year)
      */
     formatDate(dateString) {
         const date = new Date(dateString);
         return new Intl.DateTimeFormat('en-US', {
             timeZone: this.currentTimezone,
             weekday: 'long',
-            year: 'numeric',
             month: 'long',
             day: 'numeric'
         }).format(date);
+    }
+
+    /**
+     * Format date for day-group headers — uses UTC calendar date so games
+     * group under FIFA's published match date regardless of local timezone.
+     */
+    formatDateHeader(dateString) {
+        // Extract UTC date parts directly from the ISO string to avoid any
+        // timezone shift when determining which "day" a match belongs to.
+        const utcDate = new Date(dateString);
+        const utcYear  = utcDate.getUTCFullYear();
+        const utcMonth = utcDate.getUTCMonth();
+        const utcDay   = utcDate.getUTCDate();
+        // Build a display string using a neutral locale date (no timezone conversion)
+        const display = new Date(Date.UTC(utcYear, utcMonth, utcDay));
+        return new Intl.DateTimeFormat('en-US', {
+            timeZone: 'UTC',
+            weekday: 'long',
+            month: 'long',
+            day: 'numeric'
+        }).format(display);
     }
 
     /**
