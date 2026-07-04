@@ -11,7 +11,7 @@ Free tier: 10 requests/minute, no daily cap.
 
 import requests
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import os
 import sys
 
@@ -123,43 +123,45 @@ def is_tbd(name: str) -> bool:
     return any(p in name for p in _TBD_PATTERNS)
 
 
-def build_api_lookup(api_matches: list) -> dict:
+def build_api_lookup(api_matches: list) -> tuple:
     """
-    Build two lookup dicts:
+    Build two lookup structures:
       - by_teams: (norm_home, norm_away, date_str) → fixture  (for group stage)
-      - by_datetime: "YYYY-MM-DDTHH:MM" → fixture             (for knockout stage)
+      - by_time:  list of (utc_datetime, fixture)              (for knockout TBD slots)
     Returns both as a tuple.
     """
     by_teams = {}
-    by_datetime = {}
+    by_time = []
 
     for m in api_matches:
         home = normalise(m.get("homeTeam", {}).get("name", ""))
         away = normalise(m.get("awayTeam", {}).get("name", ""))
         utc_date = m.get("utcDate", "")        # "2026-06-11T19:00:00Z"
         date_str = utc_date[:10]               # "2026-06-11"
-        datetime_key = utc_date[:16]           # "2026-06-11T19:00"
 
         # Team-name lookup (both orderings)
         by_teams[(home, away, date_str)] = m
         by_teams[(away, home, date_str)] = m
 
-        # Date+time lookup (unique per slot, used for knockout TBD matches)
-        by_datetime[datetime_key] = m
+        # Time list for fuzzy datetime matching
+        try:
+            api_dt = datetime.fromisoformat(utc_date.replace("Z", "+00:00"))
+            by_time.append((api_dt, m))
+        except Exception:
+            pass
 
-    return by_teams, by_datetime
+    return by_teams, by_time
 
 
-def get_api_match(our_match: dict, by_teams: dict, by_datetime: dict) -> tuple[dict | None, bool]:
+def get_api_match(our_match: dict, by_teams: dict, by_time: list) -> tuple[dict | None, bool]:
     """
     Find the API fixture for one of our matches.json entries.
     Returns (api_match, team1_is_home).
-    Falls back to date+time lookup for knockout slots with TBD team names.
+    Falls back to ±60-minute time window for knockout slots with TBD team names.
     """
     t1 = our_match.get("team1", {}).get("name", "")
     t2 = our_match.get("team2", {}).get("name", "")
     date_str = our_match.get("date", "")[:10]
-    datetime_key = our_match.get("date", "")[:16]
 
     # Try team-name lookup first (reliable for group stage)
     api_match = by_teams.get((t1, t2, date_str)) or \
@@ -169,22 +171,34 @@ def get_api_match(our_match: dict, by_teams: dict, by_datetime: dict) -> tuple[d
         api_home = normalise(api_match.get("homeTeam", {}).get("name", ""))
         return api_match, (normalise(t1) == api_home)
 
-    # For knockout TBD slots, fall back to matching by exact UTC date+time
+    # For knockout TBD slots, find the API fixture within ±60 min of our stored time
     if is_tbd(t1) or is_tbd(t2):
-        api_match = by_datetime.get(datetime_key)
-        if api_match:
-            # team1 in our file = home team from API (arbitrary but consistent)
-            return api_match, True
+        try:
+            our_dt = datetime.fromisoformat(our_match["date"].replace("Z", "+00:00"))
+        except Exception:
+            return None, True
+
+        window = timedelta(minutes=60)
+        best = None
+        best_delta = timedelta.max
+        for api_dt, m in by_time:
+            delta = abs(api_dt - our_dt)
+            if delta <= window and delta < best_delta:
+                best = m
+                best_delta = delta
+
+        if best:
+            return best, True  # team1 in our file = home team from API
 
     return None, True
 
 
-def get_score_for_match(our_match: dict, by_teams: dict, by_datetime: dict) -> dict | None:
+def get_score_for_match(our_match: dict, by_teams: dict, by_time: list) -> dict | None:
     """
     Try to find score + real team info for one of our matches.json entries.
     Returns a result dict or None if no data is available yet.
     """
-    api_match, team1_is_home = get_api_match(our_match, by_teams, by_datetime)
+    api_match, team1_is_home = get_api_match(our_match, by_teams, by_time)
     if not api_match:
         return None
 
@@ -279,7 +293,7 @@ def update_match_scores():
         sys.exit(1)
 
     print(f"  Got {len(api_matches)} fixtures from API.")
-    by_teams, by_datetime = build_api_lookup(api_matches)
+    by_teams, by_time = build_api_lookup(api_matches)
 
     path = locate_matches_file()
     matches = load_matches(path)
@@ -335,7 +349,7 @@ def update_match_scores():
             continue
 
         # Try to get score + real team data from the API
-        result = get_score_for_match(match, by_teams, by_datetime)
+        result = get_score_for_match(match, by_teams, by_time)
 
         if result:
             changed = False
