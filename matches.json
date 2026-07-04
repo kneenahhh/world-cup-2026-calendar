@@ -2614,14 +2614,16 @@
     "id": "match-094",
     "date": "2026-07-07T00:00:00Z",
     "team1": {
-      "name": "Round of 32 9 Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Portugal",
+      "code": "POR",
+      "flag": "🇵🇹",
+      "label": "Round of 32 9 Winner"
     },
     "team2": {
-      "name": "Round of 32 10 Winner",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Spain",
+      "code": "SPA",
+      "flag": "🇪🇸",
+      "label": "Round of 32 10 Winner"
     },
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -2638,14 +2640,16 @@
     "id": "match-095",
     "date": "2026-07-07T16:00:00Z",
     "team1": {
-      "name": "Round of 32 14 Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Argentina",
+      "code": "ARG",
+      "flag": "🇦🇷",
+      "label": "Round of 32 14 Winner"
     },
     "team2": {
-      "name": "Round of 32 16 Winner",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Egypt",
+      "code": "EGY",
+      "flag": "🇪🇬",
+      "label": "Round of 32 16 Winner"
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
@@ -2662,14 +2666,16 @@
     "id": "match-096",
     "date": "2026-07-07T20:00:00Z",
     "team1": {
-      "name": "Round of 32 13 Winner",
-      "code": "TBD",
-      "flag": "⚽"
+      "name": "Switzerland",
+      "code": "SWI",
+      "flag": "🇨🇭",
+      "label": "Round of 32 13 Winner"
     },
     "team2": {
-      "name": "Round of 32 15 Winner",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Colombia",
+      "code": "COL",
+      "flag": "🇨🇴",
+      "label": "Round of 32 15 Winner"
     },
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -2688,12 +2694,14 @@
     "team1": {
       "name": "Round of 16 1 Winner",
       "code": "TBD",
-      "flag": "⚽"
+      "flag": "⚽",
+      "label": "Round of 16 1 Winner"
     },
     "team2": {
-      "name": "Round of 16 2 Winner",
-      "code": "TBD",
-      "flag": "🏴"
+      "name": "Morocco",
+      "code": "MOR",
+      "flag": "🇲🇦",
+      "label": "Round of 16 2 Winner"
     },
     "stadium": "Gillette Stadium",
     "city": "Boston",
