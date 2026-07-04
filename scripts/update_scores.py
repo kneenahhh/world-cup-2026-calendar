@@ -109,82 +109,154 @@ def fetch_all_wc_matches(api_key: str) -> list | None:
 
 # ── Matching logic ────────────────────────────────────────────────────────────
 
+# Placeholder patterns that mean the team hasn't been determined yet
+_TBD_PATTERNS = ("TBD", "Winner", "Place", "Loser", "3rd Place", "")
+
+def is_tbd(name: str) -> bool:
+    """Return True if this team name is a bracket placeholder, not a real country."""
+    if not name:
+        return True
+    return any(p in name for p in _TBD_PATTERNS)
+
+
 def build_api_lookup(api_matches: list) -> dict:
     """
-    Build a lookup dict keyed by (normalised_team1, normalised_team2, date_str).
-    Date is YYYY-MM-DD in UTC so it aligns with our matches.json dates.
+    Build two lookup dicts:
+      - by_teams: (norm_home, norm_away, date_str) → fixture  (for group stage)
+      - by_datetime: "YYYY-MM-DDTHH:MM" → fixture             (for knockout stage)
+    Returns both as a tuple.
     """
-    lookup = {}
+    by_teams = {}
+    by_datetime = {}
+
     for m in api_matches:
         home = normalise(m.get("homeTeam", {}).get("name", ""))
         away = normalise(m.get("awayTeam", {}).get("name", ""))
-        utc_date = m.get("utcDate", "")  # "2026-06-11T19:00:00Z"
-        date_str = utc_date[:10]         # "2026-06-11"
+        utc_date = m.get("utcDate", "")        # "2026-06-11T19:00:00Z"
+        date_str = utc_date[:10]               # "2026-06-11"
+        datetime_key = utc_date[:16]           # "2026-06-11T19:00"
 
-        # Store under both orderings so we can match regardless of home/away
-        lookup[(home, away, date_str)] = m
-        lookup[(away, home, date_str)] = m
+        # Team-name lookup (both orderings)
+        by_teams[(home, away, date_str)] = m
+        by_teams[(away, home, date_str)] = m
 
-    return lookup
+        # Date+time lookup (unique per slot, used for knockout TBD matches)
+        by_datetime[datetime_key] = m
+
+    return by_teams, by_datetime
 
 
-def get_score_for_match(our_match: dict, lookup: dict) -> dict | None:
+def get_api_match(our_match: dict, by_teams: dict, by_datetime: dict) -> tuple[dict | None, bool]:
     """
-    Try to find a corresponding API fixture for one of our matches.json entries.
-    Returns a dict with keys: team1_score, team2_score, status — or None.
+    Find the API fixture for one of our matches.json entries.
+    Returns (api_match, team1_is_home).
+    Falls back to date+time lookup for knockout slots with TBD team names.
     """
     t1 = our_match.get("team1", {}).get("name", "")
     t2 = our_match.get("team2", {}).get("name", "")
     date_str = our_match.get("date", "")[:10]
+    datetime_key = our_match.get("date", "")[:16]
 
-    # Try direct lookup
-    api_match = lookup.get((t1, t2, date_str))
-    if not api_match:
-        # Some matches share the same date; try with normalised names just in case
-        api_match = lookup.get((normalise(t1), normalise(t2), date_str))
+    # Try team-name lookup first (reliable for group stage)
+    api_match = by_teams.get((t1, t2, date_str)) or \
+                by_teams.get((normalise(t1), normalise(t2), date_str))
 
+    if api_match:
+        api_home = normalise(api_match.get("homeTeam", {}).get("name", ""))
+        return api_match, (normalise(t1) == api_home)
+
+    # For knockout TBD slots, fall back to matching by exact UTC date+time
+    if is_tbd(t1) or is_tbd(t2):
+        api_match = by_datetime.get(datetime_key)
+        if api_match:
+            # team1 in our file = home team from API (arbitrary but consistent)
+            return api_match, True
+
+    return None, True
+
+
+def get_score_for_match(our_match: dict, by_teams: dict, by_datetime: dict) -> dict | None:
+    """
+    Try to find score + real team info for one of our matches.json entries.
+    Returns a result dict or None if no data is available yet.
+    """
+    api_match, team1_is_home = get_api_match(our_match, by_teams, by_datetime)
     if not api_match:
         return None
 
-    status = api_match.get("status", "")  # SCHEDULED, IN_PLAY, PAUSED, FINISHED, ...
+    status = api_match.get("status", "")
     score_data = api_match.get("score", {})
 
-    # fullTime is the authoritative final score; currentScore during a live match
     full_time = score_data.get("fullTime", {})
     home_score = full_time.get("home")
     away_score = full_time.get("away")
 
-    # For live matches, fall back to the running score
+    # For live matches fall back to running score
     if (home_score is None or away_score is None) and status in ("IN_PLAY", "PAUSED", "EXTRA_TIME", "PENALTY"):
         current = score_data.get("regularTime") or score_data.get("halfTime") or {}
         home_score = current.get("home")
         away_score = current.get("away")
 
-    if home_score is None or away_score is None:
-        return None
+    # Real team names from the API (may still be None/empty if not yet determined)
+    api_home_name = api_match.get("homeTeam", {}).get("name") or ""
+    api_away_name = api_match.get("awayTeam", {}).get("name") or ""
+    api_home_flag = flag_for(api_home_name)
+    api_away_flag = flag_for(api_away_name)
 
-    # Determine which team was home/away in the API response
-    api_home = normalise(api_match.get("homeTeam", {}).get("name", ""))
-    api_away = normalise(api_match.get("awayTeam", {}).get("name", ""))
-
-    if normalise(t1) == api_home:
-        team1_score, team2_score = int(home_score), int(away_score)
+    if team1_is_home:
+        real_t1_name, real_t1_flag = normalise(api_home_name), api_home_flag
+        real_t2_name, real_t2_flag = normalise(api_away_name), api_away_flag
+        t1_score = int(home_score) if home_score is not None else None
+        t2_score = int(away_score) if away_score is not None else None
     else:
-        team1_score, team2_score = int(away_score), int(home_score)
+        real_t1_name, real_t1_flag = normalise(api_away_name), api_away_flag
+        real_t2_name, real_t2_flag = normalise(api_home_name), api_home_flag
+        t1_score = int(away_score) if away_score is not None else None
+        t2_score = int(home_score) if home_score is not None else None
 
-    # Map API status to our status field
+    # Map API status
     if status == "FINISHED":
         our_status = "finished"
     elif status in ("IN_PLAY", "PAUSED", "EXTRA_TIME", "PENALTY"):
         our_status = "live"
+    elif status == "TIMED":
+        our_status = "scheduled"
     else:
         our_status = status.lower()
 
     return {
-        "team1_score": team1_score,
-        "team2_score": team2_score,
+        "real_t1_name": real_t1_name,
+        "real_t1_flag": real_t1_flag,
+        "real_t2_name": real_t2_name,
+        "real_t2_flag": real_t2_flag,
+        "team1_score": t1_score,
+        "team2_score": t2_score,
         "status": our_status,
     }
+
+
+# ── Flag lookup ───────────────────────────────────────────────────────────────
+# Maps canonical team name → flag emoji for real teams.
+FLAG_MAP = {
+    "Mexico": "🇲🇽", "South Africa": "🇿🇦", "South Korea": "🇰🇷",
+    "Czech Republic": "🇨🇿", "Canada": "🇨🇦", "Bosnia & Herzegovina": "🇧🇦",
+    "USA": "🇺🇸", "Paraguay": "🇵🇾", "Qatar": "🇶🇦", "Switzerland": "🇨🇭",
+    "Brazil": "🇧🇷", "Morocco": "🇲🇦", "Haiti": "🇭🇹", "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "Australia": "🇦🇺", "Türkiye": "🇹🇷", "Germany": "🇩🇪", "Curaçao": "🇨🇼",
+    "Netherlands": "🇳🇱", "Japan": "🇯🇵", "Ecuador": "🇪🇨", "Ivory Coast": "🇨🇮",
+    "Sweden": "🇸🇪", "Tunisia": "🇹🇳", "Spain": "🇪🇸", "Cape Verde": "🇨🇻",
+    "Belgium": "🇧🇪", "Egypt": "🇪🇬", "Uruguay": "🇺🇾", "Saudi Arabia": "🇸🇦",
+    "Iran": "🇮🇷", "New Zealand": "🇳🇿", "France": "🇫🇷", "Senegal": "🇸🇳",
+    "Iraq": "🇮🇶", "Norway": "🇳🇴", "Argentina": "🇦🇷", "Algeria": "🇩🇿",
+    "Austria": "🇦🇹", "Jordan": "🇯🇴", "Portugal": "🇵🇹", "Congo DR": "🇨🇩",
+    "England": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Croatia": "🇭🇷", "Panama": "🇵🇦", "Ghana": "🇬🇭",
+    "Colombia": "🇨🇴", "Uzbekistan": "🇺🇿",
+}
+
+def flag_for(name: str) -> str:
+    """Return the flag emoji for a team name, or ⚽ if not found."""
+    canonical = normalise(name)
+    return FLAG_MAP.get(canonical, "⚽")
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -203,7 +275,7 @@ def update_match_scores():
         sys.exit(1)
 
     print(f"  Got {len(api_matches)} fixtures from API.")
-    lookup = build_api_lookup(api_matches)
+    by_teams, by_datetime = build_api_lookup(api_matches)
 
     path = locate_matches_file()
     matches = load_matches(path)
@@ -217,13 +289,10 @@ def update_match_scores():
         if match.get("stage") in ("Opening Ceremony", "Halftime Show"):
             continue
 
-        # Skip if no real teams yet (knockout TBD slots)
         t1_name = match.get("team1", {}).get("name", "")
         t2_name = match.get("team2", {}).get("name", "")
-        if t1_name in ("TBD", "") or t2_name in ("TBD", ""):
-            continue
 
-        # Skip future matches that haven't started yet (give 30 min buffer for kickoff)
+        # Skip future matches that haven't started yet
         try:
             match_time = datetime.fromisoformat(match["date"].replace("Z", "+00:00"))
         except Exception:
@@ -232,43 +301,61 @@ def update_match_scores():
         if match_time > now:
             continue  # Not started yet
 
-        # Skip matches that are already marked finished AND have scores
+        # Skip matches already finished with scores AND with real team names
         already_done = (
             match.get("status") == "finished"
             and "score" in match.get("team1", {})
             and "score" in match.get("team2", {})
+            and not is_tbd(t1_name)
+            and not is_tbd(t2_name)
         )
         if already_done:
-            continue  # Nothing to update
+            continue
 
-        # Try to get score data from the API
-        result = get_score_for_match(match, lookup)
+        # Try to get score + real team data from the API
+        result = get_score_for_match(match, by_teams, by_datetime)
 
         if result:
-            old_t1 = match["team1"].get("score")
-            old_t2 = match["team2"].get("score")
-            old_status = match.get("status")
+            changed = False
 
-            match["team1"]["score"] = result["team1_score"]
-            match["team2"]["score"] = result["team2_score"]
-            match["status"] = result["status"]
+            # Update real team names for knockout slots that had TBD placeholders
+            if is_tbd(t1_name) and result["real_t1_name"]:
+                match["team1"]["label"] = t1_name          # preserve bracket label
+                match["team1"]["name"]  = result["real_t1_name"]
+                match["team1"]["flag"]  = result["real_t1_flag"]
+                match["team1"]["code"]  = result["real_t1_name"][:3].upper()
+                changed = True
+            if is_tbd(t2_name) and result["real_t2_name"]:
+                match["team2"]["label"] = t2_name          # preserve bracket label
+                match["team2"]["name"]  = result["real_t2_name"]
+                match["team2"]["flag"]  = result["real_t2_flag"]
+                match["team2"]["code"]  = result["real_t2_name"][:3].upper()
+                changed = True
 
-            changed = (
-                old_t1 != result["team1_score"]
-                or old_t2 != result["team2_score"]
-                or old_status != result["status"]
-            )
+            # Update scores when available
+            if result["team1_score"] is not None and result["team2_score"] is not None:
+                if match["team1"].get("score") != result["team1_score"] \
+                        or match["team2"].get("score") != result["team2_score"]:
+                    match["team1"]["score"] = result["team1_score"]
+                    match["team2"]["score"] = result["team2_score"]
+                    changed = True
+
+            if match.get("status") != result["status"] and result["status"] not in ("scheduled", ""):
+                match["status"] = result["status"]
+                changed = True
 
             if changed:
                 updated_count += 1
-                label = "🔴 LIVE" if result["status"] == "live" else "✅ FINAL"
-                print(
-                    f"  [{label}] {t1_name} {result['team1_score']}–{result['team2_score']} {t2_name}"
-                )
+                t1_display = match["team1"]["name"]
+                t2_display = match["team2"]["name"]
+                s1 = match["team1"].get("score", "?")
+                s2 = match["team2"].get("score", "?")
+                label = "🔴 LIVE" if result["status"] == "live" else "✅ FINAL" if result["status"] == "finished" else "📋 UPDATED"
+                print(f"  [{label}] {t1_display} {s1}–{s2} {t2_display}")
                 if result["status"] == "live":
                     live_count += 1
         else:
-            print(f"  ⏳ No score yet: {t1_name} vs {t2_name} ({match['date'][:10]})")
+            print(f"  ⏳ No data yet: {t1_name} vs {t2_name} ({match['date'][:10]})")
 
     print(f"\nSummary: {updated_count} updated ({live_count} live)")
 
