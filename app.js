@@ -10,7 +10,7 @@ class WorldCupCalendar {
         this.selectedMatches = new Set();
         this.currentTimezone = 'America/New_York';
         this.currentView = 'list';
-        this.currentMonth = new Date(2026, 5); // June 2026
+        this.currentMonth = new Date(2026, 6); // July 2026
         this.icsGenerator = new ICSGenerator();
         
         this.init();
