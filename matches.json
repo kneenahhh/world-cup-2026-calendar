@@ -2084,14 +2084,14 @@
       "code": "GER",
       "flag": "🇩🇪",
       "label": "Group E Winner",
-      "score": 4
+      "score": 3
     },
     "team2": {
       "name": "Paraguay",
       "code": "PAR",
       "flag": "🇵🇾",
       "label": "3rd Place Group A/B/C/D/F",
-      "score": 5
+      "score": 4
     },
     "stadium": "Gillette Stadium",
     "city": "Monterrey",
@@ -2171,7 +2171,7 @@
       "code": "FRA",
       "flag": "🇫🇷",
       "label": "Group I Winner",
-      "score": 3
+      "score": 2
     },
     "team2": {
       "name": "Sweden",
@@ -2488,12 +2488,14 @@
     "team1": {
       "name": "Round of 32 1 Winner",
       "code": "TBD",
-      "flag": "⚽"
+      "flag": "⚽",
+      "score": 0
     },
     "team2": {
       "name": "Round of 32 3 Winner",
       "code": "TBD",
-      "flag": "🏴"
+      "flag": "🏴",
+      "score": 1
     },
     "stadium": "NRG Stadium",
     "city": "Philadelphia",
@@ -2504,7 +2506,8 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-090",
