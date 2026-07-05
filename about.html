@@ -349,12 +349,77 @@
         .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
         .scroll-top-btn:hover { background: #0043ce; }
 
+        /* ── Info tooltip ── */
+        .info-term {
+            position: relative;
+            display: inline;
+        }
+        .info-term .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #0f62fe;
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            font-style: normal;
+            margin-left: 3px;
+            cursor: help;
+            vertical-align: middle;
+            line-height: 1;
+            position: relative;
+            top: -1px;
+        }
+        .info-term .info-tooltip {
+            display: none;
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #161616;
+            color: #f4f4f4;
+            font-size: 0.8rem;
+            font-weight: 400;
+            line-height: 1.5;
+            padding: 10px 14px;
+            border-radius: 4px;
+            width: max-content;
+            max-width: 300px;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            pointer-events: none;
+            white-space: normal;
+        }
+        .info-term .info-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #161616;
+        }
+        .info-term:hover .info-tooltip {
+            display: block;
+        }
+        .info-term:hover .info-highlight {
+            background: #d0e2ff;
+            border-radius: 2px;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 672px) {
             .about-header { padding: 24px 20px; flex-wrap: wrap; }
             .about-header-text h1 { font-size: 1.3rem; }
             .page-content { padding: 24px 16px 48px; }
             .product-grid { grid-template-columns: 1fr; }
+            .info-term .info-tooltip {
+                max-width: 220px;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -378,8 +443,8 @@
         <div class="intro-blurb">
             <h2>What IBM products could power this app?</h2>
             <p>
-                This World Cup 2026 Calendar app was built with IBM Bob — a zero-dependency, vanilla JavaScript static web app
-                hosted on GitHub Pages, with an automated Python score-update pipeline running on GitHub Actions.
+                This World Cup 2026 Calendar app was built with IBM Bob — a <span class="info-term"><span class="info-highlight">zero-dependency, vanilla JavaScript static web app</span><span class="info-icon">i</span><span class="info-tooltip">An app built with plain JavaScript (no extra libraries or frameworks like React/Angular), that doesn't require a server to run — it's just HTML, CSS, and JS files served directly to your browser, like a PDF you can open anywhere.</span></span>
+                hosted on GitHub Pages, with an <span class="info-term"><span class="info-highlight">automated Python score-update pipeline</span><span class="info-icon">i</span><span class="info-tooltip">A small Python script that runs on a schedule (like a timer) to automatically fetch live match scores from a sports data website and update the app's match data — no human has to do it manually.</span></span> running on <span class="info-term"><span class="info-highlight">GitHub Actions</span><span class="info-icon">i</span><span class="info-tooltip">A free service from GitHub that runs your code automatically on a schedule or when something changes — like a robot assistant that wakes up every 30 minutes to check for new scores.</span></span>.
                 No other IBM products were used in its creation. But what <em>could</em> have been used?
                 Below is a full landscape of IBM products evaluated against this app — what applies now, what applies
                 with expansion, and what doesn't apply (and why).
@@ -393,11 +458,11 @@
                 <li>Search matches by keyword</li>
                 <li>Toggle between list view and calendar view</li>
                 <li>Select timezone from 20+ global options</li>
-                <li>Download individual or bulk .ICS calendar files</li>
-                <li>Live score updates via automated GitHub Actions pipeline</li>
+                <li>Download individual or bulk <span class="info-term"><span class="info-highlight">.ICS calendar files</span><span class="info-icon">i</span><span class="info-tooltip">A universal calendar file format — when you download one and open it, it automatically adds the event to Apple Calendar, Google Calendar, Outlook, or any calendar app. Like a digital invite.</span></span></li>
+                <li>Live score updates via <span class="info-term"><span class="info-highlight">automated GitHub Actions pipeline</span><span class="info-icon">i</span><span class="info-tooltip">A scheduled script that runs automatically on GitHub's servers — every 30 minutes during matches, it fetches the latest scores from a sports data API and updates the app. No one has to push a button.</span></span></li>
                 <li>Fully responsive — works on phone, tablet, and desktop</li>
-                <li>Zero-dependency vanilla JS — no frameworks</li>
-                <li>Hosted free on GitHub Pages</li>
+                <li><span class="info-term"><span class="info-highlight">Zero-dependency vanilla JS</span><span class="info-icon">i</span><span class="info-tooltip">Built with plain JavaScript and no external libraries — the app doesn't rely on React, Angular, Vue, or any framework. Fewer moving parts means fewer things that can break.</span></span> — no frameworks</li>
+                <li>Hosted free on <span class="info-term"><span class="info-highlight">GitHub Pages</span><span class="info-icon">i</span><span class="info-tooltip">A free hosting service from GitHub that turns your code repository into a live website — no server management, no hosting fees. Perfect for static sites like this one.</span></span></li>
             </ul>
         </div>
     </div>
@@ -427,7 +492,7 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">What it does</p>
-                    <p class="card-text">watsonx Assistant is IBM's fully managed conversational AI platform. It lets you build structured dialogue flows ("actions") and deploy them as a chat interface in any web page via a small JavaScript embed snippet.</p>
+                    <p class="card-text">watsonx Assistant is IBM's fully managed conversational AI platform. It lets you build structured dialogue flows ("actions") and deploy them as a chat interface in any web page via a small <span class="info-term"><span class="info-highlight">JavaScript embed snippet</span><span class="info-icon">i</span><span class="info-tooltip">A small piece of code (usually 3–5 lines) that you copy-paste into your web page to add a feature — like pasting an Instagram embed code to show a post on your blog. In this case, it adds a chat bubble.</span></span>.</p>
                     <p class="card-section-label">How it fits this app</p>
                     <p class="card-text">The current app uses dropdown filters and a search box to navigate 104 matches. watsonx Assistant could replace or augment this with a natural language interface: <em>"Show me USA games in the group stage"</em>, <em>"What time does the final start in London?"</em></p>
                     <p class="card-section-label">What you'd actually build</p>
@@ -435,12 +500,12 @@
                         <ul>
                             <li>Sign up at <strong>cloud.ibm.com</strong> — no credit card needed for the Lite plan</li>
                             <li>Create a watsonx Assistant instance and design conversation "actions" in the visual no-code builder</li>
-                            <li>Connect it to your match data via a knowledge base document upload or a custom REST extension</li>
-                            <li>Drop the generated Web Chat embed snippet (3 lines of JS) into <code>index.html</code></li>
+                            <li>Connect it to your match data via a knowledge base document upload or a <span class="info-term"><span class="info-highlight">custom REST extension</span><span class="info-icon">i</span><span class="info-tooltip">A plug-in you configure that lets the chatbot fetch live data from an external source (like your matches.json file) by making internet requests — so the bot always has up-to-date info instead of just static answers.</span></span></li>
+                            <li>Drop the generated <span class="info-term"><span class="info-highlight">Web Chat embed snippet</span><span class="info-icon">i</span><span class="info-tooltip">A tiny piece of code you paste into your HTML file that makes a chat bubble appear on your website — similar to how live chat support widgets work on shopping sites.</span></span> (3 lines of JS) into <code>index.html</code></li>
                         </ul>
                     </p>
                     <p class="card-section-label">Complexity</p>
-                    <p class="card-text">Low to medium. The UI builder is visual and no-code. The challenging part is wiring it to live <code>matches.json</code> data.</p>
+                    <p class="card-text">Low to medium. The UI builder is visual and no-code. The challenging part is wiring it to live <code>matches.json</code> data, which requires a small <span class="info-term"><span class="info-highlight">API wrapper</span><span class="info-icon">i</span><span class="info-tooltip">A thin layer of code that sits between two systems and translates requests — like a waiter taking your order (in English) and relaying it to the kitchen (in their own format).</span></span> or <span class="info-term"><span class="info-highlight">serverless function</span><span class="info-icon">i</span><span class="info-tooltip">A small piece of code that runs in the cloud only when called (you don't maintain a server). Think of it like a vending machine — it's dormant until someone presses a button, does its job, and goes back to sleep. You only pay for the seconds it runs.</span></span>.</p>
                     <p class="card-section-label">Lite plan limits</p>
                     <p class="card-text">1,000 monthly active users · 10,000 messages/month · Limited integrations.</p>
                 </div>
@@ -465,11 +530,11 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">What it does</p>
-                    <p class="card-text">watsonx.ai is IBM's foundation model platform — access to IBM Granite, Meta Llama, Mistral, and other LLMs via REST API and Python SDK.</p>
+                    <p class="card-text">watsonx.ai is IBM's foundation model platform — access to IBM Granite, Meta Llama, Mistral, and other <span class="info-term"><span class="info-highlight">LLMs</span><span class="info-icon">i</span><span class="info-tooltip">Large Language Models — the AI technology behind tools like ChatGPT. They're trained on massive amounts of text and can understand and generate human language. IBM Granite is IBM's version.</span></span> via <span class="info-term"><span class="info-highlight">REST API</span><span class="info-icon">i</span><span class="info-tooltip">A standard way for software to talk to other software over the internet — like a menu at a restaurant. You send a request ("I'd like the match scores, please") and get back data in a structured format.</span></span> and <span class="info-term"><span class="info-highlight">Python SDK</span><span class="info-icon">i</span><span class="info-tooltip">A pre-built toolkit (Software Development Kit) for the Python programming language that makes it easy to connect to a service — instead of writing all the connection code yourself, you use ready-made building blocks.</span></span>.</p>
                     <p class="card-section-label">How it fits this app</p>
                     <p class="card-text">Two concrete uses in the Python score-update pipeline:
                         <ul>
-                            <li><strong>Dynamic team name normalization:</strong> Replace the hardcoded <code>TEAM_NAME_MAP</code> with a Granite model call.</li>
+                            <li><strong>Dynamic team name normalization:</strong> Replace the hardcoded <code><span class="info-term"><span class="info-highlight">TEAM_NAME_MAP</span><span class="info-icon">i</span><span class="info-tooltip">A lookup table in the code that manually maps different spellings of team names to one standard name — e.g., "USA" → "United States", "Korea Republic" → "South Korea". Currently maintained by hand.</span></span></code> with a <span class="info-term"><span class="info-highlight">Granite model call</span><span class="info-icon">i</span><span class="info-tooltip">Sending text to IBM's Granite AI model and getting a response — like asking ChatGPT a question, but using IBM's own AI model that you access through code rather than a chat window.</span></span>.</li>
                             <li><strong>Match description generation:</strong> Feed match metadata to a model and receive natural-language descriptions.</li>
                         </ul>
                     </p>
@@ -479,11 +544,11 @@
                             <li>Provision a watsonx.ai Studio instance on <strong>cloud.ibm.com</strong></li>
                             <li>Install <code>ibm-watsonx-ai</code> Python SDK</li>
                             <li>Add ~10 lines of Python to <code>update_scores.py</code></li>
-                            <li>Store IBM Cloud API key as a GitHub Actions secret</li>
+                            <li>Store IBM Cloud <span class="info-term"><span class="info-highlight">API key</span><span class="info-icon">i</span><span class="info-tooltip">A secret password that proves to IBM's servers that you're allowed to use their service — like a membership card number. You keep it secret so nobody else can use your account.</span></span> as a <span class="info-term"><span class="info-highlight">GitHub Actions secret</span><span class="info-icon">i</span><span class="info-tooltip">A secure storage spot in GitHub where you can save passwords and API keys that your automated scripts need — GitHub encrypts them and never shows them in logs.</span></span></li>
                         </ul>
                     </p>
                     <p class="card-section-label">Complexity</p>
-                    <p class="card-text">Low. Standard REST/SDK calls. Adds ~200ms latency per match update.</p>
+                    <p class="card-text">Low. Standard <span class="info-term"><span class="info-highlight">REST/SDK calls</span><span class="info-icon">i</span><span class="info-tooltip">Sending a request to an IBM service over the internet (REST) or using a pre-built Python toolkit (SDK) — both are just ways of asking "hey IBM, process this data for me" and getting an answer back.</span></span>. Adds ~200ms <span class="info-term"><span class="info-highlight">latency</span><span class="info-icon">i</span><span class="info-tooltip">The delay between requesting something and getting a response — 200ms is one-fifth of a second. Barely noticeable to a person, but it adds up when processing 104 matches.</span></span> per match update.</p>
                 </div>
             </div>
         </div>
@@ -505,13 +570,13 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">What it does</p>
-                    <p class="card-text">Enterprise-grade APM and observability. Auto-instruments running applications to capture traces, errors, latency metrics, and infrastructure health.</p>
+                    <p class="card-text">Enterprise-grade <span class="info-term"><span class="info-highlight">APM</span><span class="info-icon">i</span><span class="info-tooltip">Application Performance Monitoring — software that watches your app in real-time to catch slowdowns, errors, and crashes before your users notice them. Like a health monitor for your app.</span></span> and observability. <span class="info-term"><span class="info-highlight">Auto-instruments</span><span class="info-icon">i</span><span class="info-tooltip">Automatically detects and monitors all the important parts of your application without you writing extra monitoring code — it just "plugs in" and starts tracking everything.</span></span> running applications to capture traces, errors, latency metrics, and infrastructure health.</p>
                     <p class="card-section-label">How it fits this app</p>
                     <p class="card-text">Zero observability in the score-update pipeline today. Instana could monitor the Python script's HTTP calls, capture exceptions, and alert when automation breaks.</p>
                     <p class="card-section-label">Why it's a difficult fit today</p>
-                    <p class="card-text">Pricing is per monitored host (~$75/month). GitHub Actions uses ephemeral runners — no persistent host to license.</p>
+                    <p class="card-text">Pricing is per monitored host (~$75/month). GitHub Actions uses <span class="info-term"><span class="info-highlight">ephemeral runners</span><span class="info-icon">i</span><span class="info-tooltip">Temporary virtual computers that are created, do their job (run your script), and immediately disappear — like a disposable camera. There's nothing persistent to monitor.</span></span> — no persistent host to license.</p>
                     <p class="card-section-label">What would need to change</p>
-                    <p class="card-text">Move the Python script onto a persistent server (IBM Cloud Code Engine, a VM, or Cloud Functions).</p>
+                    <p class="card-text">Move the Python script onto a persistent server (<span class="info-term"><span class="info-highlight">IBM Cloud Code Engine</span><span class="info-icon">i</span><span class="info-tooltip">IBM's service for running code in the cloud without managing servers — you upload your script, tell it when to run, and IBM handles everything else (scaling, uptime, infrastructure).</span></span>, a VM, or <span class="info-term"><span class="info-highlight">Cloud Functions</span><span class="info-icon">i</span><span class="info-tooltip">Small pieces of code that run on-demand in the cloud — similar to serverless functions. You don't manage any servers; the cloud provider runs your code when triggered and bills you only for the time it actually runs.</span></span>).</p>
                 </div>
             </div>
         </div>
@@ -564,9 +629,9 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">What it does</p>
-                    <p class="card-text">Full API lifecycle management — design, secure, rate-limit, publish, and monetize APIs with a built-in developer portal.</p>
+                    <p class="card-text">Full <span class="info-term"><span class="info-highlight">API lifecycle management</span><span class="info-icon">i</span><span class="info-tooltip">Managing an API from birth to retirement — designing it, building it, securing it, publishing it for others to use, monitoring its health, and eventually retiring old versions. Like managing a product from design through to end-of-life.</span></span> — design, secure, rate-limit, publish, and monetize APIs with a built-in <span class="info-term"><span class="info-highlight">developer portal</span><span class="info-icon">i</span><span class="info-tooltip">A website where other developers can discover your API, read documentation, get access keys, and test it out — like an app store but for data connections.</span></span>.</p>
                     <p class="card-section-label">Expansion scenario</p>
-                    <p class="card-text">Expose a proper REST API (<code>GET /matches</code>, <code>GET /teams/{code}/schedule</code>), rate-limit external consumers, and publish a developer portal so other fan apps could consume your data.</p>
+                    <p class="card-text">Expose a proper <span class="info-term"><span class="info-highlight">REST API</span><span class="info-icon">i</span><span class="info-tooltip">A structured web address (URL) that returns data instead of a web page — like a drive-through window for data. Other apps can request specific information from it.</span></span> (<code>GET /matches</code>, <code>GET /teams/{code}/schedule</code>), <span class="info-term"><span class="info-highlight">rate-limit</span><span class="info-icon">i</span><span class="info-tooltip">Restricting how many requests someone can make in a time period — like saying "you can only ask me 100 questions per minute" to prevent overload or abuse.</span></span> external consumers, and publish a developer portal so other fan apps could consume your data.</p>
                 </div>
             </div>
         </div>
@@ -587,9 +652,9 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">What it does</p>
-                    <p class="card-text">AI-powered application management — unified view of app health, dependencies, vulnerabilities, and risk score.</p>
+                    <p class="card-text">AI-powered application management — unified view of app health, dependencies, <span class="info-term"><span class="info-highlight">vulnerabilities</span><span class="info-icon">i</span><span class="info-tooltip">Known security weaknesses in the software libraries your app uses — like recalls on car parts. Security researchers find them and publish warnings (called CVEs) so developers know to update.</span></span>, and risk score.</p>
                     <p class="card-section-label">Expansion scenario</p>
-                    <p class="card-text">Monitor health of the entire app ecosystem: is football-data.org still responding? Are there CVEs in your Python dependencies? What is the overall risk score before the World Cup starts?</p>
+                    <p class="card-text">Monitor health of the entire app ecosystem: is football-data.org still responding? Are there <span class="info-term"><span class="info-highlight">CVEs</span><span class="info-icon">i</span><span class="info-tooltip">Common Vulnerabilities and Exposures — a public database of known security bugs in software. When a CVE is found in a library you use, it means there's a known way for hackers to exploit it and you should update.</span></span> in your Python dependencies? What is the overall risk score before the World Cup starts?</p>
                 </div>
             </div>
         </div>
@@ -610,7 +675,7 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">What it does</p>
-                    <p class="card-text">Natural language BI querying — type a question and get a visualization back. AI layer on top of IBM Cognos Analytics.</p>
+                    <p class="card-text">Natural language <span class="info-term"><span class="info-highlight">BI querying</span><span class="info-icon">i</span><span class="info-tooltip">Business Intelligence querying — asking questions about your data in plain English and getting charts/answers back, instead of writing complex database queries or building reports manually.</span></span> — type a question and get a visualization back. AI layer on top of IBM Cognos Analytics.</p>
                     <p class="card-section-label">Expansion scenario</p>
                     <p class="card-text">Once you add user telemetry, ask questions like <em>"Which team's games were downloaded most in June?"</em> and get an instant chart.</p>
                 </div>
@@ -633,7 +698,7 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">What it does</p>
-                    <p class="card-text">Aggregates metrics across CI/CD pipelines — deployment frequency, failure rates, mean time to recovery.</p>
+                    <p class="card-text">Aggregates metrics across <span class="info-term"><span class="info-highlight">CI/CD pipelines</span><span class="info-icon">i</span><span class="info-tooltip">Continuous Integration / Continuous Delivery — automated workflows that build, test, and deploy your code whenever you make a change. In this app, the GitHub Actions workflow that updates scores is a simple CI/CD pipeline.</span></span> — deployment frequency, failure rates, <span class="info-term"><span class="info-highlight">mean time to recovery</span><span class="info-icon">i</span><span class="info-tooltip">The average time it takes to fix something after it breaks — if the score updater fails at 2pm and is fixed by 3pm, that's a 1-hour mean time to recovery.</span></span>.</p>
                     <p class="card-section-label">Expansion scenario</p>
                     <p class="card-text">Track how often the score-update job fails, what the mean time between failures is, and whether pipeline durations trend upward during peak match days.</p>
                 </div>
@@ -679,9 +744,9 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">What it does</p>
-                    <p class="card-text">FinOps and resource optimization — analyzes cloud resource consumption and auto right-sizes workloads to reduce cost.</p>
+                    <p class="card-text"><span class="info-term"><span class="info-highlight">FinOps</span><span class="info-icon">i</span><span class="info-tooltip">Financial Operations for cloud — the practice of tracking and optimizing how much you spend on cloud services. Like budgeting, but specifically for cloud computing costs.</span></span> and resource optimization — analyzes cloud resource consumption and auto right-sizes workloads to reduce cost.</p>
                     <p class="card-section-label">Expansion scenario</p>
-                    <p class="card-text">If the app migrated to IBM Cloud (Cloud Functions, Cloudant, CIS, Event Streams), Turbonomic could monitor spend and auto-optimize provisioning. Built for enterprises spending $10k+/month on cloud.</p>
+                    <p class="card-text">If the app migrated to IBM Cloud (<span class="info-term"><span class="info-highlight">Cloud Functions, Cloudant, CIS, Event Streams</span><span class="info-icon">i</span><span class="info-tooltip">IBM cloud services: Cloud Functions runs code on-demand, Cloudant is a database, CIS (Cloud Internet Services) handles web traffic/security, and Event Streams handles real-time data flow. Together they'd be the cloud infrastructure replacing GitHub Pages.</span></span>), Turbonomic could monitor spend and auto-optimize provisioning. Built for enterprises spending $10k+/month on cloud.</p>
                 </div>
             </div>
         </div>
@@ -713,7 +778,7 @@
                     <p class="card-section-label">Why it doesn't apply</p>
                     <p class="card-text">Your entire data model is 104 rows in a flat JSON file. There is nothing to put in a lakehouse.</p>
                     <p class="card-section-label">Scenario that makes it applicable</p>
-                    <p class="card-text">The app becomes a full fan analytics platform capturing millions of interaction events per day. You want to run ad-hoc SQL queries across terabytes of behavioral data.</p>
+                    <p class="card-text">The app becomes a full fan analytics platform capturing millions of interaction events per day. You want to run <span class="info-term"><span class="info-highlight">ad-hoc SQL queries</span><span class="info-icon">i</span><span class="info-tooltip">One-off questions you ask a database using SQL (a query language) — like asking a spreadsheet "show me all rows where the country is USA and the date is in June" but for millions of rows of data.</span></span> across terabytes of behavioral data.</p>
                 </div>
             </div>
         </div>
@@ -759,7 +824,7 @@
                     <p class="card-section-label">Why it doesn't apply</p>
                     <p class="card-text">104 matches, ~10 columns each — tiny and read-mostly. A JSON file in Git outperforms a database for this specific use case.</p>
                     <p class="card-section-label">Scenario that makes it applicable</p>
-                    <p class="card-text">The app becomes an official tournament management system with concurrent write operations, complex joins, and thousands of downstream consumers.</p>
+                    <p class="card-text">The app becomes an official tournament management system with concurrent <span class="info-term"><span class="info-highlight">write operations</span><span class="info-icon">i</span><span class="info-tooltip">Multiple systems trying to update the same data at the same time — like two people editing the same Google Doc simultaneously. Databases handle the conflicts; a plain file can't.</span></span>, complex <span class="info-term"><span class="info-highlight">joins</span><span class="info-icon">i</span><span class="info-tooltip">A database operation that combines data from multiple tables — like merging a "teams" spreadsheet with a "matches" spreadsheet to see which team plays where.</span></span>, and thousands of downstream consumers.</p>
                 </div>
             </div>
         </div>
@@ -780,7 +845,7 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">Why it doesn't apply</p>
-                    <p class="card-text">No user telemetry, no usage data, and no business metrics to report on. Cognos needs data to visualize.</p>
+                    <p class="card-text">No <span class="info-term"><span class="info-highlight">user telemetry</span><span class="info-icon">i</span><span class="info-tooltip">Data about how people use your app — which buttons they click, how long they stay, which pages they visit. Like Google Analytics but for understanding user behavior patterns.</span></span>, no usage data, and no business metrics to report on. Cognos needs data to visualize.</p>
                     <p class="card-section-label">Scenario that makes it applicable</p>
                     <p class="card-text">IBM Client Engineering wants monthly business reports on which teams drive the most downloads, mobile vs desktop breakdown, and broadcast channel searches.</p>
                 </div>
@@ -828,7 +893,7 @@
                     <p class="card-section-label">Why it doesn't apply</p>
                     <p class="card-text">Enterprise integration platform for hundreds of system connections. The app has one external dependency — a single HTTP call. Comically disproportionate.</p>
                     <p class="card-section-label">Scenario that makes it applicable</p>
-                    <p class="card-text">The app becomes part of a broader FIFA digital ecosystem: ingesting match data via EDI, syncing with broadcasters via SOAP, exchanging ticketing data via AS2, routing notifications through regional partner systems.</p>
+                    <p class="card-text">The app becomes part of a broader FIFA digital ecosystem: ingesting match data via <span class="info-term"><span class="info-highlight">EDI</span><span class="info-icon">i</span><span class="info-tooltip">Electronic Data Interchange — a decades-old standard for exchanging structured business documents between organizations electronically. Think of it like a very formal, machine-readable email format used between big companies.</span></span>, syncing with broadcasters via <span class="info-term"><span class="info-highlight">SOAP</span><span class="info-icon">i</span><span class="info-tooltip">An older, very structured protocol for systems to communicate — like REST API's older, more bureaucratic sibling. It uses XML (verbose markup) and is common in large enterprise and government systems.</span></span>, exchanging ticketing data via AS2, routing notifications through regional partner systems.</p>
                 </div>
             </div>
         </div>
@@ -849,7 +914,7 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">Why it doesn't apply</p>
-                    <p class="card-text">MDM manages devices, not web applications. This is a public website — no managed devices, no enterprise app distribution.</p>
+                    <p class="card-text"><span class="info-term"><span class="info-highlight">MDM</span><span class="info-icon">i</span><span class="info-tooltip">Mobile Device Management — software that lets an IT department remotely control, secure, and configure all company phones and laptops. They can install apps, enforce passwords, and wipe lost devices.</span></span> manages devices, not web applications. This is a public website — no managed devices, no enterprise app distribution.</p>
                     <p class="card-section-label">Scenario that makes it applicable</p>
                     <p class="card-text">Repackage as a native mobile app distributed to managed corporate devices through MaaS360's enterprise app catalog.</p>
                 </div>
@@ -897,7 +962,7 @@
                     <p class="card-section-label">Why it doesn't apply</p>
                     <p class="card-text">Data security and compliance platform. This app collects zero personal data — no user accounts, no PII, no database to protect.</p>
                     <p class="card-section-label">Scenario that makes it applicable</p>
-                    <p class="card-text">Add user accounts with personalized match alerts storing PII, requiring GDPR/CCPA compliance monitoring.</p>
+                    <p class="card-text">Add user accounts with personalized match alerts storing <span class="info-term"><span class="info-highlight">PII</span><span class="info-icon">i</span><span class="info-tooltip">Personally Identifiable Information — any data that could identify a specific person: name, email, phone number, location, etc. Heavily regulated by laws like GDPR and CCPA.</span></span>, requiring <span class="info-term"><span class="info-highlight">GDPR/CCPA</span><span class="info-icon">i</span><span class="info-tooltip">Data privacy laws — GDPR (Europe) and CCPA (California) give people rights over their personal data: the right to see it, delete it, and know who it's shared with. Companies that collect personal data must comply or face large fines.</span></span> compliance monitoring.</p>
                 </div>
             </div>
         </div>
@@ -918,7 +983,7 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">Why it doesn't apply</p>
-                    <p class="card-text">Governance, Risk, and Compliance (GRC) platform. A fan calendar has no regulatory environment, no formal risk committees, and no internal audit functions.</p>
+                    <p class="card-text"><span class="info-term"><span class="info-highlight">Governance, Risk, and Compliance (GRC)</span><span class="info-icon">i</span><span class="info-tooltip">The practice of managing rules (governance), identifying what could go wrong (risk), and proving you follow regulations (compliance). Large companies have entire departments for this — banks, healthcare, energy companies.</span></span> platform. A fan calendar has no regulatory environment, no formal risk committees, and no internal audit functions.</p>
                     <p class="card-section-label">Scenario that makes it applicable</p>
                     <p class="card-text">Built and operated by a publicly traded media company needing to document API dependency risk, manage data privacy compliance, and track security audit findings.</p>
                 </div>
@@ -941,7 +1006,7 @@
                 <div class="accordion-body-inner">
                     <hr class="card-divider">
                     <p class="card-section-label">Why it doesn't apply</p>
-                    <p class="card-text"><strong>Not an IBM product.</strong> IBM's equivalent is IBM Event Streams. Beyond the vendor mismatch, the app uses cron-based polling — no real-time event streams.</p>
+                    <p class="card-text"><strong>Not an IBM product.</strong> IBM's equivalent is IBM Event Streams. Beyond the vendor mismatch, the app uses <span class="info-term"><span class="info-highlight">cron-based polling</span><span class="info-icon">i</span><span class="info-tooltip">A scheduled timer (cron) that checks for updates at regular intervals — like checking your mailbox every 30 minutes rather than having mail instantly delivered to your door.</span></span> — no real-time event streams.</p>
                     <p class="card-section-label">Scenario that makes IBM Event Streams applicable</p>
                     <p class="card-text">True real-time score updates — within 5 seconds of a goal, not every 30 minutes. Event Streams would fan out score events to all connected clients simultaneously.</p>
                 </div>
