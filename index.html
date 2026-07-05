@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIFA World Cup 2026 - Calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -116,7 +119,7 @@
         <footer class="footer">
             <p>FIFA World Cup 2026 • Hosted by USA 🇺🇸, Mexico 🇲🇽, and Canada 🇨🇦</p>
             <img src="Bob at the World Cup.png" alt="Bob at the World Cup" class="footer-logo">
-            <p class="footer-note">Designed by Client Engineering | Made with IBM Bob</p>
+            <p class="footer-note">Designed by Nina | Made with IBM Bob</p>
             <p class="footer-disclaimer">This is a fun passion project created by a Strategy Designer. Not affiliated with FIFA.</p>
         </footer>
     </div>
@@ -131,8 +134,21 @@
         </div>
     </div>
 
+    <!-- Scroll to top button -->
+    <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
     <!-- Scripts -->
     <script src="ics-generator.js"></script>
     <script src="app.js"></script>
+    <script>
+        // Scroll-to-top button behaviour
+        const scrollBtn = document.getElementById('scroll-top-btn');
+        window.addEventListener('scroll', () => {
+            scrollBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
