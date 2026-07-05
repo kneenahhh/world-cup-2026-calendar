@@ -2517,14 +2517,14 @@
       "code": "PAR",
       "flag": "🇵🇾",
       "label": "Round of 32 2 Winner",
-      "score": 0
+      "score": 1
     },
     "team2": {
       "name": "France",
       "code": "FRA",
       "flag": "🇫🇷",
       "label": "Round of 32 5 Winner",
-      "score": 0
+      "score": 2
     },
     "stadium": "Lincoln Financial Field",
     "city": "NY/NJ",
