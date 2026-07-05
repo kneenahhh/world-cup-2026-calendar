@@ -1386,7 +1386,7 @@
       "score": 1
     },
     "stadium": "BC Place",
-    "city": "Vancouver",
+    "city": "Seattle",
     "country": "Canada",
     "broadcast": [
       "FOX",
@@ -1440,7 +1440,7 @@
       "score": 2
     },
     "stadium": "Mercedes-Benz Stadium",
-    "city": "Atlanta",
+    "city": "Miami",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1494,7 +1494,7 @@
       "score": 0
     },
     "stadium": "Estadio BBVA",
-    "city": "Monterrey",
+    "city": "Mexico City",
     "country": "Mexico",
     "broadcast": [
       "FS1",
@@ -1548,7 +1548,7 @@
       "score": 2
     },
     "stadium": "Lincoln Financial Field",
-    "city": "Philadelphia",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1602,7 +1602,7 @@
       "score": 3
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1656,7 +1656,7 @@
       "score": 0
     },
     "stadium": "Levi's Stadium",
-    "city": "Santa Clara",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1710,7 +1710,7 @@
       "score": 4
     },
     "stadium": "Gillette Stadium",
-    "city": "Boston",
+    "city": "Toronto",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1764,7 +1764,7 @@
       "score": 0
     },
     "stadium": "NRG Stadium",
-    "city": "Houston",
+    "city": "Guadalajara",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1818,7 +1818,7 @@
       "score": 1
     },
     "stadium": "Lumen Field",
-    "city": "Seattle",
+    "city": "Vancouver",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1872,7 +1872,7 @@
       "score": 1
     },
     "stadium": "Lincoln Financial Field",
-    "city": "Philadelphia",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -1926,7 +1926,7 @@
       "score": 0
     },
     "stadium": "Hard Rock Stadium",
-    "city": "Miami",
+    "city": "Atlanta",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -1980,7 +1980,7 @@
       "score": 3
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City",
+    "city": "Dallas",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -2049,7 +2049,7 @@
   },
   {
     "id": "match-074",
-    "date": "2026-06-29T17:00:00Z",
+    "date": "2026-06-29T20:30:00Z",
     "team1": {
       "name": "Brazil",
       "code": "BRA",
@@ -2065,7 +2065,7 @@
       "score": 1
     },
     "stadium": "NRG Stadium",
-    "city": "Houston",
+    "city": "Boston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2078,7 +2078,7 @@
   },
   {
     "id": "match-075",
-    "date": "2026-06-29T20:30:00Z",
+    "date": "2026-06-30T01:00:00Z",
     "team1": {
       "name": "Germany",
       "code": "GER",
@@ -2094,7 +2094,7 @@
       "score": 5
     },
     "stadium": "Gillette Stadium",
-    "city": "Boston",
+    "city": "Monterrey",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2107,7 +2107,7 @@
   },
   {
     "id": "match-076",
-    "date": "2026-06-30T01:00:00Z",
+    "date": "2026-06-30T17:00:00Z",
     "team1": {
       "name": "Netherlands",
       "code": "NET",
@@ -2123,7 +2123,7 @@
       "score": 4
     },
     "stadium": "Estadio BBVA",
-    "city": "Monterrey",
+    "city": "Dallas",
     "country": "Mexico",
     "broadcast": [
       "FOX",
@@ -2136,7 +2136,7 @@
   },
   {
     "id": "match-077",
-    "date": "2026-06-30T17:00:00Z",
+    "date": "2026-06-30T21:00:00Z",
     "team1": {
       "name": "Ivory Coast",
       "code": "IVO",
@@ -2152,7 +2152,7 @@
       "score": 2
     },
     "stadium": "AT&T Stadium",
-    "city": "Dallas",
+    "city": "NY/NJ",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2165,7 +2165,7 @@
   },
   {
     "id": "match-078",
-    "date": "2026-06-30T21:00:00Z",
+    "date": "2026-07-01T01:00:00Z",
     "team1": {
       "name": "France",
       "code": "FRA",
@@ -2181,7 +2181,7 @@
       "score": 0
     },
     "stadium": "MetLife Stadium",
-    "city": "NY/NJ",
+    "city": "Mexico City",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2210,7 +2210,7 @@
       "score": 1
     },
     "stadium": "Estadio Azteca",
-    "city": "Mexico City",
+    "city": "Atlanta",
     "country": "Mexico",
     "broadcast": [
       "FOX",
@@ -2239,7 +2239,7 @@
       "score": 2
     },
     "stadium": "Mercedes-Benz Stadium",
-    "city": "Atlanta",
+    "city": "Seattle",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2268,7 +2268,7 @@
       "score": 0
     },
     "stadium": "Lumen Field",
-    "city": "Seattle",
+    "city": "Santa Clara",
     "country": "United States",
     "broadcast": [
       "FS1",
@@ -2297,7 +2297,7 @@
       "score": 0
     },
     "stadium": "Levi's Stadium",
-    "city": "Santa Clara",
+    "city": "LA",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2326,7 +2326,7 @@
       "score": 1
     },
     "stadium": "SoFi Stadium",
-    "city": "LA",
+    "city": "Toronto",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2355,7 +2355,7 @@
       "score": 0
     },
     "stadium": "BMO Field",
-    "city": "Toronto",
+    "city": "Vancouver",
     "country": "Canada",
     "broadcast": [
       "FOX",
@@ -2384,7 +2384,7 @@
       "score": 5
     },
     "stadium": "BC Place",
-    "city": "Vancouver",
+    "city": "Dallas",
     "country": "Canada",
     "broadcast": [
       "FS1",
@@ -2413,7 +2413,7 @@
       "score": 2
     },
     "stadium": "AT&T Stadium",
-    "city": "Dallas",
+    "city": "Miami",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2442,7 +2442,7 @@
       "score": 0
     },
     "stadium": "Hard Rock Stadium",
-    "city": "Miami",
+    "city": "Kansas City",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2471,7 +2471,7 @@
       "score": 3
     },
     "stadium": "Arrowhead Stadium",
-    "city": "Kansas City",
+    "city": "Houston",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2484,49 +2484,18 @@
   },
   {
     "id": "match-089",
-    "date": "2026-07-04T17:00:00Z",
+    "date": "2026-07-04T21:00:00Z",
     "team1": {
       "name": "Round of 32 1 Winner",
       "code": "TBD",
-      "flag": "⚽",
-      "score": 0
+      "flag": "⚽"
     },
     "team2": {
       "name": "Round of 32 3 Winner",
       "code": "TBD",
-      "flag": "🏴",
-      "score": 3
+      "flag": "🏴"
     },
     "stadium": "NRG Stadium",
-    "city": "Houston",
-    "country": "United States",
-    "broadcast": [
-      "FOX",
-      "Tele",
-      "Peacock"
-    ],
-    "stage": "Round of 16",
-    "group": "",
-    "status": "finished"
-  },
-  {
-    "id": "match-090",
-    "date": "2026-07-04T21:00:00Z",
-    "team1": {
-      "name": "Paraguay",
-      "code": "PAR",
-      "flag": "🇵🇾",
-      "label": "Round of 32 2 Winner",
-      "score": 0
-    },
-    "team2": {
-      "name": "France",
-      "code": "FRA",
-      "flag": "🇫🇷",
-      "label": "Round of 32 5 Winner",
-      "score": 1
-    },
-    "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
     "country": "United States",
     "broadcast": [
@@ -2535,12 +2504,37 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": "",
-    "status": "finished"
+    "group": ""
+  },
+  {
+    "id": "match-090",
+    "date": "2026-07-05T20:00:00Z",
+    "team1": {
+      "name": "Paraguay",
+      "code": "PAR",
+      "flag": "🇵🇾",
+      "label": "Round of 32 2 Winner"
+    },
+    "team2": {
+      "name": "France",
+      "code": "FRA",
+      "flag": "🇫🇷",
+      "label": "Round of 32 5 Winner"
+    },
+    "stadium": "Lincoln Financial Field",
+    "city": "NY/NJ",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Round of 16",
+    "group": ""
   },
   {
     "id": "match-091",
-    "date": "2026-07-05T20:00:00Z",
+    "date": "2026-07-06T00:00:00Z",
     "team1": {
       "name": "Brazil",
       "code": "BRA",
@@ -2554,7 +2548,7 @@
       "label": "Round of 32 6 Winner"
     },
     "stadium": "MetLife Stadium",
-    "city": "NY/NJ",
+    "city": "Mexico City",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2566,7 +2560,7 @@
   },
   {
     "id": "match-092",
-    "date": "2026-07-06T00:00:00Z",
+    "date": "2026-07-06T19:00:00Z",
     "team1": {
       "name": "Mexico",
       "code": "MEX",
@@ -2580,7 +2574,7 @@
       "label": "Round of 32 8 Winner"
     },
     "stadium": "Estadio Banorte",
-    "city": "Mexico City",
+    "city": "Dallas",
     "country": "Mexico",
     "broadcast": [
       "FOX",
@@ -2592,7 +2586,7 @@
   },
   {
     "id": "match-093",
-    "date": "2026-07-06T19:00:00Z",
+    "date": "2026-07-07T00:00:00Z",
     "team1": {
       "name": "Portugal",
       "code": "POR",
@@ -2606,7 +2600,7 @@
       "label": "Round of 32 10 Winner"
     },
     "stadium": "AT&T Stadium",
-    "city": "Dallas",
+    "city": "Seattle",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2618,7 +2612,7 @@
   },
   {
     "id": "match-094",
-    "date": "2026-07-07T00:00:00Z",
+    "date": "2026-07-07T16:00:00Z",
     "team1": {
       "name": "USA",
       "code": "USA",
@@ -2632,7 +2626,7 @@
       "label": "Round of 32 12 Winner"
     },
     "stadium": "Lumen Field",
-    "city": "Seattle",
+    "city": "Atlanta",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2644,7 +2638,7 @@
   },
   {
     "id": "match-095",
-    "date": "2026-07-07T16:00:00Z",
+    "date": "2026-07-07T20:00:00Z",
     "team1": {
       "name": "Argentina",
       "code": "ARG",
@@ -2658,7 +2652,7 @@
       "label": "Round of 32 16 Winner"
     },
     "stadium": "Mercedes-Benz Stadium",
-    "city": "Atlanta",
+    "city": "Vancouver",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2670,7 +2664,7 @@
   },
   {
     "id": "match-096",
-    "date": "2026-07-07T20:00:00Z",
+    "date": "2026-07-09T20:00:00Z",
     "team1": {
       "name": "Switzerland",
       "code": "SWI",
@@ -2684,7 +2678,7 @@
       "label": "Round of 32 15 Winner"
     },
     "stadium": "BC Place",
-    "city": "Vancouver",
+    "city": "Boston",
     "country": "Canada",
     "broadcast": [
       "FOX",
@@ -2696,7 +2690,7 @@
   },
   {
     "id": "match-097",
-    "date": "2026-07-09T20:00:00Z",
+    "date": "2026-07-10T19:00:00Z",
     "team1": {
       "name": "Round of 16 1 Winner",
       "code": "TBD",
@@ -2710,30 +2704,6 @@
       "label": "Round of 16 2 Winner"
     },
     "stadium": "Gillette Stadium",
-    "city": "Boston",
-    "country": "United States",
-    "broadcast": [
-      "FOX",
-      "Tele",
-      "Peacock"
-    ],
-    "stage": "Quarter-Final",
-    "group": ""
-  },
-  {
-    "id": "match-098",
-    "date": "2026-07-10T19:00:00Z",
-    "team1": {
-      "name": "Round of 16 5 Winner",
-      "code": "TBD",
-      "flag": "⚽"
-    },
-    "team2": {
-      "name": "Round of 16 6 Winner",
-      "code": "TBD",
-      "flag": "🏴"
-    },
-    "stadium": "SoFi Stadium",
     "city": "LA",
     "country": "United States",
     "broadcast": [
@@ -2745,19 +2715,19 @@
     "group": ""
   },
   {
-    "id": "match-099",
+    "id": "match-098",
     "date": "2026-07-11T21:00:00Z",
     "team1": {
-      "name": "Round of 16 3 Winner",
+      "name": "Round of 16 5 Winner",
       "code": "TBD",
       "flag": "⚽"
     },
     "team2": {
-      "name": "Round of 16 4 Winner",
+      "name": "Round of 16 6 Winner",
       "code": "TBD",
       "flag": "🏴"
     },
-    "stadium": "Hard Rock Stadium",
+    "stadium": "SoFi Stadium",
     "city": "Miami",
     "country": "United States",
     "broadcast": [
@@ -2769,19 +2739,19 @@
     "group": ""
   },
   {
-    "id": "match-100",
+    "id": "match-099",
     "date": "2026-07-12T01:00:00Z",
     "team1": {
-      "name": "Round of 16 7 Winner",
+      "name": "Round of 16 3 Winner",
       "code": "TBD",
       "flag": "⚽"
     },
     "team2": {
-      "name": "Round of 16 8 Winner",
+      "name": "Round of 16 4 Winner",
       "code": "TBD",
       "flag": "🏴"
     },
-    "stadium": "Arrowhead Stadium",
+    "stadium": "Hard Rock Stadium",
     "city": "Kansas City",
     "country": "United States",
     "broadcast": [
@@ -2793,8 +2763,32 @@
     "group": ""
   },
   {
-    "id": "match-101",
+    "id": "match-100",
     "date": "2026-07-14T19:00:00Z",
+    "team1": {
+      "name": "Round of 16 7 Winner",
+      "code": "TBD",
+      "flag": "⚽"
+    },
+    "team2": {
+      "name": "Round of 16 8 Winner",
+      "code": "TBD",
+      "flag": "🏴"
+    },
+    "stadium": "Arrowhead Stadium",
+    "city": "Dallas",
+    "country": "United States",
+    "broadcast": [
+      "FOX",
+      "Tele",
+      "Peacock"
+    ],
+    "stage": "Quarter-Final",
+    "group": ""
+  },
+  {
+    "id": "match-101",
+    "date": "2026-07-15T19:00:00Z",
     "team1": {
       "name": "Quarterfinal 1 Winner",
       "code": "TBD",
@@ -2806,7 +2800,7 @@
       "flag": "🏴"
     },
     "stadium": "AT&T Stadium",
-    "city": "Dallas",
+    "city": "Atlanta",
     "country": "United States",
     "broadcast": [
       "FOX",
@@ -2818,7 +2812,7 @@
   },
   {
     "id": "match-102",
-    "date": "2026-07-15T19:00:00Z",
+    "date": "2026-07-18T21:00:00Z",
     "team1": {
       "name": "Quarterfinal 3 Winner",
       "code": "TBD",
@@ -2830,7 +2824,7 @@
       "flag": "🏴"
     },
     "stadium": "Mercedes-Benz Stadium",
-    "city": "Atlanta",
+    "city": "Miami",
     "country": "United States",
     "broadcast": [
       "FOX",
