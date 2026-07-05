@@ -7,8 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/web-components/tag/v2/all.min.css">
-    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/all.min.js"></script>
     <style>
         /* ── Page shell ── */
         body {
@@ -17,7 +15,7 @@
             font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
-        /* ── Custom header (mirrors app header palette) ── */
+        /* ── Custom header ── */
         .about-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 32px 48px;
@@ -64,12 +62,22 @@
             padding: 40px 24px 64px;
         }
 
+        /* ── Intro side-by-side grid ── */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 672px) {
+            .intro-grid { grid-template-columns: 1fr; }
+        }
+
         /* ── Intro blurb ── */
         .intro-blurb {
             background: #fff;
             border-left: 4px solid #0f62fe;
             padding: 24px 28px;
-            margin-bottom: 40px;
             border-radius: 0 4px 4px 0;
         }
         .intro-blurb h2 {
@@ -84,6 +92,28 @@
             line-height: 1.6;
             font-size: 0.95rem;
         }
+
+        /* ── Features card ── */
+        .features-card {
+            background: #fff;
+            border-left: 4px solid #198038;
+            padding: 24px 28px;
+            border-radius: 0 4px 4px 0;
+        }
+        .features-card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            color: #161616;
+        }
+        .features-card ul {
+            margin: 0;
+            padding-left: 18px;
+            color: #525252;
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+        .features-card li { margin-bottom: 2px; }
 
         /* ── Section headings ── */
         .section-heading {
@@ -111,30 +141,55 @@
             grid-template-columns: 1fr;
         }
 
-        /* ── Product card ── */
+        /* ── Product card / Accordion ── */
         .product-card {
             background: #fff;
             border: 1px solid #e0e0e0;
             border-radius: 4px;
-            padding: 24px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
         }
-        .product-card.featured {
-            border-top: 4px solid #0f62fe;
-        }
-        .product-card.expansion {
-            border-top: 4px solid #6929c4;
-        }
-        .product-card.not-applicable {
-            border-top: 4px solid #da1e28;
-        }
-        .product-card-header {
+        .product-card.featured { border-top: 4px solid #0f62fe; }
+        .product-card.expansion { border-top: 4px solid #6929c4; }
+        .product-card.not-applicable { border-top: 4px solid #da1e28; }
+
+        /* ── Accordion trigger (always visible) ── */
+        .accordion-trigger {
             display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
+            align-items: center;
             gap: 12px;
+            padding: 20px 24px;
+            cursor: pointer;
+            user-select: none;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+        }
+        .accordion-trigger:hover { background: #f9f9f9; }
+        .product-pictogram {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-pictogram svg {
+            width: 32px;
+            height: 32px;
+            fill: #0f62fe;
+        }
+        .product-card.not-applicable .product-pictogram svg { fill: #6f6f6f; }
+        .product-card.expansion .product-pictogram svg { fill: #6929c4; }
+
+        .accordion-title-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
         }
         .product-card-title {
             font-size: 1.05rem;
@@ -160,6 +215,34 @@
         .tag-yellow { background: #fdf1d6; color: #684e00; }
         .tag-red    { background: #fff1f1; color: #a2191f; }
         .tag-purple { background: #f6f2ff; color: #491d8b; }
+
+        /* ── Chevron ── */
+        .accordion-chevron {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+            fill: #6f6f6f;
+        }
+        .product-card.open .accordion-chevron {
+            transform: rotate(180deg);
+        }
+
+        /* ── Accordion body (hidden by default) ── */
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .product-card.open .accordion-body {
+            max-height: 2000px;
+        }
+        .accordion-body-inner {
+            padding: 0 24px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
         /* ── Card body text ── */
         .card-section-label {
@@ -228,7 +311,7 @@
         .summary-table tr:nth-child(even) td { background: #f4f4f4; }
         .summary-table tr:hover td { background: #e8e8e8; }
 
-        /* ── Footer — Carbon dark ── */
+        /* ── Footer ── */
         .about-footer {
             text-align: center;
             padding: 32px 24px;
@@ -237,39 +320,6 @@
             margin-top: 64px;
             background: #161616;
             font-size: 0.875rem;
-        }
-
-        /* ── Pictogram container ── */
-        .product-pictogram {
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .product-pictogram svg {
-            width: 40px;
-            height: 40px;
-            fill: #0f62fe;
-        }
-        .product-card.not-applicable .product-pictogram svg {
-            fill: #6f6f6f;
-        }
-        .product-card.expansion .product-pictogram svg {
-            fill: #6929c4;
-        }
-        .product-card-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-        .product-card-header-text {
-            flex: 1;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 12px;
         }
 
         /* ── Scroll to top ── */
@@ -291,13 +341,13 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.2s ease, background 0.15s ease, transform 0.15s ease;
+            transition: opacity 0.2s ease;
             z-index: 999;
             line-height: 1;
             font-family: inherit;
         }
         .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
-        .scroll-top-btn:hover { background: #0043ce; transform: translateY(-2px); }
+        .scroll-top-btn:hover { background: #0043ce; }
 
         /* ── Responsive ── */
         @media (max-width: 672px) {
@@ -310,9 +360,7 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════
-     PAGE HEADER
-═══════════════════════════════════════════════════════════ -->
+<!-- PAGE HEADER -->
 <header class="about-header">
     <img src="Bob at the World Cup.png" alt="Bob at the World Cup" class="about-header-logo">
     <div class="about-header-text">
@@ -322,27 +370,40 @@
     <a href="index.html" class="back-link">← Back to App</a>
 </header>
 
-<!-- ═══════════════════════════════════════════════════════════
-     MAIN CONTENT
-═══════════════════════════════════════════════════════════ -->
+<!-- MAIN CONTENT -->
 <main class="page-content">
 
-    <!-- Intro -->
-    <div class="intro-blurb">
-        <h2>What IBM products could power this app?</h2>
-        <p>
-            This World Cup 2026 Calendar app was built with IBM Bob — a zero-dependency, vanilla JavaScript static web app
-            hosted on GitHub Pages, with an automated Python score-update pipeline running on GitHub Actions.
-            No other IBM products were used in its creation. But what <em>could</em> have been used?
-            Below is a full landscape of IBM products evaluated against this app — what applies now, what applies
-            with expansion, and what doesn't apply (and why).
-        </p>
+    <!-- Intro — side by side -->
+    <div class="intro-grid">
+        <div class="intro-blurb">
+            <h2>What IBM products could power this app?</h2>
+            <p>
+                This World Cup 2026 Calendar app was built with IBM Bob — a zero-dependency, vanilla JavaScript static web app
+                hosted on GitHub Pages, with an automated Python score-update pipeline running on GitHub Actions.
+                No other IBM products were used in its creation. But what <em>could</em> have been used?
+                Below is a full landscape of IBM products evaluated against this app — what applies now, what applies
+                with expansion, and what doesn't apply (and why).
+            </p>
+        </div>
+        <div class="features-card">
+            <h2>📋 Current App Features</h2>
+            <ul>
+                <li>Browse all 104 FIFA World Cup 2026 matches</li>
+                <li>Filter by team, stage, or group</li>
+                <li>Search matches by keyword</li>
+                <li>Toggle between list view and calendar view</li>
+                <li>Select timezone from 20+ global options</li>
+                <li>Download individual or bulk .ICS calendar files</li>
+                <li>Live score updates via automated GitHub Actions pipeline</li>
+                <li>Fully responsive — works on phone, tablet, and desktop</li>
+                <li>Zero-dependency vanilla JS — no frameworks</li>
+                <li>Hosted free on GitHub Pages</li>
+            </ul>
+        </div>
     </div>
 
 
-    <!-- ─────────────────────────────────────────────────────
-         SECTION 1 — THE THREE CORE PRODUCTS
-    ───────────────────────────────────────────────────────── -->
+    <!-- SECTION 1 — APPLICABLE TODAY -->
     <h2 class="section-heading">✅ Applicable Today — Deep Dive</h2>
     <p class="section-subheading">These three products apply directly to the current architecture with no major changes required.</p>
 
@@ -350,541 +411,570 @@
 
         <!-- watsonx Assistant -->
         <div class="product-card featured">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Conversational AI">
-                    <!-- Carbon: chat / virtual-agent -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M17.74,30,16,29l4-7h6a2,2,0,0,0,2-2V8a2,2,0,0,0-2-2H6A2,2,0,0,0,4,8V20a2,2,0,0,0,2,2h9v2H6a4,4,0,0,1-4-4V8A4,4,0,0,1,6,4H26a4,4,0,0,1,4,4V20a4,4,0,0,1-4,4H21.16Z"/><rect x="8" y="10" width="16" height="2"/><rect x="8" y="14" width="10" height="2"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM watsonx Assistant</h3>
                     <span class="tag tag-green">✅ Applicable Now</span>
+                    <span class="cost-badge free">Lite — Free</span>
+                    <span class="cost-badge paid">Plus — ~$140/mo</span>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">watsonx Assistant is IBM's fully managed conversational AI platform. It lets you build structured dialogue flows ("actions") and deploy them as a chat interface in any web page via a small JavaScript embed snippet.</p>
+                    <p class="card-section-label">How it fits this app</p>
+                    <p class="card-text">The current app uses dropdown filters and a search box to navigate 104 matches. watsonx Assistant could replace or augment this with a natural language interface: <em>"Show me USA games in the group stage"</em>, <em>"What time does the final start in London?"</em></p>
+                    <p class="card-section-label">What you'd actually build</p>
+                    <p class="card-text">
+                        <ul>
+                            <li>Sign up at <strong>cloud.ibm.com</strong> — no credit card needed for the Lite plan</li>
+                            <li>Create a watsonx Assistant instance and design conversation "actions" in the visual no-code builder</li>
+                            <li>Connect it to your match data via a knowledge base document upload or a custom REST extension</li>
+                            <li>Drop the generated Web Chat embed snippet (3 lines of JS) into <code>index.html</code></li>
+                        </ul>
+                    </p>
+                    <p class="card-section-label">Complexity</p>
+                    <p class="card-text">Low to medium. The UI builder is visual and no-code. The challenging part is wiring it to live <code>matches.json</code> data.</p>
+                    <p class="card-section-label">Lite plan limits</p>
+                    <p class="card-text">1,000 monthly active users · 10,000 messages/month · Limited integrations.</p>
                 </div>
             </div>
-            <div class="cost-strip">
-                <span class="cost-badge free">Lite Plan — Free (no credit card)</span>
-                <span class="cost-badge paid">Plus — ~$140/month</span>
-                <span class="cost-badge enterprise">Enterprise — Custom pricing</span>
-            </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">watsonx Assistant is IBM's fully managed conversational AI platform. It lets you build structured dialogue flows ("actions") and deploy them as a chat interface in any web page via a small JavaScript embed snippet.</p>
-            <p class="card-section-label">How it fits this app</p>
-            <p class="card-text">The current app uses dropdown filters and a search box to navigate 104 matches. watsonx Assistant could replace or augment this with a natural language interface: <em>"Show me USA games in the group stage"</em>, <em>"What time does the final start in London?"</em>, <em>"Which matches are on FOX this weekend?"</em></p>
-            <p class="card-section-label">What you'd actually build</p>
-            <p class="card-text">
-                <ul>
-                    <li>Sign up at <strong>cloud.ibm.com</strong> — no credit card needed for the Lite plan</li>
-                    <li>Create a watsonx Assistant instance and design conversation "actions" in the visual no-code builder</li>
-                    <li>Connect it to your match data via a knowledge base document upload (static approach) or a custom REST extension (dynamic, live data)</li>
-                    <li>Drop the generated Web Chat embed snippet (3 lines of JS) into <code>index.html</code> — a chat bubble appears in the bottom-right corner</li>
-                </ul>
-            </p>
-            <p class="card-section-label">Complexity</p>
-            <p class="card-text">Low to medium. The UI builder is visual and no-code. The challenging part is wiring it to live <code>matches.json</code> data, which requires a small API wrapper or serverless function.</p>
-            <p class="card-section-label">Lite plan limits</p>
-            <p class="card-text">1,000 monthly active users · 10,000 messages/month · Limited integrations. For a hobby/fan app this is ample unless the app goes viral.</p>
         </div>
 
         <!-- watsonx.ai -->
         <div class="product-card featured">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="AI Foundation Models">
-                    <!-- Carbon: machine-learning-model -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27,23H25V21h2V19H25V17h2V15H25V13h2V11H25V9h2V7H13A2,2,0,0,0,11,9V11H9V9h2V7H5A2,2,0,0,0,3,9V27a2,2,0,0,0,2,2H27a2,2,0,0,0,2-2V25A2,2,0,0,0,27,23ZM5,27V9H9V27ZM27,27H11V9H23V23H21v2h2v2H11V11H9V27H5V9h4V7H5A2,2,0,0,0,3,9V27a2,2,0,0,0,2,2H27a2,2,0,0,0,2-2V25A2,2,0,0,0,27,23Z"/><rect x="13" y="11" width="2" height="2"/><rect x="13" y="15" width="2" height="2"/><rect x="13" y="19" width="2" height="2"/><rect x="17" y="11" width="2" height="2"/><rect x="17" y="15" width="2" height="2"/><rect x="17" y="19" width="2" height="2"/><rect x="21" y="11" width="2" height="2"/><rect x="21" y="15" width="2" height="2"/><rect x="21" y="19" width="2" height="2"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM watsonx.ai</h3>
                     <span class="tag tag-green">✅ Applicable Now</span>
+                    <span class="cost-badge free">Lite — ~25k tokens free</span>
+                    <span class="cost-badge paid">Pay-as-you-go</span>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">watsonx.ai is IBM's foundation model platform — access to IBM Granite, Meta Llama, Mistral, and other LLMs via REST API and Python SDK.</p>
+                    <p class="card-section-label">How it fits this app</p>
+                    <p class="card-text">Two concrete uses in the Python score-update pipeline:
+                        <ul>
+                            <li><strong>Dynamic team name normalization:</strong> Replace the hardcoded <code>TEAM_NAME_MAP</code> with a Granite model call.</li>
+                            <li><strong>Match description generation:</strong> Feed match metadata to a model and receive natural-language descriptions.</li>
+                        </ul>
+                    </p>
+                    <p class="card-section-label">What you'd actually build</p>
+                    <p class="card-text">
+                        <ul>
+                            <li>Provision a watsonx.ai Studio instance on <strong>cloud.ibm.com</strong></li>
+                            <li>Install <code>ibm-watsonx-ai</code> Python SDK</li>
+                            <li>Add ~10 lines of Python to <code>update_scores.py</code></li>
+                            <li>Store IBM Cloud API key as a GitHub Actions secret</li>
+                        </ul>
+                    </p>
+                    <p class="card-section-label">Complexity</p>
+                    <p class="card-text">Low. Standard REST/SDK calls. Adds ~200ms latency per match update.</p>
                 </div>
             </div>
-            <div class="cost-strip">
-                <span class="cost-badge free">Lite Plan — ~25,000 tokens/month free</span>
-                <span class="cost-badge paid">Pay-as-you-go — per 1,000 tokens (varies by model)</span>
-            </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">watsonx.ai is IBM's foundation model platform — it gives you access to IBM Granite, Meta Llama, Mistral, and other large language models via a REST API and Python SDK, with a Prompt Lab UI for experimentation.</p>
-            <p class="card-section-label">How it fits this app</p>
-            <p class="card-text">Two concrete uses exist today in the Python score-update pipeline (<code>update_scores.py</code>):
-                <ul>
-                    <li><strong>Dynamic team name normalization:</strong> The script uses a hardcoded <code>TEAM_NAME_MAP</code> dictionary to reconcile API team names (e.g. "USA" → "United States"). A Granite model call could handle this dynamically — send the raw API name, get back the canonical FIFA name. No more manually maintained dictionary.</li>
-                    <li><strong>Match description generation:</strong> Feed raw match metadata (teams, stadium, stage, group) to a model and receive a natural-language description. Useful for bracket matches and special events currently authored manually.</li>
-                </ul>
-            </p>
-            <p class="card-section-label">What you'd actually build</p>
-            <p class="card-text">
-                <ul>
-                    <li>Provision a watsonx.ai Studio instance on <strong>cloud.ibm.com</strong> (auto-creates an IBM Cloud Object Storage bucket)</li>
-                    <li>Install the <code>ibm-watsonx-ai</code> Python SDK: <code>pip install ibm-watsonx-ai</code></li>
-                    <li>Add ~10 lines of Python to <code>update_scores.py</code> to call the model with your team name or match metadata</li>
-                    <li>Store your IBM Cloud API key as a GitHub Actions secret alongside the existing <code>FOOTBALL_DATA_API_KEY</code></li>
-                </ul>
-            </p>
-            <p class="card-section-label">Complexity</p>
-            <p class="card-text">Low. Standard REST/SDK calls. Adds ~200ms latency per match update and a small per-token cost. The Lite plan's 25,000 tokens/month covers hundreds of match description generations.</p>
         </div>
 
         <!-- Instana -->
         <div class="product-card featured">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Observability">
-                    <!-- Carbon: activity -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 29 13 L 23 13 L 23 3 L 9 3 L 9 13 L 3 13 L 3 29 L 13 29 L 13 21 L 19 21 L 19 29 L 29 29 Z M 11 13 L 11 5 L 21 5 L 21 13 L 11 13 Z M 5 27 L 5 15 L 27 15 L 27 27 L 21 27 L 21 19 L 11 19 L 11 27 Z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM Instana</h3>
                     <span class="tag tag-yellow">⚠️ Expensive for Current Architecture</span>
+                    <span class="cost-badge enterprise">~$75/host/mo — no free tier</span>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">Enterprise-grade APM and observability. Auto-instruments running applications to capture traces, errors, latency metrics, and infrastructure health.</p>
+                    <p class="card-section-label">How it fits this app</p>
+                    <p class="card-text">Zero observability in the score-update pipeline today. Instana could monitor the Python script's HTTP calls, capture exceptions, and alert when automation breaks.</p>
+                    <p class="card-section-label">Why it's a difficult fit today</p>
+                    <p class="card-text">Pricing is per monitored host (~$75/month). GitHub Actions uses ephemeral runners — no persistent host to license.</p>
+                    <p class="card-section-label">What would need to change</p>
+                    <p class="card-text">Move the Python script onto a persistent server (IBM Cloud Code Engine, a VM, or Cloud Functions).</p>
                 </div>
             </div>
-            <div class="cost-strip">
-                <span class="cost-badge paid">14-day free trial</span>
-                <span class="cost-badge enterprise">~$75/host/month after trial — no free tier</span>
-            </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Instana is IBM's enterprise-grade APM (Application Performance Management) and observability platform. It auto-instruments running applications to capture traces, errors, latency metrics, and infrastructure health — with a Python SDK that instruments HTTP calls and exceptions automatically.</p>
-            <p class="card-section-label">How it fits this app</p>
-            <p class="card-text">There is currently zero observability in the score-update pipeline. If the GitHub Actions workflow silently fails to fetch scores, fans see stale data with no alert fired. Instana could monitor the Python script's HTTP calls to <code>football-data.org</code>, capture exceptions, and alert when the automation breaks.</p>
-            <p class="card-section-label">Why it's a difficult fit today</p>
-            <p class="card-text">Instana's pricing is per <em>monitored host</em> (~$75/month). GitHub Actions uses ephemeral runners that are torn down after each job — there is no persistent host to license. You'd be paying for a host that doesn't run continuously.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">Move the Python score-update script off GitHub Actions onto a persistent server (IBM Cloud Code Engine, a VM, or Cloud Functions with a longer-lived runtime). Then install the <code>instana</code> Python package — it auto-instruments with zero code changes.</p>
-            <p class="card-section-label">Better fit for current scale</p>
-            <p class="card-text">IBM's lighter <strong>IBM Cloud Monitoring</strong> service, or free-tier tools like Datadog/New Relic, would be more proportionate for a single-script pipeline. Instana shines for Kubernetes workloads with dozens of microservices.</p>
         </div>
 
     </div><!-- /product-grid single-col -->
 
 
-    <!-- ─────────────────────────────────────────────────────
-         SECTION 2 — APPLICABLE WITH EXPANSION
-    ───────────────────────────────────────────────────────── -->
+    <!-- SECTION 2 — APPLICABLE WITH EXPANSION -->
     <h2 class="section-heading">🟣 Applicable with App Expansion</h2>
-    <p class="section-subheading">These products become relevant when the app grows into new capabilities — each entry includes the specific expansion scenario that unlocks it.</p>
+    <p class="section-subheading">These products become relevant when the app grows into new capabilities.</p>
 
     <div class="product-grid">
 
         <!-- watsonx Orchestrate -->
         <div class="product-card expansion">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Workflow Automation">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M28,20H26V18H20v2H18v4H16V22H10v2H8V20H6V28H8v2h4V28h2v2h4V28h2v4h4V28h2v2h4V20ZM10,28H8V26h2Zm6-2H14V24h2Zm6,2H20V26h2Zm6,0H26V26h2Z"/><path d="M22,14V12H20V8H18v4H16V8H14v4H12V8H10v4H8V6H6v8H4V2H2V16H4v2H6v2h8v-2h2v2h8V16h2V12H24v2Z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">watsonx Orchestrate</h3>
                     <span class="tag tag-purple">With Expansion</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">AI-powered automation platform that coordinates multi-step workflows across multiple tools and APIs using natural language.</p>
+                    <p class="card-section-label">Expansion scenario</p>
+                    <p class="card-text">If the app grew to include fan notifications, ticket link aggregation, and social sharing, Orchestrate would act as the orchestration layer coordinating the full fan engagement workflow.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">An AI-powered automation platform that coordinates multi-step workflows across multiple tools and APIs using natural language — essentially an AI agent that chains actions together.</p>
-            <p class="card-section-label">Expansion scenario</p>
-            <p class="card-text">If the app grew to include fan notifications ("remind me 1 hour before USA games"), ticket link aggregation, and social sharing, Orchestrate would act as the orchestration layer: <em>watsonx Assistant (conversation) → match data API → notification service → social media post</em>. It coordinates the full fan engagement workflow in one place.</p>
-            <p class="card-section-label">Access</p>
-            <p class="card-text">IBM Cloud SaaS, trial available. Production pricing requires a sales engagement — no public per-seat rate.</p>
         </div>
 
         <!-- API Connect -->
         <div class="product-card expansion">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="API Management">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M20,20h-2V18h2a6,6,0,0,0,0-12H18V4H20a8,8,0,0,1,0,16Z"/><path d="M14,28H12A8,8,0,0,1,12,12h2v2H12a6,6,0,0,0,0,12h2Z"/><rect x="11" y="15" width="10" height="2"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM API Connect</h3>
                     <span class="tag tag-purple">With Expansion</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">Full API lifecycle management — design, secure, rate-limit, publish, and monetize APIs with a built-in developer portal.</p>
+                    <p class="card-section-label">Expansion scenario</p>
+                    <p class="card-text">Expose a proper REST API (<code>GET /matches</code>, <code>GET /teams/{code}/schedule</code>), rate-limit external consumers, and publish a developer portal so other fan apps could consume your data.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Full API lifecycle management — design, secure, rate-limit, publish, and monetize APIs, with a built-in developer portal.</p>
-            <p class="card-section-label">Expansion scenario</p>
-            <p class="card-text">Right now the app serves <code>matches.json</code> as a raw file with no API layer. With API Connect you could expose a proper REST API (<code>GET /matches</code>, <code>GET /teams/{code}/schedule</code>), rate-limit external consumers, add API key auth, and publish a developer portal so other fan apps could consume your World Cup data.</p>
-            <p class="card-section-label">Access</p>
-            <p class="card-text">IBM Cloud SaaS. Lite plan free (5 APIs, limited calls). Paid tiers start at ~$200/month.</p>
         </div>
 
         <!-- Concert -->
         <div class="product-card expansion">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="App Risk Management">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"/><path d="M15 8H17V18H15zM15 20H17V22H15z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM Concert</h3>
                     <span class="tag tag-purple">With Expansion</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">AI-powered application management — unified view of app health, dependencies, vulnerabilities, and risk score.</p>
+                    <p class="card-section-label">Expansion scenario</p>
+                    <p class="card-text">Monitor health of the entire app ecosystem: is football-data.org still responding? Are there CVEs in your Python dependencies? What is the overall risk score before the World Cup starts?</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">AI-powered application management that gives you a unified view of your app's health, dependencies, vulnerabilities, and risk score — designed for DevOps teams managing complex apps.</p>
-            <p class="card-section-label">Expansion scenario</p>
-            <p class="card-text">Concert could monitor the health of your entire app ecosystem: is <code>football-data.org</code> API still responding? Are there CVEs in your Python dependencies? What is the overall risk score of the app before the World Cup starts? As the app's dependency graph grows (more APIs, more services), Concert's unified risk view becomes increasingly valuable.</p>
-            <p class="card-section-label">Access</p>
-            <p class="card-text">Available on IBM Cloud. Trial available. Contact IBM for current production pricing.</p>
         </div>
 
         <!-- watsonx BI Assistant -->
         <div class="product-card expansion">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Business Intelligence">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27,3H5C3.9,3,3,3.9,3,5v22c0,1.1,0.9,2,2,2h22c1.1,0,2-0.9,2-2V5C29,3.9,28.1,3,27,3z M27,27H5V5h22V27z"/><rect x="8" y="20" width="4" height="6"/><rect x="14" y="14" width="4" height="12"/><rect x="20" y="8" width="4" height="18"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">watsonx BI Assistant</h3>
                     <span class="tag tag-purple">With Expansion</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">Natural language BI querying — type a question and get a visualization back. AI layer on top of IBM Cognos Analytics.</p>
+                    <p class="card-section-label">Expansion scenario</p>
+                    <p class="card-text">Once you add user telemetry, ask questions like <em>"Which team's games were downloaded most in June?"</em> and get an instant chart.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Natural language BI querying — type a question and get a visualization back. The AI-powered conversational layer on top of IBM Cognos Analytics.</p>
-            <p class="card-section-label">Expansion scenario</p>
-            <p class="card-text">Once you add user telemetry (which matches are most downloaded, which teams are most-selected, which timezones are most common), watsonx BI Assistant would let you as the app owner ask <em>"Which team's games were downloaded most in June?"</em> and get an instant chart — no SQL or BI tool expertise required.</p>
-            <p class="card-section-label">Access</p>
-            <p class="card-text">IBM Cloud SaaS, part of the Cognos Analytics family. Trial available.</p>
         </div>
 
         <!-- IBM DevOps -->
         <div class="product-card expansion">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="DevOps">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M21.41 26.585L19.995 25.169 22.169 23 16 23 16 21 22.169 21 19.997 18.833 21.413 17.417 25.997 22.001 21.41 26.585zM8 9H14.1699L11.998 11.167 13.414 12.583 18 8 13.41 3.415 11.996 4.831 14.17 7H8C5.794 7 4 8.794 4 11V17H6V11C6 9.8954305 6.8954305 9 8 9zM25.998 15H24V11C24 8.794 22.206 7 20 7H15.83L18.004 4.831 16.59 3.415 12 8 16.586 12.583 18.002 11.169 15.83 9H20C21.1045695 9 22 9.8954305 22 11V15H19.998L24.998 20 25.998 15z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M21.41 26.585L19.995 25.169 22.169 23 16 23 16 21 22.169 21 19.997 18.833 21.413 17.417 25.997 22.001 21.41 26.585zM8 9H14.1699L11.998 11.167 13.414 12.583 18 8 13.41 3.415 11.996 4.831 14.17 7H8C5.794 7 4 8.794 4 11V17H6V11C6 9.8954305 6.8954305 9 8 9zM22 16V12h5V10H22V6H20v4H15v2h5v4Z"/></svg>
                 </div>
-                <div class="product-card-header-text">
-                    <h3 class="product-card-title">IBM DevOps (DevOps Intelligence)</h3>
+                <div class="accordion-title-area">
+                    <h3 class="product-card-title">IBM DevOps Intelligence</h3>
                     <span class="tag tag-purple">With Expansion</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">Aggregates metrics across CI/CD pipelines — deployment frequency, failure rates, mean time to recovery.</p>
+                    <p class="card-section-label">Expansion scenario</p>
+                    <p class="card-text">Track how often the score-update job fails, what the mean time between failures is, and whether pipeline durations trend upward during peak match days.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Aggregates metrics across CI/CD pipelines to provide intelligence on deployment frequency, failure rates, mean time to recovery, and lead time for changes.</p>
-            <p class="card-section-label">Expansion scenario</p>
-            <p class="card-text">You already have a GitHub Actions pipeline for score updates. IBM DevOps Intelligence could track how often the score-update job fails, what the mean time between failures is, and whether pipeline durations are trending upward during peak match days. As the pipeline grows (more workflows, more scripts), this visibility becomes operationally important.</p>
-            <p class="card-section-label">Access</p>
-            <p class="card-text">IBM Cloud. Trial available. GitHub's native Actions insights cover most of this for single-pipeline apps at no cost.</p>
         </div>
 
         <!-- Sterling -->
         <div class="product-card expansion">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Supply Chain">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M29,20H26V18H24v2H21a1,1,0,0,0-1,1v2H18V18H16v5H14V21a1,1,0,0,0-1-1H10V18H8v2H5a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1H29a1,1,0,0,0,1-1V21A1,1,0,0,0,29,20ZM6,28V22h6v6Zm12,0V28h0V22h6v6Z"/><path d="M8,16h2V8h5V6H10V2H8V6H3V8H8Z"/><path d="M22,16V12h5V10H22V6H20v4H15v2h5v4Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M29,20H26V18H24v2H21a1,1,0,0,0-1,1v2H18V18H16v5H14V21a1,1,0,0,0-1-1H10V18H8v2H5a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1H29a1,1,0,0,0,1-1V21A1,1,0,0,0,29,20ZM10,28H8V26h2Zm6-2H14V24h2Zm6,2H20V26h2Zm6,0H26V26h2Z"/><path d="M8,16h2V8h5V6H10V2H8V6H3V8H8Z"/><path d="M22,16V12h5V10H22V6H20v4H15v2h5v4Z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM Sterling</h3>
                     <span class="tag tag-purple">With Major Expansion</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">Enterprise supply chain and B2B commerce — order management, inventory, fulfillment, and supplier collaboration.</p>
+                    <p class="card-section-label">Expansion scenario</p>
+                    <p class="card-text">If the app expanded to include a merchandise store or ticket resale marketplace — tracking inventory, managing orders, handling fulfillment logistics.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Enterprise supply chain and B2B commerce platform — order management, inventory, fulfillment, and supplier collaboration at scale.</p>
-            <p class="card-section-label">Expansion scenario</p>
-            <p class="card-text">If the app expanded to include a <strong>merchandise store or ticket resale marketplace</strong> — tracking inventory of World Cup gear, managing orders across multiple suppliers, handling fulfillment logistics — Sterling would be the right backend. This is a significant product pivot (fan portal → commerce platform), not something inherent to a calendar app.</p>
-            <p class="card-section-label">Access</p>
-            <p class="card-text">Enterprise product. Requires IBM sales engagement. Not self-serve on IBM Cloud.</p>
         </div>
 
         <!-- Turbonomic -->
         <div class="product-card expansion">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="FinOps / Cloud Cost">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,4A12,12,0,1,1,4,16,12.0136,12.0136,0,0,1,16,4m0-2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z"/><path d="M17 8H15v2.5601A4.0033 4.0033 0 0016 18a2 2 0 11-2 2H12a4.0042 4.0042 0 003 3.8583V26h2V23.8583A4.0033 4.0033 0 0016 16a2 2 0 112-2h2a4.0042 4.0042 0 00-3-3.8583z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM Turbonomic (FinOps)</h3>
                     <span class="tag tag-purple">With Cloud Migration</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">What it does</p>
+                    <p class="card-text">FinOps and resource optimization — analyzes cloud resource consumption and auto right-sizes workloads to reduce cost.</p>
+                    <p class="card-section-label">Expansion scenario</p>
+                    <p class="card-text">If the app migrated to IBM Cloud (Cloud Functions, Cloudant, CIS, Event Streams), Turbonomic could monitor spend and auto-optimize provisioning. Built for enterprises spending $10k+/month on cloud.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">FinOps and resource optimization platform — analyzes cloud resource consumption and automatically right-sizes workloads to reduce cost while maintaining performance.</p>
-            <p class="card-section-label">Expansion scenario</p>
-            <p class="card-text">The app currently costs $0/month (GitHub Pages + Actions free tier). If the app migrated to IBM Cloud — Cloud Functions, Cloudant, CIS, Event Streams — Turbonomic could monitor spend and auto-optimize provisioning. At hobby scale it still wouldn't be justified; Turbonomic is built for enterprises spending $10k+/month on cloud infrastructure.</p>
-            <p class="card-section-label">Access</p>
-            <p class="card-text">IBM Cloud SaaS and on-premises. 30-day free trial. Enterprise pricing post-trial.</p>
         </div>
 
     </div><!-- /product-grid -->
 
 
-    <!-- ─────────────────────────────────────────────────────
-         SECTION 3 — NOT APPLICABLE
-    ───────────────────────────────────────────────────────── -->
+    <!-- SECTION 3 — NOT APPLICABLE -->
     <h2 class="section-heading">❌ Not Applicable — Full Analysis</h2>
-    <p class="section-subheading">These products don't apply to this app today — but here's the full explanation, what would need to change, and what scenario would flip the answer.</p>
+    <p class="section-subheading">These products don't apply to this app today — here's the full explanation and what scenario would flip the answer.</p>
 
     <div class="product-grid single-col">
 
         <!-- watsonx.data -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Data Lakehouse">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2C8.2,2,2,4.7,2,8v16c0,3.3,6.2,6,14,6s14-2.7,14-6V8C30,4.7,23.8,2,16,2z M28,24c0,1.4-5.1,4-12,4S4,25.4,4,24v-3.2C6.5,22.5,11,24,16,24s9.5-1.5,12-3.2V24z M28,18c0,1.4-5.1,4-12,4S4,19.4,4,18v-3.2C6.5,16.5,11,18,16,18s9.5-1.5,12-3.2V18z M16,16C9.1,16,4,13.4,4,12s5.1-4,12-4s12,2.6,12,4S22.9,16,16,16z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">watsonx.data</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">Your entire data model is 104 rows in a flat JSON file. There is nothing to put in a lakehouse.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">The app becomes a full fan analytics platform capturing millions of interaction events per day. You want to run ad-hoc SQL queries across terabytes of behavioral data.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">A managed data lakehouse platform (Presto/Spark query engine over object storage) designed for analytical workloads at scale. Organizations use it to run SQL analytics cheaply across terabytes of structured and unstructured data.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">Your entire data model is 104 rows of match data in a flat JSON file. There is literally nothing to put in a lakehouse. The overhead of provisioning, configuring, and querying watsonx.data would be orders of magnitude greater than the value it provides at this data volume.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">You would need to: (1) instrument every user interaction as an event (page views, match selections, timezone choices, ICS downloads), (2) stream those events to object storage (IBM Cloud Object Storage), and (3) have enough volume — millions of rows — to justify a distributed query engine over a simple database.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">The app becomes a full fan analytics platform used globally during the World Cup, capturing millions of interaction events per day. You want to run ad-hoc SQL queries like <em>"Which teams' games drove the most ICS downloads in the first week of group stage by timezone?"</em> across terabytes of behavioral data. At that scale, watsonx.data's cost efficiency over a traditional data warehouse would be the differentiator.</p>
         </div>
 
         <!-- watsonx.governance -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="AI Governance">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2L2,8v6c0,9.6,5.8,18.6,14,21c8.2-2.4,14-11.4,14-21V8L16,2z M16,28.9C8.8,26.5,4,18.3,4,14v-4.8L16,4.2L28,9.2V14C28,18.3,23.2,26.5,16,28.9z"/><path d="M20.3 10.3L14 16.6 11.7 14.3 10.3 15.7 14 19.4 21.7 11.7z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">watsonx.governance</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">There are no AI models in production. watsonx.governance has nothing to govern.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">The app adds a match outcome prediction feature powered by a watsonx.ai model with compliance requirements (e.g., sports betting integration transparency).</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">An AI model lifecycle and risk management platform. It monitors AI models in production for bias, accuracy drift, fairness, and regulatory compliance — generating audit trails and alerts when a model's behavior deviates from accepted thresholds.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">There are no AI models in production in this app. watsonx.governance has nothing to govern. You cannot monitor a model that doesn't exist.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">You would need to first deploy a watsonx.ai model to production (e.g., a match description generator or outcome predictor), register it in watsonx.governance, and define quality thresholds and fairness metrics. Only then does governance tooling provide value.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">The app adds a <strong>World Cup match outcome prediction feature</strong> powered by a watsonx.ai model. That model must comply with transparency requirements (e.g., for a regulated sports betting integration). watsonx.governance would monitor the model's prediction accuracy over time, alert when it drifts, and generate compliance reports proving the model behaves fairly across all 48 teams — not just the high-profile nations.</p>
         </div>
 
         <!-- Db2 -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Relational Database">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2C8.3,2,4,4.7,4,7v18c0,2.3,4.3,5,12,5s12-2.7,12-5V7C28,4.7,23.7,2,16,2z M26,7c0,1.1-4,3-10,3S6,8.1,6,7s4-3,10-3S26,5.9,26,7z M6,10.4C7.9,11.4,11.6,12,16,12s8.1-0.6,10-1.6V13c0,1.1-4,3-10,3S6,14.1,6,13V10.4z M6,16.4c1.9,1,5.6,1.6,10,1.6s8.1-0.6,10-1.6V19c0,1.1-4,3-10,3S6,20.1,6,19V16.4z M16,28c-6,0-10-1.9-10-3v-2.6c1.9,1,5.6,1.6,10,1.6s8.1-0.6,10-1.6V25C26,26.1,22,28,16,28z"/></svg>
                 </div>
-                <div class="product-card-header-text">
-                    <h3 class="product-card-title">IBM Db2 / Db2 Database</h3>
+                <div class="accordion-title-area">
+                    <h3 class="product-card-title">IBM Db2</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">104 matches, ~10 columns each — tiny and read-mostly. A JSON file in Git outperforms a database for this specific use case.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">The app becomes an official tournament management system with concurrent write operations, complex joins, and thousands of downstream consumers.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">IBM's flagship relational database — enterprise-grade SQL with ACID transactions, high availability, and deep optimization for transactional (OLTP) workloads. Used heavily in financial services and ERP systems.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">Your data (104 matches, ~10 columns each) is tiny and read-mostly. A production relational database is technically viable but massively over-engineered. The operational overhead of running, patching, and backing up a Db2 instance far exceeds any benefit for this data volume. A JSON file in Git outperforms it for this specific use case.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">You would need: (1) concurrent write operations (multiple processes updating scores simultaneously), (2) complex relational queries with joins across multiple tables, (3) transactional integrity requirements (e.g., a score update must atomically update both teams' records), and (4) a persistent backend server to connect to the database.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">The app becomes an official tournament management system — not just a calendar but a live results platform where multiple official data providers simultaneously push scores, referees log match events in real time, and thousands of downstream systems consume the data. At that scale, Db2's concurrency control, replication, and enterprise SLAs become essential. IBM Cloudant (document DB) would still be a better fit for the current app architecture even at larger scale.</p>
         </div>
 
         <!-- Cognos Analytics -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Business Reporting">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27,3H5C3.9,3,3,3.9,3,5v22c0,1.1,0.9,2,2,2h22c1.1,0,2-0.9,2-2V5C29,3.9,28.1,3,27,3z M27,27H5V5h22V27z"/><path d="M10 16H8v8h2zM14 12h-2v12h2zM18 8h-2v16h2zM22 4h-2v20h2z" transform="scale(-1,1) translate(-32,0)"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM Cognos Analytics</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">No user telemetry, no usage data, and no business metrics to report on. Cognos needs data to visualize.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">IBM Client Engineering wants monthly business reports on which teams drive the most downloads, mobile vs desktop breakdown, and broadcast channel searches.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">A full business intelligence and reporting platform — self-service dashboards, scheduled reports, OLAP cubes, and data exploration. Designed for business analysts building financial and operational reports.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">The app has no user telemetry, no usage data, and no business metrics to report on. Cognos needs data to visualize. There is currently nothing flowing into a data store that Cognos could connect to.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">You would need to: (1) add client-side event tracking (Google Analytics-style, but piped to a data store), (2) persist that data in a Cognos-compatible source (Db2, Cloudant, or a data warehouse), and (3) have enough business questions to justify a full BI platform over a simpler charting tool.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">IBM Client Engineering uses this app as an internal tool and wants a monthly business report: <em>"Which national teams drove the most calendar downloads globally? What percentage of users are on mobile vs. desktop? Which broadcast channels are most searched?"</em> Cognos would provide the scheduled reports and executive dashboards for that operational review. Note: <strong>watsonx BI Assistant</strong> (above) would still be the better entry point — it's lighter and more conversational.</p>
         </div>
 
         <!-- Maximo -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Asset Management">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M26 16.0001L18 16.0001 18 6.0001 16 6.0001 16 16.0001 14 16.0001 14 2.0001 12 2.0001 12 16.0001 6 16.0001 6 18.0001 12 18.0001 12 30.0001 14 30.0001 14 18.0001 18 18.0001 18 30.0001 20 30.0001 20 18.0001 26 18.0001 26 16.0001z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM Maximo</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">Enterprise Asset Management for physical assets (industrial equipment, facilities, vehicles). No physical assets to manage in a calendar web app.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">Pivot to managing physical stadium infrastructure — HVAC maintenance schedules, field equipment work orders, lighting rigs, and broadcast infrastructure.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Enterprise Asset Management (EAM) — manages the lifecycle of physical assets like industrial equipment, facilities, vehicles, and utilities infrastructure. Used by power plants, airlines, transit agencies, and manufacturing plants to schedule preventive maintenance and track asset health.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">A World Cup calendar app has no physical assets to manage. Maximo operates in an entirely different domain — industrial operations — with no conceptual overlap with a web-based sports scheduling tool.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">The fundamental nature of the project would need to change entirely. This isn't a matter of adding features — it's a domain mismatch.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">If the project pivoted to managing the <strong>physical infrastructure of World Cup 2026 stadiums</strong> — tracking maintenance schedules for stadium HVAC systems, managing work orders for field equipment, monitoring the health of stadium lighting rigs and broadcast infrastructure — Maximo would be the right tool. That's a completely different application serving FIFA venue operations teams, not fans.</p>
         </div>
 
         <!-- webMethods -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Enterprise Integration">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M12 6L6 6 6 12 8 12 8 8 12 8 12 6zM26 6L20 6 20 8 24 8 24 12 26 12 26 6zM6 26L6 20 8 20 8 24 12 24 12 26 6 26zM24 24L20 24 20 26 26 26 26 20 24 20 24 24zM16 4C9.4 4 4 9.4 4 16s5.4 12 12 12 12-5.4 12-12S22.6 4 16 4zm0 22C10.5 26 6 21.5 6 16S10.5 6 16 6s10 4.5 10 10-4.5 10-10 10z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">webMethods (IBM)</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">Enterprise integration platform for hundreds of system connections. The app has one external dependency — a single HTTP call. Comically disproportionate.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">The app becomes part of a broader FIFA digital ecosystem: ingesting match data via EDI, syncing with broadcasters via SOAP, exchanging ticketing data via AS2, routing notifications through regional partner systems.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">An enterprise integration platform acquired from Software AG — covers API management, B2B/EDI integration, message brokering, and event-driven integration for large organizations connecting dozens of enterprise systems (ERP, CRM, partner networks, government registries).</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">The app has one external data dependency: the football-data.org API. That's a single HTTP call in a Python script. webMethods is designed for organizations managing hundreds of integrations across enterprise systems — its complexity and cost would be comically disproportionate here.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">You would need 10+ enterprise system integrations, B2B partner data exchange (EDI), or complex message routing across heterogeneous protocols (SOAP, REST, AS2, MQ) to justify the platform.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">The app becomes part of a broader FIFA digital ecosystem: ingesting official match data from FIFA's internal systems via EDI, syncing with broadcaster systems (FOX, Telemundo) via SOAP APIs, exchanging ticketing data with Ticketmaster via AS2, and routing notifications through multiple regional partner systems. At that integration complexity, webMethods would be the right orchestration backbone — but that's FIFA's internal IT architecture, not a fan app.</p>
         </div>
 
         <!-- MaaS360 -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Mobile Device Management">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M21,2H11a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H21a2,2,0,0,0,2-2V4A2,2,0,0,0,21,2Zm0,26H11V4H21Z"/><circle cx="16" cy="25" r="1.5"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM MaaS360</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">MDM manages devices, not web applications. This is a public website — no managed devices, no enterprise app distribution.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">Repackage as a native mobile app distributed to managed corporate devices through MaaS360's enterprise app catalog.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Mobile Device Management (MDM) and Unified Endpoint Management (UEM) — enterprise management of employee phones, laptops, and tablets. IT administrators use it to enforce security policies, push software, wipe lost devices, and manage app distribution across a corporate device fleet.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">MaaS360 manages <em>devices</em>, not web applications. This app is a public website accessed through a browser — there are no managed devices, no enterprise app distribution, and no corporate device fleet to govern.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">The app would need to be repackaged as a <strong>native mobile app</strong> (React Native or Swift/Kotlin) distributed to managed corporate devices through MaaS360's enterprise app catalog.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">IBM Client Engineering wants to distribute this app as a <strong>corporate branded native app</strong> to all IBM employee devices as a World Cup engagement initiative. MaaS360 would handle the internal distribution, ensure the app is only accessible to employees, enforce update policies, and remotely remove the app after the tournament ends — without requiring employees to use a public app store.</p>
         </div>
 
         <!-- Planning Analytics -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Financial Planning">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M26,28H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V26A2,2,0,0,1,26,28ZM6,6V26H26V6Z"/><polygon points="9 14 9 22 11 22 11 14 9 14"/><polygon points="13 10 13 22 15 22 15 10 13 10"/><polygon points="17 17 17 22 19 22 19 17 17 17"/><polygon points="21 12 21 22 23 22 23 12 21 12"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM Planning Analytics</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">Financial planning, budgeting, and forecasting platform. This app generates no revenue and has no budget to model.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">The app becomes a commercial product with sponsorship revenue, ad inventory, and subscription tiers requiring financial scenario modeling.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">A financial planning, budgeting, and forecasting platform (built on TM1) used by enterprise FP&amp;A teams to model financial scenarios, consolidate budgets across business units, and produce planning reports.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">This app has no financial planning component. It generates no revenue, has no budget to manage, and produces no financial data. Planning Analytics is a domain-specific tool for finance departments.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">The project would need a financial dimension — revenue streams, cost centers, budget allocations, or forecasting requirements — that don't exist in a free hobby app.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">The World Cup Calendar becomes a <strong>commercial product</strong> with sponsorship revenue, advertising inventory, and subscription tiers. A finance team needs to model: <em>"How does revenue change if we add a $5/month premium tier vs. a freemium ad model? What are our server cost projections if we hit 1M users during the knockout stage?"</em> Planning Analytics would handle those financial scenario models and revenue forecasts. Still a stretch — a spreadsheet would honestly cover this scenario for most small commercial apps.</p>
         </div>
 
         <!-- Guardium -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Data Security">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2L4,6.9V16c0,7.4,5.1,14.3,12,16c6.9-1.7,12-8.6,12-16V6.9L16,2z M26,16c0,6.3-4.1,12.1-10,13.9C10.1,28.1,6,22.3,6,16V8.3L16,4.1L26,8.3V16z"/><path d="M20.3 10.3L14 16.6 11.7 14.3 10.3 15.7 14 19.4 21.7 11.7z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM Guardium</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">Data security and compliance platform. This app collects zero personal data — no user accounts, no PII, no database to protect.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">Add user accounts with personalized match alerts storing PII, requiring GDPR/CCPA compliance monitoring.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">A data security and compliance platform — monitors databases and data stores for unauthorized access, enforces data privacy policies, masks sensitive data, and generates compliance reports for regulations like GDPR, HIPAA, PCI-DSS, and SOC2.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">This app collects zero personal data. There are no user accounts, no PII stored server-side, and no database to protect. Guardium monitors data stores — and there's nothing here that qualifies.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">You would need to: (1) add user accounts or authentication, (2) store personal data server-side (names, emails, preferences, location), (3) operate a database (Db2, Cloudant, etc.), and (4) have regulatory compliance obligations (GDPR for European users, CCPA for Californians).</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">The app adds <strong>user accounts with personalized match alerts</strong> — users register with their email, save their favorite teams, and receive notifications. The app now stores PII and must comply with GDPR (right to erasure, data portability) and CCPA. Guardium would monitor the user database for unauthorized access, alert on anomalous query patterns (e.g., a bulk export of all email addresses), mask PII in non-production environments, and auto-generate the GDPR compliance audit trail.</p>
         </div>
 
         <!-- OpenPages -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="GRC / Risk Management">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M25,5H22V3H20V5H12V3H10V5H7A2,2,0,0,0,5,7V27a2,2,0,0,0,2,2H25a2,2,0,0,0,2-2V7A2,2,0,0,0,25,5Zm0,22H7V7h3V9h2V7h8V9h2V7h3Z"/><rect x="9" y="13" width="6" height="2"/><rect x="9" y="17" width="6" height="2"/><rect x="9" y="21" width="6" height="2"/><rect x="17" y="13" width="6" height="2"/><rect x="17" y="17" width="4" height="2"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">IBM OpenPages</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">Governance, Risk, and Compliance (GRC) platform. A fan calendar has no regulatory environment, no formal risk committees, and no internal audit functions.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">Built and operated by a publicly traded media company needing to document API dependency risk, manage data privacy compliance, and track security audit findings.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">A Governance, Risk, and Compliance (GRC) platform for enterprise risk management — manages internal audit programs, operational risk registers, regulatory compliance obligations, and policy management for large organizations.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">GRC platforms are designed for organizations with complex regulatory environments, formal risk committees, and internal audit functions. A fan calendar app has none of these structures, no compliance obligations, and no enterprise risk framework to manage.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">The project would need to operate within an enterprise that has: formal risk management obligations, a regulated business activity (finance, healthcare, energy), internal audit requirements, and compliance reporting to regulators or a board.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">The World Cup Calendar is built and operated by a <strong>publicly traded media company</strong> (say, FOX Sports' digital team). That company's IT/risk team must document the risk of third-party API dependency on football-data.org (operational risk), manage the data privacy compliance program for user data (regulatory risk), and track the internal audit of the app's security controls. OpenPages would manage those risk registers, compliance controls, and audit findings — but that's the parent company's GRC program, not the app itself.</p>
         </div>
 
         <!-- Confluent -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Event Streaming / Kafka">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M2 15H4V17H2zM6 15H8V17H6zM10 15H12V17H10zM14 15H16V17H14zM18 15H20V17H18zM22 15H24V17H22zM26 15H28V17H26zM30 15H32V17H30zM2 11H4V13H2zM2 19H4V21H2zM6 9H8V11H6zM6 21H8V23H6zM10 7H12V9H10zM10 23H12V25H10zM14 5H16V7H14zM14 25H16V27H14zM18 5H20V7H18zM18 25H20V27H18zM22 7H24V9H22zM22 23H24V25H22zM26 9H28V11H26zM26 21H28V23H26zM30 11H32V13H30zM30 19H32V21H30z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M2 15H4V17H2zM6 15H8V17H6zM10 15H12V17H10zM14 15H16V17H14zM18 15H20V17H18zM22 15H24V17H22zM26 15H28V17H26zM30 15H32V17H30z"/></svg>
                 </div>
-                <div class="product-card-header-text">
+                <div class="accordion-title-area">
                     <h3 class="product-card-title">Confluent</h3>
                     <span class="tag tag-red">❌ Not IBM — Competing Product</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text"><strong>Not an IBM product.</strong> IBM's equivalent is IBM Event Streams. Beyond the vendor mismatch, the app uses cron-based polling — no real-time event streams.</p>
+                    <p class="card-section-label">Scenario that makes IBM Event Streams applicable</p>
+                    <p class="card-text">True real-time score updates — within 5 seconds of a goal, not every 30 minutes. Event Streams would fan out score events to all connected clients simultaneously.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Confluent is the commercial Kafka company — it provides managed Apache Kafka for real-time event streaming and data pipeline infrastructure.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">First and most importantly: <strong>Confluent is not an IBM product</strong>. It is a competing managed Kafka service. IBM's equivalent is <strong>IBM Event Streams</strong>. If you encounter Confluent in IBM materials, it's in the context of a joint solution or marketplace listing — not an IBM-owned offering. Beyond the vendor mismatch, the current app uses cron-based polling (GitHub Actions every 30–60 minutes) — there are no real-time event streams to manage.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">To use IBM Event Streams (the correct IBM product): move off GitHub Actions polling to an event-driven architecture where score changes are streamed as Kafka events the moment they occur. This requires a persistent consumer service and a Kafka producer connected to the football-data.org API.</p>
-            <p class="card-section-label">Scenario that makes IBM Event Streams applicable</p>
-            <p class="card-text">The app needs <strong>true real-time score updates</strong> — not "updated every 30 minutes" but "updated within 5 seconds of a goal being scored." IBM Event Streams would receive a score-change event the instant it's available, fan it out to all connected clients simultaneously, and drive live score animations on the app. For a World Cup final watched by millions, the difference between 30-minute polling and 5-second event streaming is the difference between a good app and a great one.</p>
         </div>
 
         <!-- Data Lineage -->
         <div class="product-card not-applicable">
-            <div class="product-card-header">
+            <button class="accordion-trigger" aria-expanded="false">
                 <div class="product-pictogram" title="Data Lineage">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="4" cy="16" r="2"/><circle cx="16" cy="4" r="2"/><circle cx="16" cy="28" r="2"/><circle cx="28" cy="16" r="2"/><path d="M16 6L16 14 6 14 6 16 16 16 16 26 18 26 18 16 26 16 26 14 18 14 18 6 16 6z"/></svg>
                 </div>
-                <div class="product-card-header-text">
-                    <h3 class="product-card-title">IBM Data Lineage (Manta / OpenLineage)</h3>
+                <div class="accordion-title-area">
+                    <h3 class="product-card-title">IBM Data Lineage (Manta)</h3>
                     <span class="tag tag-red">❌ Not Applicable</span>
                 </div>
+                <svg class="accordion-chevron" viewBox="0 0 16 16"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"/></svg>
+            </button>
+            <div class="accordion-body">
+                <div class="accordion-body-inner">
+                    <hr class="card-divider">
+                    <p class="card-section-label">Why it doesn't apply</p>
+                    <p class="card-text">Your pipeline is two hops: <code>football-data.org → update_scores.py → matches.json</code>. A developer can trace the full lineage by reading one script.</p>
+                    <p class="card-section-label">Scenario that makes it applicable</p>
+                    <p class="card-text">Multiple data sources (broadcast, stadium, ticketing, social media) flowing through 10+ pipeline stages where humans can no longer mentally track where a field came from.</p>
+                </div>
             </div>
-            <hr class="card-divider">
-            <p class="card-section-label">What it does</p>
-            <p class="card-text">Data lineage tools track how data flows and transforms across complex pipelines — where data originated, what processes touched it, what transformations were applied, and where it landed. Used in large data engineering organizations for compliance, debugging, and data trust.</p>
-            <p class="card-section-label">Why it doesn't apply today</p>
-            <p class="card-text">Your entire data pipeline is two hops: <code>football-data.org API → update_scores.py → matches.json</code>. A developer can trace the full lineage by reading one 200-line Python script. There is nothing complex enough to require automated lineage tooling.</p>
-            <p class="card-section-label">What would need to change</p>
-            <p class="card-text">You would need multiple data sources (broadcast schedules, stadium data, ticketing feeds, social media sentiment) flowing through multiple transformation stages into multiple output datasets — a data mesh or warehouse architecture with 10+ pipeline stages where a human can no longer mentally track where a specific data field came from.</p>
-            <p class="card-section-label">Scenario that makes it applicable</p>
-            <p class="card-text">The app becomes a <strong>FIFA official data intelligence platform</strong> ingesting: match data from football-data.org, broadcast rights data from FIFA's rights management system, stadium capacity data from venue operators, ticket sales data from Ticketmaster, and social media sentiment from the Twitter/X API. Each source feeds into multiple derived datasets (fan engagement scores, broadcast performance metrics, venue utilization reports). When a compliance auditor asks <em>"Where did the broadcast performance metric for Match 47 come from?"</em> — IBM Manta would trace the full lineage from source to report in seconds, instead of a week of manual investigation.</p>
         </div>
 
     </div><!-- /not-applicable grid -->
 
 
-    <!-- ─────────────────────────────────────────────────────
-         SUMMARY TABLE
-    ───────────────────────────────────────────────────────── -->
+    <!-- SUMMARY TABLE -->
     <h2 class="section-heading">📋 Full Summary</h2>
     <table class="summary-table">
         <thead>
@@ -897,34 +987,32 @@
         <tbody>
             <tr><td><strong>watsonx Assistant</strong></td><td><span class="tag tag-green">✅ Now</span></td><td>Search/filter dropdowns → conversational match lookup</td></tr>
             <tr><td><strong>watsonx.ai</strong></td><td><span class="tag tag-green">✅ Now</span></td><td>Hardcoded team name map + manual descriptions</td></tr>
-            <tr><td><strong>IBM Instana</strong></td><td><span class="tag tag-yellow">⚠️ Expensive fit</span></td><td>No monitoring → pipeline health observability (needs persistent server)</td></tr>
+            <tr><td><strong>IBM Instana</strong></td><td><span class="tag tag-yellow">⚠️ Expensive fit</span></td><td>No monitoring → pipeline health observability</td></tr>
             <tr><td><strong>watsonx Orchestrate</strong></td><td><span class="tag tag-purple">With Expansion</span></td><td>Multi-step AI workflows (notifications, integrations)</td></tr>
-            <tr><td><strong>IBM API Connect</strong></td><td><span class="tag tag-purple">With Expansion</span></td><td>Expose matches.json as a proper versioned REST API</td></tr>
+            <tr><td><strong>IBM API Connect</strong></td><td><span class="tag tag-purple">With Expansion</span></td><td>Expose matches.json as a versioned REST API</td></tr>
             <tr><td><strong>IBM Concert</strong></td><td><span class="tag tag-purple">With Expansion</span></td><td>App health + dependency risk monitoring</td></tr>
             <tr><td><strong>watsonx BI Assistant</strong></td><td><span class="tag tag-purple">With Expansion</span></td><td>Admin analytics on usage data via natural language</td></tr>
             <tr><td><strong>IBM DevOps Intelligence</strong></td><td><span class="tag tag-purple">With Expansion</span></td><td>Pipeline intelligence across multiple workflows</td></tr>
             <tr><td><strong>IBM Sterling</strong></td><td><span class="tag tag-purple">Major Expansion</span></td><td>Would need a commerce/merch expansion</td></tr>
-            <tr><td><strong>IBM Turbonomic</strong></td><td><span class="tag tag-purple">With Cloud Migration</span></td><td>$0 cloud spend today — nothing to optimize yet</td></tr>
+            <tr><td><strong>IBM Turbonomic</strong></td><td><span class="tag tag-purple">With Cloud Migration</span></td><td>$0 cloud spend today — nothing to optimize</td></tr>
             <tr><td><strong>watsonx.data</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Need millions of rows of analytics data</td></tr>
             <tr><td><strong>watsonx.governance</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Need AI models in production first</td></tr>
             <tr><td><strong>IBM Db2</strong></td><td><span class="tag tag-red">❌ No</span></td><td>No relational use case; tiny read-only dataset</td></tr>
             <tr><td><strong>IBM Cognos Analytics</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Need large usage telemetry first</td></tr>
             <tr><td><strong>IBM Maximo</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Wrong domain — industrial asset management</td></tr>
-            <tr><td><strong>webMethods</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Enterprise integration at huge scale — 1 API dependency today</td></tr>
+            <tr><td><strong>webMethods</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Enterprise integration — 1 API dependency today</td></tr>
             <tr><td><strong>IBM MaaS360</strong></td><td><span class="tag tag-red">❌ No</span></td><td>MDM — manages devices, not web apps</td></tr>
-            <tr><td><strong>IBM Planning Analytics</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Financial planning — no revenue/budget to model</td></tr>
+            <tr><td><strong>IBM Planning Analytics</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Financial planning — no revenue to model</td></tr>
             <tr><td><strong>IBM Guardium</strong></td><td><span class="tag tag-red">❌ No</span></td><td>No user data or databases to protect</td></tr>
-            <tr><td><strong>IBM OpenPages</strong></td><td><span class="tag tag-red">❌ No</span></td><td>GRC — wrong domain; no enterprise risk obligations</td></tr>
-            <tr><td><strong>Confluent</strong></td><td><span class="tag tag-red">❌ Not IBM</span></td><td>IBM's equivalent is Event Streams — competing vendor</td></tr>
-            <tr><td><strong>IBM Data Lineage</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Two-hop pipeline — no lineage complexity to track</td></tr>
+            <tr><td><strong>IBM OpenPages</strong></td><td><span class="tag tag-red">❌ No</span></td><td>GRC — no enterprise risk obligations</td></tr>
+            <tr><td><strong>Confluent</strong></td><td><span class="tag tag-red">❌ Not IBM</span></td><td>IBM's equivalent is Event Streams</td></tr>
+            <tr><td><strong>IBM Data Lineage</strong></td><td><span class="tag tag-red">❌ No</span></td><td>Two-hop pipeline — no lineage complexity</td></tr>
         </tbody>
     </table>
 
 </main>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer class="about-footer">
     <p>FIFA World Cup 2026 Calendar &nbsp;•&nbsp; Designed by Nina &nbsp;•&nbsp; Made with IBM Bob</p>
 </footer>
@@ -932,6 +1020,16 @@
 <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
 
 <script>
+    // Accordion toggle — multiple can be open simultaneously
+    document.querySelectorAll('.accordion-trigger').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.product-card');
+            const isOpen = card.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen);
+        });
+    });
+
+    // Scroll to top
     const scrollBtn = document.getElementById('scroll-top-btn');
     window.addEventListener('scroll', () => {
         scrollBtn.classList.toggle('visible', window.scrollY > 300);
