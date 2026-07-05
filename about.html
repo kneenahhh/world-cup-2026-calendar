@@ -375,10 +375,7 @@
         }
         .info-term .info-tooltip {
             display: none;
-            position: absolute;
-            bottom: calc(100% + 8px);
-            left: 50%;
-            transform: translateX(-50%);
+            position: fixed;
             background: #161616;
             color: #f4f4f4;
             font-size: 0.8rem;
@@ -388,19 +385,10 @@
             border-radius: 4px;
             width: max-content;
             max-width: 300px;
-            z-index: 1000;
+            z-index: 9999;
             box-shadow: 0 4px 12px rgba(0,0,0,0.25);
             pointer-events: none;
             white-space: normal;
-        }
-        .info-term .info-tooltip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 6px solid transparent;
-            border-top-color: #161616;
         }
         .info-term:hover .info-tooltip {
             display: block;
@@ -1091,6 +1079,44 @@
             const card = btn.closest('.product-card');
             const isOpen = card.classList.toggle('open');
             btn.setAttribute('aria-expanded', isOpen);
+        });
+    });
+
+    // Info tooltip positioning (fixed so it escapes overflow:hidden parents)
+    document.querySelectorAll('.info-term').forEach(term => {
+        const tooltip = term.querySelector('.info-tooltip');
+        if (!tooltip) return;
+
+        term.addEventListener('mouseenter', () => {
+            const rect = term.getBoundingClientRect();
+
+            // Show to measure size
+            tooltip.style.display = 'block';
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.left = '0';
+            tooltip.style.top = '0';
+            const tipRect = tooltip.getBoundingClientRect();
+            const tipH = tipRect.height;
+            const tipW = tipRect.width;
+            tooltip.style.visibility = '';
+
+            // Vertical: above the term, or below if clipped at top
+            let top = rect.top - tipH - 8;
+            if (top < 4) top = rect.bottom + 8;
+
+            // Horizontal: centered, clamped to viewport edges
+            let left = rect.left + rect.width / 2 - tipW / 2;
+            if (left < 8) left = 8;
+            if (left + tipW > window.innerWidth - 8) left = window.innerWidth - tipW - 8;
+
+            tooltip.style.top = top + 'px';
+            tooltip.style.left = left + 'px';
+        });
+
+        term.addEventListener('mouseleave', () => {
+            tooltip.style.display = '';
+            tooltip.style.top = '';
+            tooltip.style.left = '';
         });
     });
 
