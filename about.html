@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About this App — FIFA World Cup 2026 Calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/web-components/tag/v2/all.min.css">
     <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/all.min.js"></script>
     <style>
@@ -225,16 +228,76 @@
         .summary-table tr:nth-child(even) td { background: #f4f4f4; }
         .summary-table tr:hover td { background: #e8e8e8; }
 
-        /* ── Footer ── */
+        /* ── Footer — Carbon dark ── */
         .about-footer {
             text-align: center;
-            padding: 24px;
-            border-top: 1px solid #e0e0e0;
-            color: #6f6f6f;
-            font-size: 0.8rem;
+            padding: 32px 24px;
+            border-top: 4px solid #0f62fe;
+            color: #c6c6c6;
             margin-top: 64px;
-            background: #fff;
+            background: #161616;
+            font-size: 0.875rem;
         }
+
+        /* ── Pictogram container ── */
+        .product-pictogram {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-pictogram svg {
+            width: 40px;
+            height: 40px;
+            fill: #0f62fe;
+        }
+        .product-card.not-applicable .product-pictogram svg {
+            fill: #6f6f6f;
+        }
+        .product-card.expansion .product-pictogram svg {
+            fill: #6929c4;
+        }
+        .product-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .product-card-header-text {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        /* ── Scroll to top ── */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #0f62fe;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, background 0.15s ease, transform 0.15s ease;
+            z-index: 999;
+            line-height: 1;
+            font-family: inherit;
+        }
+        .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
+        .scroll-top-btn:hover { background: #0043ce; transform: translateY(-2px); }
 
         /* ── Responsive ── */
         @media (max-width: 672px) {
@@ -288,8 +351,14 @@
         <!-- watsonx Assistant -->
         <div class="product-card featured">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM watsonx Assistant</h3>
-                <span class="tag tag-green">✅ Applicable Now</span>
+                <div class="product-pictogram" title="Conversational AI">
+                    <!-- Carbon: chat / virtual-agent -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M17.74,30,16,29l4-7h6a2,2,0,0,0,2-2V8a2,2,0,0,0-2-2H6A2,2,0,0,0,4,8V20a2,2,0,0,0,2,2h9v2H6a4,4,0,0,1-4-4V8A4,4,0,0,1,6,4H26a4,4,0,0,1,4,4V20a4,4,0,0,1-4,4H21.16Z"/><rect x="8" y="10" width="16" height="2"/><rect x="8" y="14" width="10" height="2"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM watsonx Assistant</h3>
+                    <span class="tag tag-green">✅ Applicable Now</span>
+                </div>
             </div>
             <div class="cost-strip">
                 <span class="cost-badge free">Lite Plan — Free (no credit card)</span>
@@ -319,8 +388,14 @@
         <!-- watsonx.ai -->
         <div class="product-card featured">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM watsonx.ai</h3>
-                <span class="tag tag-green">✅ Applicable Now</span>
+                <div class="product-pictogram" title="AI Foundation Models">
+                    <!-- Carbon: machine-learning-model -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27,23H25V21h2V19H25V17h2V15H25V13h2V11H25V9h2V7H13A2,2,0,0,0,11,9V11H9V9h2V7H5A2,2,0,0,0,3,9V27a2,2,0,0,0,2,2H27a2,2,0,0,0,2-2V25A2,2,0,0,0,27,23ZM5,27V9H9V27ZM27,27H11V9H23V23H21v2h2v2H11V11H9V27H5V9h4V7H5A2,2,0,0,0,3,9V27a2,2,0,0,0,2,2H27a2,2,0,0,0,2-2V25A2,2,0,0,0,27,23Z"/><rect x="13" y="11" width="2" height="2"/><rect x="13" y="15" width="2" height="2"/><rect x="13" y="19" width="2" height="2"/><rect x="17" y="11" width="2" height="2"/><rect x="17" y="15" width="2" height="2"/><rect x="17" y="19" width="2" height="2"/><rect x="21" y="11" width="2" height="2"/><rect x="21" y="15" width="2" height="2"/><rect x="21" y="19" width="2" height="2"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM watsonx.ai</h3>
+                    <span class="tag tag-green">✅ Applicable Now</span>
+                </div>
             </div>
             <div class="cost-strip">
                 <span class="cost-badge free">Lite Plan — ~25,000 tokens/month free</span>
@@ -352,8 +427,14 @@
         <!-- Instana -->
         <div class="product-card featured">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Instana</h3>
-                <span class="tag tag-yellow">⚠️ Expensive for Current Architecture</span>
+                <div class="product-pictogram" title="Observability">
+                    <!-- Carbon: activity -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 29 13 L 23 13 L 23 3 L 9 3 L 9 13 L 3 13 L 3 29 L 13 29 L 13 21 L 19 21 L 19 29 L 29 29 Z M 11 13 L 11 5 L 21 5 L 21 13 L 11 13 Z M 5 27 L 5 15 L 27 15 L 27 27 L 21 27 L 21 19 L 11 19 L 11 27 Z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Instana</h3>
+                    <span class="tag tag-yellow">⚠️ Expensive for Current Architecture</span>
+                </div>
             </div>
             <div class="cost-strip">
                 <span class="cost-badge paid">14-day free trial</span>
@@ -386,8 +467,13 @@
         <!-- watsonx Orchestrate -->
         <div class="product-card expansion">
             <div class="product-card-header">
-                <h3 class="product-card-title">watsonx Orchestrate</h3>
-                <span class="tag tag-purple">With Expansion</span>
+                <div class="product-pictogram" title="Workflow Automation">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M28,20H26V18H20v2H18v4H16V22H10v2H8V20H6V28H8v2h4V28h2v2h4V28h2v4h4V28h2v2h4V20ZM10,28H8V26h2Zm6-2H14V24h2Zm6,2H20V26h2Zm6,0H26V26h2Z"/><path d="M22,14V12H20V8H18v4H16V8H14v4H12V8H10v4H8V6H6v8H4V2H2V16H4v2H6v2h8v-2h2v2h8V16h2V12H24v2Z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">watsonx Orchestrate</h3>
+                    <span class="tag tag-purple">With Expansion</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -401,8 +487,13 @@
         <!-- API Connect -->
         <div class="product-card expansion">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM API Connect</h3>
-                <span class="tag tag-purple">With Expansion</span>
+                <div class="product-pictogram" title="API Management">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M20,20h-2V18h2a6,6,0,0,0,0-12H18V4H20a8,8,0,0,1,0,16Z"/><path d="M14,28H12A8,8,0,0,1,12,12h2v2H12a6,6,0,0,0,0,12h2Z"/><rect x="11" y="15" width="10" height="2"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM API Connect</h3>
+                    <span class="tag tag-purple">With Expansion</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -416,8 +507,13 @@
         <!-- Concert -->
         <div class="product-card expansion">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Concert</h3>
-                <span class="tag tag-purple">With Expansion</span>
+                <div class="product-pictogram" title="App Risk Management">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"/><path d="M15 8H17V18H15zM15 20H17V22H15z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Concert</h3>
+                    <span class="tag tag-purple">With Expansion</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -431,8 +527,13 @@
         <!-- watsonx BI Assistant -->
         <div class="product-card expansion">
             <div class="product-card-header">
-                <h3 class="product-card-title">watsonx BI Assistant</h3>
-                <span class="tag tag-purple">With Expansion</span>
+                <div class="product-pictogram" title="Business Intelligence">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27,3H5C3.9,3,3,3.9,3,5v22c0,1.1,0.9,2,2,2h22c1.1,0,2-0.9,2-2V5C29,3.9,28.1,3,27,3z M27,27H5V5h22V27z"/><rect x="8" y="20" width="4" height="6"/><rect x="14" y="14" width="4" height="12"/><rect x="20" y="8" width="4" height="18"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">watsonx BI Assistant</h3>
+                    <span class="tag tag-purple">With Expansion</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -446,8 +547,13 @@
         <!-- IBM DevOps -->
         <div class="product-card expansion">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM DevOps (DevOps Intelligence)</h3>
-                <span class="tag tag-purple">With Expansion</span>
+                <div class="product-pictogram" title="DevOps">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M21.41 26.585L19.995 25.169 22.169 23 16 23 16 21 22.169 21 19.997 18.833 21.413 17.417 25.997 22.001 21.41 26.585zM8 9H14.1699L11.998 11.167 13.414 12.583 18 8 13.41 3.415 11.996 4.831 14.17 7H8C5.794 7 4 8.794 4 11V17H6V11C6 9.8954305 6.8954305 9 8 9zM25.998 15H24V11C24 8.794 22.206 7 20 7H15.83L18.004 4.831 16.59 3.415 12 8 16.586 12.583 18.002 11.169 15.83 9H20C21.1045695 9 22 9.8954305 22 11V15H19.998L24.998 20 25.998 15z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM DevOps (DevOps Intelligence)</h3>
+                    <span class="tag tag-purple">With Expansion</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -461,8 +567,13 @@
         <!-- Sterling -->
         <div class="product-card expansion">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Sterling</h3>
-                <span class="tag tag-purple">With Major Expansion</span>
+                <div class="product-pictogram" title="Supply Chain">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M29,20H26V18H24v2H21a1,1,0,0,0-1,1v2H18V18H16v5H14V21a1,1,0,0,0-1-1H10V18H8v2H5a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1H29a1,1,0,0,0,1-1V21A1,1,0,0,0,29,20ZM6,28V22h6v6Zm12,0V28h0V22h6v6Z"/><path d="M8,16h2V8h5V6H10V2H8V6H3V8H8Z"/><path d="M22,16V12h5V10H22V6H20v4H15v2h5v4Z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Sterling</h3>
+                    <span class="tag tag-purple">With Major Expansion</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -476,8 +587,13 @@
         <!-- Turbonomic -->
         <div class="product-card expansion">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Turbonomic (FinOps)</h3>
-                <span class="tag tag-purple">With Cloud Migration</span>
+                <div class="product-pictogram" title="FinOps / Cloud Cost">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,4A12,12,0,1,1,4,16,12.0136,12.0136,0,0,1,16,4m0-2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z"/><path d="M17 8H15v2.5601A4.0033 4.0033 0 0016 18a2 2 0 11-2 2H12a4.0042 4.0042 0 003 3.8583V26h2V23.8583A4.0033 4.0033 0 0016 16a2 2 0 112-2h2a4.0042 4.0042 0 00-3-3.8583z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Turbonomic (FinOps)</h3>
+                    <span class="tag tag-purple">With Cloud Migration</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -502,8 +618,13 @@
         <!-- watsonx.data -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">watsonx.data</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Data Lakehouse">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2C8.2,2,2,4.7,2,8v16c0,3.3,6.2,6,14,6s14-2.7,14-6V8C30,4.7,23.8,2,16,2z M28,24c0,1.4-5.1,4-12,4S4,25.4,4,24v-3.2C6.5,22.5,11,24,16,24s9.5-1.5,12-3.2V24z M28,18c0,1.4-5.1,4-12,4S4,19.4,4,18v-3.2C6.5,16.5,11,18,16,18s9.5-1.5,12-3.2V18z M16,16C9.1,16,4,13.4,4,12s5.1-4,12-4s12,2.6,12,4S22.9,16,16,16z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">watsonx.data</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -519,8 +640,13 @@
         <!-- watsonx.governance -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">watsonx.governance</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="AI Governance">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2L2,8v6c0,9.6,5.8,18.6,14,21c8.2-2.4,14-11.4,14-21V8L16,2z M16,28.9C8.8,26.5,4,18.3,4,14v-4.8L16,4.2L28,9.2V14C28,18.3,23.2,26.5,16,28.9z"/><path d="M20.3 10.3L14 16.6 11.7 14.3 10.3 15.7 14 19.4 21.7 11.7z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">watsonx.governance</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -536,8 +662,13 @@
         <!-- Db2 -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Db2 / Db2 Database</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Relational Database">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2C8.3,2,4,4.7,4,7v18c0,2.3,4.3,5,12,5s12-2.7,12-5V7C28,4.7,23.7,2,16,2z M26,7c0,1.1-4,3-10,3S6,8.1,6,7s4-3,10-3S26,5.9,26,7z M6,10.4C7.9,11.4,11.6,12,16,12s8.1-0.6,10-1.6V13c0,1.1-4,3-10,3S6,14.1,6,13V10.4z M6,16.4c1.9,1,5.6,1.6,10,1.6s8.1-0.6,10-1.6V19c0,1.1-4,3-10,3S6,20.1,6,19V16.4z M16,28c-6,0-10-1.9-10-3v-2.6c1.9,1,5.6,1.6,10,1.6s8.1-0.6,10-1.6V25C26,26.1,22,28,16,28z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Db2 / Db2 Database</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -553,8 +684,13 @@
         <!-- Cognos Analytics -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Cognos Analytics</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Business Reporting">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27,3H5C3.9,3,3,3.9,3,5v22c0,1.1,0.9,2,2,2h22c1.1,0,2-0.9,2-2V5C29,3.9,28.1,3,27,3z M27,27H5V5h22V27z"/><path d="M10 16H8v8h2zM14 12h-2v12h2zM18 8h-2v16h2zM22 4h-2v20h2z" transform="scale(-1,1) translate(-32,0)"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Cognos Analytics</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -570,8 +706,13 @@
         <!-- Maximo -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Maximo</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Asset Management">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M26 16.0001L18 16.0001 18 6.0001 16 6.0001 16 16.0001 14 16.0001 14 2.0001 12 2.0001 12 16.0001 6 16.0001 6 18.0001 12 18.0001 12 30.0001 14 30.0001 14 18.0001 18 18.0001 18 30.0001 20 30.0001 20 18.0001 26 18.0001 26 16.0001z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Maximo</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -587,8 +728,13 @@
         <!-- webMethods -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">webMethods (IBM)</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Enterprise Integration">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M12 6L6 6 6 12 8 12 8 8 12 8 12 6zM26 6L20 6 20 8 24 8 24 12 26 12 26 6zM6 26L6 20 8 20 8 24 12 24 12 26 6 26zM24 24L20 24 20 26 26 26 26 20 24 20 24 24zM16 4C9.4 4 4 9.4 4 16s5.4 12 12 12 12-5.4 12-12S22.6 4 16 4zm0 22C10.5 26 6 21.5 6 16S10.5 6 16 6s10 4.5 10 10-4.5 10-10 10z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">webMethods (IBM)</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -604,8 +750,13 @@
         <!-- MaaS360 -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM MaaS360</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Mobile Device Management">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M21,2H11a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H21a2,2,0,0,0,2-2V4A2,2,0,0,0,21,2Zm0,26H11V4H21Z"/><circle cx="16" cy="25" r="1.5"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM MaaS360</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -621,8 +772,13 @@
         <!-- Planning Analytics -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Planning Analytics</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Financial Planning">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M26,28H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V26A2,2,0,0,1,26,28ZM6,6V26H26V6Z"/><polygon points="9 14 9 22 11 22 11 14 9 14"/><polygon points="13 10 13 22 15 22 15 10 13 10"/><polygon points="17 17 17 22 19 22 19 17 17 17"/><polygon points="21 12 21 22 23 22 23 12 21 12"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Planning Analytics</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -638,8 +794,13 @@
         <!-- Guardium -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Guardium</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Data Security">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,2L4,6.9V16c0,7.4,5.1,14.3,12,16c6.9-1.7,12-8.6,12-16V6.9L16,2z M26,16c0,6.3-4.1,12.1-10,13.9C10.1,28.1,6,22.3,6,16V8.3L16,4.1L26,8.3V16z"/><path d="M20.3 10.3L14 16.6 11.7 14.3 10.3 15.7 14 19.4 21.7 11.7z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Guardium</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -655,8 +816,13 @@
         <!-- OpenPages -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM OpenPages</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="GRC / Risk Management">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M25,5H22V3H20V5H12V3H10V5H7A2,2,0,0,0,5,7V27a2,2,0,0,0,2,2H25a2,2,0,0,0,2-2V7A2,2,0,0,0,25,5Zm0,22H7V7h3V9h2V7h8V9h2V7h3Z"/><rect x="9" y="13" width="6" height="2"/><rect x="9" y="17" width="6" height="2"/><rect x="9" y="21" width="6" height="2"/><rect x="17" y="13" width="6" height="2"/><rect x="17" y="17" width="4" height="2"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM OpenPages</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -672,8 +838,13 @@
         <!-- Confluent -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">Confluent</h3>
-                <span class="tag tag-red">❌ Not IBM — Competing Product</span>
+                <div class="product-pictogram" title="Event Streaming / Kafka">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M2 15H4V17H2zM6 15H8V17H6zM10 15H12V17H10zM14 15H16V17H14zM18 15H20V17H18zM22 15H24V17H22zM26 15H28V17H26zM30 15H32V17H30zM2 11H4V13H2zM2 19H4V21H2zM6 9H8V11H6zM6 21H8V23H6zM10 7H12V9H10zM10 23H12V25H10zM14 5H16V7H14zM14 25H16V27H14zM18 5H20V7H18zM18 25H20V27H18zM22 7H24V9H22zM22 23H24V25H22zM26 9H28V11H26zM26 21H28V23H26zM30 11H32V13H30zM30 19H32V21H30z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">Confluent</h3>
+                    <span class="tag tag-red">❌ Not IBM — Competing Product</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -689,8 +860,13 @@
         <!-- Data Lineage -->
         <div class="product-card not-applicable">
             <div class="product-card-header">
-                <h3 class="product-card-title">IBM Data Lineage (Manta / OpenLineage)</h3>
-                <span class="tag tag-red">❌ Not Applicable</span>
+                <div class="product-pictogram" title="Data Lineage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="4" cy="16" r="2"/><circle cx="16" cy="4" r="2"/><circle cx="16" cy="28" r="2"/><circle cx="28" cy="16" r="2"/><path d="M16 6L16 14 6 14 6 16 16 16 16 26 18 26 18 16 26 16 26 14 18 14 18 6 16 6z"/></svg>
+                </div>
+                <div class="product-card-header-text">
+                    <h3 class="product-card-title">IBM Data Lineage (Manta / OpenLineage)</h3>
+                    <span class="tag tag-red">❌ Not Applicable</span>
+                </div>
             </div>
             <hr class="card-divider">
             <p class="card-section-label">What it does</p>
@@ -750,8 +926,20 @@
      FOOTER
 ═══════════════════════════════════════════════════════════ -->
 <footer class="about-footer">
-    <p>FIFA World Cup 2026 Calendar &nbsp;•&nbsp; Designed by Client Engineering &nbsp;•&nbsp; Made with IBM Bob</p>
+    <p>FIFA World Cup 2026 Calendar &nbsp;•&nbsp; Designed by Nina &nbsp;•&nbsp; Made with IBM Bob</p>
 </footer>
+
+<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+<script>
+    const scrollBtn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => {
+        scrollBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
 
 </body>
 </html>
