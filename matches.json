@@ -2574,13 +2574,15 @@
       "name": "Mexico",
       "code": "MEX",
       "flag": "🇲🇽",
-      "label": "Round of 32 7 Winner"
+      "label": "Round of 32 7 Winner",
+      "score": 2
     },
     "team2": {
       "name": "England",
       "code": "ENG",
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "label": "Round of 32 8 Winner"
+      "label": "Round of 32 8 Winner",
+      "score": 3
     },
     "stadium": "Estadio Banorte",
     "city": "Dallas",
@@ -2591,7 +2593,8 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-093",
