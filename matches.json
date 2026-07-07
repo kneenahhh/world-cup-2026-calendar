@@ -2632,13 +2632,15 @@
       "name": "USA",
       "code": "USA",
       "flag": "🇺🇸",
-      "label": "Round of 32 11 Winner"
+      "label": "Round of 32 11 Winner",
+      "score": 1
     },
     "team2": {
       "name": "Belgium",
       "code": "BEL",
       "flag": "🇧🇪",
-      "label": "Round of 32 12 Winner"
+      "label": "Round of 32 12 Winner",
+      "score": 4
     },
     "stadium": "Lumen Field",
     "city": "Atlanta",
@@ -2649,7 +2651,8 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": ""
+    "group": "",
+    "status": "finished"
   },
   {
     "id": "match-095",
