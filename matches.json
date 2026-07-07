@@ -2611,7 +2611,7 @@
       "code": "ESP",
       "flag": "🇪🇸",
       "label": "Round of 32 10 Winner",
-      "score": 2
+      "score": 4
     },
     "stadium": "AT&T Stadium",
     "city": "Seattle",
@@ -2623,7 +2623,7 @@
     ],
     "stage": "Round of 16",
     "group": "",
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": "match-094",
