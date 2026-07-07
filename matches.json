@@ -2603,13 +2603,15 @@
       "name": "Portugal",
       "code": "POR",
       "flag": "🇵🇹",
-      "label": "Round of 32 9 Winner"
+      "label": "Round of 32 9 Winner",
+      "score": 1
     },
     "team2": {
       "name": "Spain",
       "code": "ESP",
       "flag": "🇪🇸",
-      "label": "Round of 32 10 Winner"
+      "label": "Round of 32 10 Winner",
+      "score": 2
     },
     "stadium": "AT&T Stadium",
     "city": "Seattle",
@@ -2620,7 +2622,8 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": ""
+    "group": "",
+    "status": "live"
   },
   {
     "id": "match-094",
