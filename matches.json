@@ -2690,13 +2690,15 @@
       "name": "Switzerland",
       "code": "SWI",
       "flag": "🇨🇭",
-      "label": "Round of 32 13 Winner"
+      "label": "Round of 32 13 Winner",
+      "score": 0
     },
     "team2": {
       "name": "Colombia",
       "code": "COL",
       "flag": "🇨🇴",
-      "label": "Round of 32 15 Winner"
+      "label": "Round of 32 15 Winner",
+      "score": 0
     },
     "stadium": "BC Place",
     "city": "Boston",
@@ -2707,7 +2709,8 @@
       "Peacock"
     ],
     "stage": "Round of 16",
-    "group": ""
+    "group": "",
+    "status": "live"
   },
   {
     "id": "match-097",
