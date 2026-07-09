@@ -2691,7 +2691,7 @@
       "code": "SWI",
       "flag": "🇨🇭",
       "label": "Round of 32 13 Winner",
-      "score": 0
+      "score": 2
     },
     "team2": {
       "name": "Colombia",
@@ -2710,7 +2710,7 @@
     ],
     "stage": "Round of 16",
     "group": "",
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": "match-097",
