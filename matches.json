@@ -2720,7 +2720,7 @@
       "code": "TBD",
       "flag": "⚽",
       "label": "Round of 16 1 Winner",
-      "score": 1
+      "score": 2
     },
     "team2": {
       "name": "Morocco",
@@ -2739,7 +2739,7 @@
     ],
     "stage": "Quarter-Final",
     "group": "",
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": "match-098",
