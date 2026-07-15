@@ -2829,13 +2829,13 @@
       "name": "Quarterfinal 1 Winner",
       "code": "TBD",
       "flag": "⚽",
-      "score": 0
+      "score": 1
     },
     "team2": {
       "name": "Quarterfinal 2 Winner",
       "code": "TBD",
       "flag": "🏴",
-      "score": 0
+      "score": 2
     },
     "stadium": "AT&T Stadium",
     "city": "Atlanta",
