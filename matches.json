@@ -2828,12 +2828,14 @@
     "team1": {
       "name": "Quarterfinal 1 Winner",
       "code": "TBD",
-      "flag": "⚽"
+      "flag": "⚽",
+      "score": 0
     },
     "team2": {
       "name": "Quarterfinal 2 Winner",
       "code": "TBD",
-      "flag": "🏴"
+      "flag": "🏴",
+      "score": 0
     },
     "stadium": "AT&T Stadium",
     "city": "Atlanta",
@@ -2844,7 +2846,8 @@
       "Peacock"
     ],
     "stage": "Semi-Final",
-    "group": ""
+    "group": "",
+    "status": "live"
   },
   {
     "id": "match-102",
