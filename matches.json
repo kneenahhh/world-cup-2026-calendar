@@ -2856,13 +2856,13 @@
       "name": "Quarterfinal 3 Winner",
       "code": "TBD",
       "flag": "⚽",
-      "score": 0
+      "score": 3
     },
     "team2": {
       "name": "Quarterfinal 4 Winner",
       "code": "TBD",
       "flag": "🏴",
-      "score": 3
+      "score": 4
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Miami",
@@ -2883,13 +2883,13 @@
       "name": "Semifinal 1 Loser",
       "code": "TBD",
       "flag": "⚽",
-      "score": 0
+      "score": 3
     },
     "team2": {
       "name": "Semifinal 2 Loser",
       "code": "TBD",
       "flag": "🏴",
-      "score": 3
+      "score": 4
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
