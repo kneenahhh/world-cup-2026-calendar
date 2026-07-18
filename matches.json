@@ -2855,12 +2855,14 @@
     "team1": {
       "name": "Quarterfinal 3 Winner",
       "code": "TBD",
-      "flag": "⚽"
+      "flag": "⚽",
+      "score": 0
     },
     "team2": {
       "name": "Quarterfinal 4 Winner",
       "code": "TBD",
-      "flag": "🏴"
+      "flag": "🏴",
+      "score": 3
     },
     "stadium": "Mercedes-Benz Stadium",
     "city": "Miami",
@@ -2871,7 +2873,8 @@
       "Peacock"
     ],
     "stage": "Semi-Final",
-    "group": ""
+    "group": "",
+    "status": "live"
   },
   {
     "id": "match-103",
@@ -2879,12 +2882,14 @@
     "team1": {
       "name": "Semifinal 1 Loser",
       "code": "TBD",
-      "flag": "⚽"
+      "flag": "⚽",
+      "score": 0
     },
     "team2": {
       "name": "Semifinal 2 Loser",
       "code": "TBD",
-      "flag": "🏴"
+      "flag": "🏴",
+      "score": 3
     },
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -2895,7 +2900,8 @@
       "Peacock"
     ],
     "stage": "Play-off for 3rd Place",
-    "group": ""
+    "group": "",
+    "status": "live"
   },
   {
     "id": "match-104",
