@@ -2909,12 +2909,14 @@
     "team1": {
       "name": "Semifinal 1 Winner",
       "code": "TBD",
-      "flag": "⚽"
+      "flag": "⚽",
+      "score": 0
     },
     "team2": {
       "name": "Semifinal 2 Winner",
       "code": "TBD",
-      "flag": "🏴"
+      "flag": "🏴",
+      "score": 0
     },
     "stadium": "MetLife Stadium",
     "city": "NY/NJ",
@@ -2925,7 +2927,8 @@
       "Peacock"
     ],
     "stage": "Final",
-    "group": ""
+    "group": "",
+    "status": "live"
   },
   {
     "id": "halftime-001",
